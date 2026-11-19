@@ -1,0 +1,47 @@
+# GRPO's training rows for Gemma 4 31B-it under the judgment mix, as one CPU SLURM job.
+backend: slurm
+cpus: 16
+mem-gb: 32
+timeout-min: 60
+env: [HF_HUB_OFFLINE=1, TRANSFORMERS_OFFLINE=1]
+vars:
+  anchors: null
+  scenarios: null
+  require_protected: null
+  dev_nonyes: null
+  out: null
+  model: gemma-4-31B-it
+  no_share: "0.35"
+  no_margin: "0.3"
+  repeat_cap: 5
+  draw_seed: 0
+  prompt_draws: 2400
+args:
+  - python
+  - -m
+  - ruleforge.launch.programs.build_grpo_data
+  - --anchors
+  - "{artifact_root}/{anchors}"
+  - --scenarios
+  - "{artifact_root}/{scenarios}"
+  - --rules
+  - data/rules/modelspec/openai_rules_all.jsonl
+  - --model
+  - "{model_root}/{model}"
+  - --require-protected
+  - "{artifact_root}/{require_protected}"
+  - --protected
+  - "{artifact_root}/{dev_nonyes}"
+  - --allow-no-held-out
+  - --draw-seed
+  - "{draw_seed}"
+  - --no-share
+  - "{no_share}"
+  - --no-margin
+  - "{no_margin}"
+  - --repeat-cap
+  - "{repeat_cap}"
+  - --prompt-draws
+  - "{prompt_draws}"
+  - --out
+  - "{artifact_root}/{out}"

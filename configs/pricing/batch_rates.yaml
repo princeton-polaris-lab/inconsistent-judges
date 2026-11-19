@@ -1,0 +1,42 @@
+# Batch API token prices, USD per million tokens, keyed by the model id a request body carries.
+schema_version: 1
+rates:
+  gpt-5.6-luna:
+    tier: batch
+    input: 0.10
+    cached_input: 0.01
+    cache_write: 0.125
+    output: 0.60
+    as_of: "2026-09-03"
+    source: >-
+      The standard rates $0.20/M input, $0.02/M cached input and $1.20/M output
+      (https://developers.openai.com/api/docs/models/gpt-5.6-luna), the documented 1.25x cache-write multiplier, and
+      the Batch API's 50% discount (https://help.openai.com/en/articles/9197833-batch-api-faq).
+  gpt-6.1-sol:
+    tier: batch
+    input: 1.00
+    cached_input: 0.05
+    cache_write: 1.25
+    output: 5.00
+    as_of: "2026-10-04"
+    source: >-
+      Public price listings read 2026-10-04 (OpenAI's own pricing page could not be loaded from this machine):
+      Batch $1.00/M input, $0.05/M cached input, $1.25/M cache writes, $5.00/M output with reasoning included.
+      Above 272k input tokens a request is billed at the long-context rates ($4 / $0.20 / $15 per million
+      standard); every request of this repo's designs is far below that. Confirm against OpenAI's pricing page
+      before a launch.
+  claude-haiku-5-5:
+    tier: batch
+    input: 0.05
+    cached_input: 0.005
+    cache_write: 0.0625
+    output: 0.25
+    as_of: "2026-10-13"
+    source: >-
+      https://platform.claude.com/docs/en/about-claude/pricing (the public page, read 2026-10-13),
+      Claude Haiku 5.5 for prompts up to 100,000 tokens: standard $0.10/M input, $0.125/M 5-minute cache
+      writes, $0.01/M cache hits, $0.50/M output; its Batch processing table, $0.05/M input and $0.25/M output (50%
+      off), the cache multipliers stacking on the Batch discount ("These multipliers stack with other pricing
+      modifiers, including the Batch API discount"), so cached input $0.005/M and cache writes (5-minute TTL)
+      $0.0625/M. Thinking bills as output. A request whose prompt is over 100,000 tokens bills at $0.25 / $1.25 per
+      million (Batch), which no request of this repo's designs approaches; global routing (no inference_geo).

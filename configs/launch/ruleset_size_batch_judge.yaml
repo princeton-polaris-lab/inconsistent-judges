@@ -1,0 +1,22 @@
+# The ruleset-size experiment under repeated stochastic decoding, for a judge served through a provider Batch API.
+backend: local
+axis:
+  - "ruleset_size.jobs_seeds={shares}"
+vars:
+  campaign_id: null
+  model: gpt-5.6-luna-batch
+  shares: null      # one-seed lists, [0],[1],...; [] for the bank
+  run_bank: "false" # true for the bank's share alone
+args:
+  - python
+  - -m
+  - ruleforge
+  - bank
+  - run
+  - --config
+  - configs/sampling_ruleset_size.yaml
+  - --
+  - campaign_id={campaign_id}
+  - model@judge_model={model}
+  - model@agent_model={model}
+  - ruleset_size.run_bank={run_bank}

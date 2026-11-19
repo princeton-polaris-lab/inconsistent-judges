@@ -1,0 +1,41 @@
+# The ruleset-size experiment under repeated stochastic decoding: the shared-individual-bank design, one judge model per
+# job.
+defaults:
+  - sampling_campaign
+  - _self_
+
+run_name: sampling_ruleset_size
+
+condition_id: ${judge_model.model_name}/bank
+evaluation_mode: individual_bank
+condition_extra: null
+
+rule_set_path: data/rules/modelspec/openai_rules_all_full.jsonl
+
+scenario_set_path: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/populations/frozen_500_r3.jsonl
+approved_scenario_sha256: c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4
+
+eval_cfg:
+  reasoning_prompt_style: naive-rules-above
+
+sampling:
+  campaign_mode: final
+  num_decoder_draws: 5
+  max_semantic_attempts: 20
+  # One block per attempt pass; campaign identity.
+  scenarios_per_request_block: 500
+
+ruleset_size:
+  design: shared_individual_bank_v1
+  # Written by ruleforge reproduce ruleset-size subsets; checked against the manifest before anything runs.
+  subset_root: data/rules/ruleset_size_subsets
+  sampling_strategy: with_replacement
+  subset_manifest_dir: data/rules/subset_manifest
+  approved_subset_manifest_sha256: 33dba816b810e0ff0fa8a6787e0fa60ce9e078e302fb0fa42cd9b0d92cbb8288
+  subset_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  subset_sizes: null          # null = every size the committed manifest carries
+  # This job's share of the subset seeds; null: all of them.
+  jobs_seeds: null
+  # auto: the share holding the design's first seed runs the bank; true or false overrides.
+  run_bank: auto
+  preflight_only: false

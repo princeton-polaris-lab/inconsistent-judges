@@ -1,0 +1,38 @@
+# The settings of `ruleforge grpo report`: the dev scenarios and draws, each tolerance's null and m1's interval;
+# docs/training_report.md defines each gate.
+ruleset_sha256: a99062f00a9ff616cba4d548e9cd59460dc4ee52fc46e3de4a4eb2579a260228
+
+null_model:
+  resamples: 10000
+  seed: 16
+  level: 0.95
+# Gates whose tolerance is floored at 3 / n.
+floored_gates: [G2, G3, G4]
+interval:
+  resamples: 10000
+  seed: 16
+  level: 0.95
+
+stage1:
+  draws: 2                            # full-set draws of a save
+  dev_scenarios: 150
+  seed: 16
+  base_draws: 8                       # full-set draws of the base
+  base_reference_draws: [0, 1, 2, 3]
+  subsets:
+    m1: [dev]
+    G1: [dev]
+    G2: [dev]
+    G3: [dev, dev_nonyes]
+    G4: [dev, dev_nonyes]
+    G6: [dev]
+    G7: [dev]
+  many_yes: 29                        # yes labels of 57
+  thinking:
+    median_ratio: 0.5
+    max_empty_share: 0.02
+probe:
+  scenarios: 100
+  seed: 16
+  bank_draws: 4                       # per-rule draws of the base
+  base_reference_draw: 0

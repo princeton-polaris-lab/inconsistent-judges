@@ -1,0 +1,18 @@
+# @package _global_
+# How Gemma 4 31B-it's training evaluation serves its arms: merged checkpoints on the fp32 engine, strict_think off.
+defaults:
+  - override /model@judge_model: gemma4-31b-fp32
+  - override /model@agent_model: gemma4-31b-fp32
+
+training:
+  policies:
+    base:
+      model_path: ${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it
+
+judge_model:
+  model_path: ${training.policies.${training.policy}.model_path}
+approved_model_weights_sha256: ${training.policies.${training.policy}.weights_sha256}
+approved_adapter_sha256: null
+
+sampling:
+  strict_think: false

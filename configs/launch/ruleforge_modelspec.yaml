@@ -1,0 +1,24 @@
+# RuleForge on a ruleset over ten seeds: one 2-GPU SLURM job per seed, the judge and the agent sharing one vLLM engine.
+backend: slurm
+gpu-count: 2
+cpus: 4
+mem-gb: 48
+timeout-min: 2880
+resumable: false
+env: ["WANDB_GROUP_TIMESTAMP={launch_id}"]
+axis: ["judge_model.seed=1..10"]
+vars:
+  task: modelspec/openai
+  prompt: naive
+  run_name: null
+args:
+  - python
+  - -m
+  - ruleforge.launch.programs.optimize
+  - task={task}
+  - run_name={run_name}
+  - model@judge_model=gemma4-31b-tp-2
+  - model@agent_model=gemma4-31b-tp-2
+  - eval_cfg.reasoning_prompt_style={prompt}
+  - "hydra.run.dir=experiments/results/sweep/${task_spec}/${task_name}/{launch_id}/{member}"
+  - hydra.job.num={member}

@@ -1,0 +1,45 @@
+# The paper's prompt-ablation arms: each judge's naive, encouraged and forced conditions, by campaign root.
+# Build with --arm-map-var pop=pop-<first 8 hex of the population's scenario manifest>.
+version: 1
+variables: [pop]
+roots:
+  published: artifact://sampling/final-2026-09-${pop}-rescored-lenient_last_line
+  published_luna: artifact://sampling/final-2026-09-luna-${pop}-rescored-lenient_last_line
+  gemma: artifact://sampling/prompt-ablation-v2-2026-10-${pop}-rescored-lenient_last_line
+  open: artifact://sampling/prompt-ablation-v2-open-2026-10-${pop}-rescored-lenient_last_line
+  luna: artifact://sampling/prompt-ablation-v2-2026-10-luna-${pop}-rescored-lenient_last_line
+  haiku: artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum
+  glimmer: artifact://sampling/prompt-ablation-v2-2026-10-glimmer-${pop}
+cross_stack_reason: >-
+  Olmo-3-32B-Think's, gemma-4-31B-it's and gpt-oss-120b's naive arms are the published ones, judged on an earlier lock
+  (vLLM 0.19.0, torch 2.10.0, transformers 5.5.0), and their encouraged and forced arms on the current stack (vLLM
+  0.28.0, torch 2.13.0, transformers 5.17.0), so a naive contrast is the prompt's and the stack's. Encouraged against
+  forced is held to one stack.
+judges:
+  Olmo-3-32B-Think:
+    naive: {root: published, condition: Olmo-3-32B-Think/naive-rules-above}
+    encouraged: {root: open, condition: Olmo-3-32B-Think/encouraged}
+    forced: {root: open, condition: Olmo-3-32B-Think/forced}
+    cross_stack: naive
+  gemma-4-31B-it:
+    naive: {root: published, condition: gemma-4-31B-it/naive-rules-above}
+    encouraged: {root: gemma, condition: gemma-4-31B-it/encouraged}
+    forced: {root: gemma, condition: gemma-4-31B-it/forced}
+    cross_stack: naive
+  gpt-oss-120b:
+    naive: {root: published, condition: gpt-oss-120b/naive-rules-above}
+    encouraged: {root: open, condition: gpt-oss-120b/encouraged}
+    forced: {root: open, condition: gpt-oss-120b/forced}
+    cross_stack: naive
+  Muse-Glimmer-30B:
+    naive: {root: glimmer, condition: Muse-Glimmer-30B/naive-rules-above}
+    encouraged: {root: glimmer, condition: Muse-Glimmer-30B/encouraged}
+    forced: {root: glimmer, condition: Muse-Glimmer-30B/forced}
+  gpt-5.6-luna:
+    naive: {root: published_luna, condition: gpt-5.6-luna/naive-rules-above}
+    encouraged: {root: luna, condition: gpt-5.6-luna/encouraged}
+    forced: {root: luna, condition: gpt-5.6-luna/forced}
+  claude-haiku-5-5:
+    naive: {root: haiku, condition: claude-haiku-5-5/naive-rules-above}
+    encouraged: {root: haiku, condition: claude-haiku-5-5/encouraged}
+    forced: {root: haiku, condition: claude-haiku-5-5/forced}

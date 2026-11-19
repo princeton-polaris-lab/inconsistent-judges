@@ -1,0 +1,7 @@
+# The prompt ablation's judge panel: one strategy.
+defaults:
+  - default
+  - _self_
+
+judge_types:
+  - No_Interpretation

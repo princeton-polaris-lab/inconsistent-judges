@@ -1,0 +1,222 @@
+{
+ "config/sampling_campaign": [
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ]
+ ],
+ "config/sampling_ruleforge": [
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ]
+ ],
+ "config/sampling_ruleset_size": [
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ]
+ ],
+ "config/sampling_training": [
+  [
+   "Qwen3-8B",
+   "even_better"
+  ]
+ ],
+ "config/sampling_training_anchors": [
+  [
+   "Qwen3-8B",
+   "even_better"
+  ]
+ ],
+ "config/sampling_training_dev": [
+  [
+   "Qwen3-8B",
+   "even_better"
+  ]
+ ],
+ "spec/batch_judge": [
+  [
+   "gpt-5.6-luna",
+   "even_better_v2"
+  ],
+  [
+   "gpt-5.6-luna",
+   "good_v2"
+  ],
+  [
+   "gpt-5.6-luna",
+   "legacy"
+  ]
+ ],
+ "spec/gemma_anchors": [
+  [
+   "gemma-4-31B-it",
+   "even_better"
+  ]
+ ],
+ "spec/gemma_references": [
+  [
+   "gemma-4-31B-it",
+   "even_better"
+  ]
+ ],
+ "spec/grpo_anchors": [
+  [
+   "Qwen3-8B",
+   "even_better"
+  ]
+ ],
+ "spec/hierarchy": [
+  [
+   "Olmo-3-32B-Think",
+   "legacy"
+  ],
+  [
+   "Olmo-3-32B-Think",
+   "legacy_hierarchy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy_hierarchy"
+  ],
+  [
+   "gpt-oss-120b",
+   "legacy"
+  ],
+  [
+   "gpt-oss-120b",
+   "legacy_hierarchy"
+  ]
+ ],
+ "spec/prompt_ablation": [
+  [
+   "gemma-4-31B-it",
+   "even_better_v2"
+  ],
+  [
+   "gemma-4-31B-it",
+   "good_v2"
+  ]
+ ],
+ "spec/prompt_ablation_naive": [
+  [
+   "Olmo-3-32B-Think",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gpt-oss-120b",
+   "legacy"
+  ]
+ ],
+ "spec/ruleforge_modelspec": [
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ]
+ ],
+ "spec/ruleforge_rulesets": [
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ]
+ ],
+ "spec/ruleforge_smoke": [
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ]
+ ],
+ "spec/ruleset_size_batch_judge": [
+  [
+   "gpt-5.6-luna",
+   "legacy"
+  ]
+ ],
+ "spec/ruleset_size_open_models": [
+  [
+   "Olmo-3-32B-Think",
+   "legacy"
+  ],
+  [
+   "gemma-4-31B-it",
+   "legacy"
+  ],
+  [
+   "gpt-oss-120b",
+   "legacy"
+  ]
+ ],
+ "spec/training_arm_gemma": [
+  [
+   "gemma-4-31B-it",
+   "even_better"
+  ],
+  [
+   "gemma-4-31B-it",
+   "even_better"
+  ]
+ ],
+ "spec/training_arms": [
+  [
+   "Qwen3-8B",
+   "even_better"
+  ],
+  [
+   "Qwen3-8B",
+   "even_better"
+  ]
+ ]
+}

@@ -1,0 +1,390 @@
+[
+ {
+  "config": {
+   "attention_backend": "FLASH_ATTN",
+   "disable_log_stats": false,
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "language_model_only": true,
+   "max_model_len": null,
+   "max_new_tokens": 65536,
+   "model_name": "Muse-Glimmer-30B",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/Muse-Glimmer-30B",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "muse_glimmer",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "muse_glimmer",
+   "tp_size": 1
+  },
+  "files": {
+   "generation_config.json": "{\n  \"bos_token_id\": 200000,\n  \"eos_token_id\": [\n    200001,\n    200008\n  ],\n  \"pad_token_id\": 200018,\n  \"max_length\": 131072,\n  \"do_sample\": true,\n  \"temperature\": 1.0,\n  \"top_p\": 0.95,\n  \"top_k\": 64\n}\n"
+  },
+  "key": {
+   "model_name": "Muse-Glimmer-30B",
+   "model_path": "Muse-Glimmer-30B",
+   "model_type": "local",
+   "model_weights_sha256": null,
+   "serving_dtype": null
+  },
+  "source": "configs/model/muse-glimmer-30b.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "FLASH_ATTN",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 32768,
+   "model_name": "Olmo-3-32B-Think",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/Olmo-3-32B-Think",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "olmo3",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "olmo3",
+   "tp_size": 1
+  },
+  "files": {
+   "generation_config.json": "{\n  \"_from_model_config\": true,\n  \"eos_token_id\": 100257,\n  \"pad_token_id\": 100277,\n  \"transformers_version\": \"4.57.1\",\n  \"temperature\": 0.6,\n  \"top_p\": 0.95,\n  \"max_new_tokens\": 32768\n}"
+  },
+  "key": {
+   "model_name": "Olmo-3-32B-Think",
+   "model_path": "Olmo-3-32B-Think",
+   "model_type": "local",
+   "model_weights_sha256": null,
+   "serving_dtype": null
+  },
+  "source": "sampling/fig2-2026-09-pop-6f528dcb/hydra/olmo3-32b-tp-2/share-0/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "TRITON_ATTN",
+   "dtype": "float32",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 32768,
+   "model_name": "Qwen3-8B",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/Qwen3-8B",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "qwen3",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "qwen3",
+   "tp_size": 1
+  },
+  "files": {
+   "generation_config.json": "{\n    \"bos_token_id\": 151643,\n    \"do_sample\": true,\n    \"eos_token_id\": [\n        151645,\n        151643\n    ],\n    \"pad_token_id\": 151643,\n    \"temperature\": 0.6,\n    \"top_k\": 20,\n    \"top_p\": 0.95,\n    \"transformers_version\": \"4.51.0\"\n}"
+  },
+  "key": {
+   "model_name": "Qwen3-8B",
+   "model_path": "Qwen3-8B",
+   "model_type": "local",
+   "model_weights_sha256": null,
+   "serving_dtype": "float32"
+  },
+  "source": "sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-6f528dcb/hydra/Qwen3-8B/figure5/base/2026-10-15_17-56-33/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "TRITON_ATTN",
+   "dtype": "float32",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 32768,
+   "model_name": "Qwen3-8B",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/checkpoint-200",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "qwen3",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "qwen3",
+   "tp_size": 1
+  },
+  "files": {
+   "generation_config.json": "{\n    \"bos_token_id\": 151643,\n    \"do_sample\": true,\n    \"eos_token_id\": [\n        151645,\n        151643\n    ],\n    \"pad_token_id\": 151643,\n    \"temperature\": 0.6,\n    \"top_k\": 20,\n    \"top_p\": 0.95,\n    \"transformers_version\": \"4.51.0\"\n}",
+   "merge_manifest.json": "{\n  \"kind\": \"lora_merge\",\n  \"merge\": {\n    \"saved_dtype\": \"float32\"\n  },\n  \"result\": {\n    \"weights_sha256\": \"44cd554da8309c815cacbd071b0cefcbc5ffbe722529b461d19f2a01be935bfb\"\n  },\n  \"weights_digest\": \"smrc-weights-sha256-v1\"\n}\n"
+  },
+  "key": {
+   "model_name": "Qwen3-8B",
+   "model_path": "checkpoint-200",
+   "model_type": "local",
+   "model_weights_sha256": "44cd554da8309c815cacbd071b0cefcbc5ffbe722529b461d19f2a01be935bfb",
+   "serving_dtype": "float32"
+  },
+  "source": "sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-6f528dcb/hydra/Qwen3-8B/figure5/grpo/2026-10-15_17-56-33/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "TRITON_ATTN",
+   "dtype": "float32",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 32768,
+   "model_name": "Qwen3-8B",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/checkpoint-300",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "qwen3",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "qwen3",
+   "tp_size": 1
+  },
+  "files": {
+   "generation_config.json": "{\n    \"bos_token_id\": 151643,\n    \"do_sample\": true,\n    \"eos_token_id\": [\n        151645,\n        151643\n    ],\n    \"pad_token_id\": 151643,\n    \"temperature\": 0.6,\n    \"top_k\": 20,\n    \"top_p\": 0.95,\n    \"transformers_version\": \"4.51.0\"\n}",
+   "merge_manifest.json": "{\n  \"kind\": \"lora_merge\",\n  \"merge\": {\n    \"saved_dtype\": \"float32\"\n  },\n  \"result\": {\n    \"weights_sha256\": \"9cbc91ce67ad525417242fe07d328c998b2493fbf644c693b01b8acaac4017dc\"\n  },\n  \"weights_digest\": \"smrc-weights-sha256-v1\"\n}\n"
+  },
+  "key": {
+   "model_name": "Qwen3-8B",
+   "model_path": "checkpoint-300",
+   "model_type": "local",
+   "model_weights_sha256": "9cbc91ce67ad525417242fe07d328c998b2493fbf644c693b01b8acaac4017dc",
+   "serving_dtype": "float32"
+  },
+  "source": "sampling/fig5-qwen-mix-2026-10-11-checkpoint-300-pop-6f528dcb/hydra/Qwen3-8B/figure5/pick/2026-10-15_17-56-03/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": null,
+   "batch_poll_seconds": 60,
+   "batch_root": "${oc.env:RULEFORGE_BATCH_ROOT}",
+   "batch_timeout_seconds": null,
+   "enable_thinking": null,
+   "fixed_temperature": 1.0,
+   "gpt_oss_reasoning_level": null,
+   "max_enqueued_tokens": null,
+   "max_model_len": null,
+   "max_new_tokens": 16384,
+   "model_name": "claude-haiku-5-5",
+   "model_path": null,
+   "model_type": "anthropic_batch",
+   "num_speculative_tokens": null,
+   "num_tries": 3,
+   "reasoning_level": "medium",
+   "reasoning_parser": null,
+   "seed": 16,
+   "send_max_output_tokens": true,
+   "speculative_method": null,
+   "strip_thinking_model": null,
+   "temperature": 1,
+   "tp_size": null
+  },
+  "files": {},
+  "key": {
+   "model_name": "claude-haiku-5-5",
+   "model_path": null,
+   "model_type": "anthropic_batch",
+   "model_weights_sha256": null,
+   "serving_dtype": null
+  },
+  "source": "sampling/prompt-ablation-v2-2026-10-haiku-pop-6f528dcb/hydra/claude-haiku-5-5/even_better_v2/2026-10-15_13-58-55/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "TRITON_ATTN",
+   "dtype": "float32",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 65536,
+   "model_name": "gemma-4-31B-it",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/checkpoint-200",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "gemma4",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "gemma4",
+   "tp_size": 2
+  },
+  "files": {
+   "generation_config.json": "{\n  \"bos_token_id\": 2,\n  \"do_sample\": true,\n  \"eos_token_id\": [\n    1,\n    106,\n    50\n  ],\n  \"pad_token_id\": 0,\n  \"temperature\": 1.0,\n  \"top_k\": 64,\n  \"top_p\": 0.95,\n  \"transformers_version\": \"5.5.0.dev0\"\n}\n",
+   "merge_manifest.json": "{\n  \"kind\": \"lora_merge\",\n  \"merge\": {\n    \"saved_dtype\": \"float32\"\n  },\n  \"result\": {\n    \"weights_sha256\": \"5f161da83561d405d917aab198b6f79433413669f786a1f2a982c389677b704e\"\n  },\n  \"weights_digest\": \"smrc-weights-sha256-v1\"\n}\n"
+  },
+  "key": {
+   "model_name": "gemma-4-31B-it",
+   "model_path": "checkpoint-200",
+   "model_type": "local",
+   "model_weights_sha256": "5f161da83561d405d917aab198b6f79433413669f786a1f2a982c389677b704e",
+   "serving_dtype": "float32"
+  },
+  "source": "sampling/fig5-gemma-2026-10-07-pop-6f528dcb/hydra/gemma-4-31B-it/figure5/grpo/2026-10-15_19-05-15/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "TRITON_ATTN",
+   "dtype": "float32",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 65536,
+   "model_name": "gemma-4-31B-it",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/checkpoint-600",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "gemma4",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "gemma4",
+   "tp_size": 2
+  },
+  "files": {
+   "generation_config.json": "{\n  \"bos_token_id\": 2,\n  \"do_sample\": true,\n  \"eos_token_id\": [\n    1,\n    106,\n    50\n  ],\n  \"pad_token_id\": 0,\n  \"temperature\": 1.0,\n  \"top_k\": 64,\n  \"top_p\": 0.95,\n  \"transformers_version\": \"5.5.0.dev0\"\n}\n",
+   "merge_manifest.json": "{\n  \"kind\": \"lora_merge\",\n  \"merge\": {\n    \"saved_dtype\": \"float32\"\n  },\n  \"result\": {\n    \"weights_sha256\": \"03a8b16f1032b403a6f47cb8085fe294e838729ce06a84f73509c46914395be3\"\n  },\n  \"weights_digest\": \"smrc-weights-sha256-v1\"\n}\n"
+  },
+  "key": {
+   "model_name": "gemma-4-31B-it",
+   "model_path": "checkpoint-600",
+   "model_type": "local",
+   "model_weights_sha256": "03a8b16f1032b403a6f47cb8085fe294e838729ce06a84f73509c46914395be3",
+   "serving_dtype": "float32"
+  },
+  "source": "sampling/fig5-gemma-ckpt600-2026-10-09-pop-6f528dcb/hydra/gemma-4-31B-it/figure5/final/2026-10-15_17-53-28/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "TRITON_ATTN",
+   "dtype": "float32",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 65536,
+   "model_name": "gemma-4-31B-it",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "gemma4",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "gemma4",
+   "tp_size": 2
+  },
+  "files": {
+   "generation_config.json": "{\n  \"bos_token_id\": 2,\n  \"do_sample\": true,\n  \"eos_token_id\": [\n    1,\n    106,\n    50\n  ],\n  \"pad_token_id\": 0,\n  \"temperature\": 1.0,\n  \"top_k\": 64,\n  \"top_p\": 0.95,\n  \"transformers_version\": \"5.5.0.dev0\"\n}\n"
+  },
+  "key": {
+   "model_name": "gemma-4-31B-it",
+   "model_path": "gemma-4-31B-it",
+   "model_type": "local",
+   "model_weights_sha256": null,
+   "serving_dtype": "float32"
+  },
+  "source": "sampling/fig5-gemma-2026-10-07-pop-6f528dcb/hydra/gemma-4-31B-it/figure5/base/2026-10-15_19-05-15/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "TRITON_ATTN",
+   "disable_log_stats": false,
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": null,
+   "max_model_len": null,
+   "max_new_tokens": 65536,
+   "model_name": "gemma-4-31B-it",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "gemma4",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "gemma4",
+   "tp_size": 1
+  },
+  "files": {
+   "generation_config.json": "{\n  \"bos_token_id\": 2,\n  \"do_sample\": true,\n  \"eos_token_id\": [\n    1,\n    106,\n    50\n  ],\n  \"pad_token_id\": 0,\n  \"temperature\": 1.0,\n  \"top_k\": 64,\n  \"top_p\": 0.95,\n  \"transformers_version\": \"5.5.0.dev0\"\n}\n"
+  },
+  "key": {
+   "model_name": "gemma-4-31B-it",
+   "model_path": "gemma-4-31B-it",
+   "model_type": "local",
+   "model_weights_sha256": null,
+   "serving_dtype": null
+  },
+  "source": "sampling/fig4-2026-09-pop-6f528dcb/hydra/gemma-4-31B-it/figure4/initial/2026-10-15_18-58-30/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": null,
+   "batch_endpoint": "responses",
+   "batch_poll_seconds": 60,
+   "batch_root": "${oc.env:RULEFORGE_BATCH_ROOT}",
+   "batch_timeout_seconds": null,
+   "enable_thinking": null,
+   "fixed_temperature": 1.0,
+   "gpt_oss_reasoning_level": null,
+   "max_enqueued_tokens": null,
+   "max_model_len": null,
+   "max_new_tokens": 65536,
+   "model_name": "gpt-5.6-luna",
+   "model_path": null,
+   "model_type": "openai_batch",
+   "num_speculative_tokens": null,
+   "num_tries": 3,
+   "reasoning_level": "medium",
+   "reasoning_parser": null,
+   "reasoning_summary": "auto",
+   "seed": 16,
+   "send_max_output_tokens": false,
+   "speculative_method": null,
+   "strip_thinking_model": null,
+   "temperature": 1,
+   "tp_size": null
+  },
+  "files": {},
+  "key": {
+   "model_name": "gpt-5.6-luna",
+   "model_path": null,
+   "model_type": "openai_batch",
+   "model_weights_sha256": null,
+   "serving_dtype": null
+  },
+  "source": "sampling/fig2-2026-09-luna-pop-6f528dcb/hydra/gpt-5.6-luna-batch/bank-login/.hydra/config.yaml"
+ },
+ {
+  "config": {
+   "attention_backend": "FLASH_ATTN",
+   "enable_thinking": true,
+   "gpt_oss_reasoning_level": "high",
+   "max_model_len": null,
+   "max_new_tokens": 65536,
+   "max_num_seqs": 512,
+   "model_name": "gpt-oss-120b",
+   "model_path": "${oc.env:RULEFORGE_MODEL_ROOT}/gpt-oss-120b",
+   "model_type": "local",
+   "num_speculative_tokens": null,
+   "num_tries": 5,
+   "reasoning_parser": "openai_gptoss",
+   "seed": 16,
+   "speculative_method": null,
+   "strip_thinking_model": "openai_gptoss",
+   "tp_size": 1
+  },
+  "files": {
+   "generation_config.json": "{\n  \"bos_token_id\": 199998,\n  \"do_sample\": true,\n  \"eos_token_id\": [\n    200002,\n    199999,\n    200012\n  ],\n  \"pad_token_id\": 199999,\n  \"transformers_version\": \"4.55.0.dev0\"\n}\n"
+  },
+  "key": {
+   "model_name": "gpt-oss-120b",
+   "model_path": "gpt-oss-120b",
+   "model_type": "local",
+   "model_weights_sha256": null,
+   "serving_dtype": null
+  },
+  "source": "sampling/fig2-2026-09-pop-6f528dcb/hydra/gpt-oss-tp-2/share-0/.hydra/config.yaml"
+ }
+]

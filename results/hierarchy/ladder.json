@@ -1,0 +1,1790 @@
+{
+  "analysis": "hierarchy_ladder",
+  "arms": [
+    {
+      "arm": "flat",
+      "campaign_id": "hierarchy-aware-2026-10",
+      "condition_id": "Olmo-3-32B-Think/naive-rules-above",
+      "grid_digest": "003791f08bdccb9b273e556c6460f63923258b028cfe395a3bdc7ec22c15bdce",
+      "individual_rule_context": "isolated",
+      "judge": "Olmo3-32B",
+      "label_rule": "lenient_markup",
+      "model_name": "Olmo-3-32B-Think",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0028,
+        "ci_low": 0.0,
+        "estimate": 0.0012000000000000001,
+        "sd": 0.0006857968398877324
+      },
+      "prompt_style": "naive-rules-above",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.44480000000000003,
+            "ci_low": 0.3852,
+            "estimate": 0.41480000000000006,
+            "sd": 0.015171484002351254
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.092,
+            "ci_low": 0.0664,
+            "estimate": 0.0792,
+            "sd": 0.006487987276929571
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.69841,
+            "ci_low": 0.6416,
+            "estimate": 0.67,
+            "sd": 0.014612377610012687
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.3492099999999999,
+            "ci_low": 0.2896,
+            "estimate": 0.31920000000000004,
+            "sd": 0.015189201543412346
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.7016,
+            "ci_low": 0.6447999999999999,
+            "estimate": 0.6732,
+            "sd": 0.014612145641267064
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.33520000000000005,
+            "ci_low": 0.27640000000000003,
+            "estimate": 0.30560000000000004,
+            "sd": 0.014963571674115777
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.75,
+            "ci_low": 0.6923900000000001,
+            "estimate": 0.7212,
+            "sd": 0.014739419663962352
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.1948,
+            "ci_low": 0.1476,
+            "estimate": 0.1708,
+            "sd": 0.011967829395508613
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.784,
+            "ci_low": 0.726,
+            "estimate": 0.7556,
+            "sd": 0.014766081390809142
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.066,
+            "ci_low": 0.0404,
+            "estimate": 0.052800000000000014,
+            "sd": 0.006631367759489742
+          }
+        }
+      ]
+    },
+    {
+      "arm": "hierarchy",
+      "campaign_id": "hierarchy-aware-2026-10",
+      "condition_id": "Olmo-3-32B-Think/naive-hierarchy",
+      "grid_digest": "5d67b9d95db5ab297d6daa15a9ec95786ad4d736c7dc0d4d87c5d543fe05e8f7",
+      "individual_rule_context": "superiors",
+      "judge": "Olmo3-32B",
+      "label_rule": "lenient_markup",
+      "model_name": "Olmo-3-32B-Think",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0072,
+        "ci_low": 0.002,
+        "estimate": 0.0044,
+        "sd": 0.0013157685966764825
+      },
+      "prompt_style": "naive-hierarchy",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.4732099999999999,
+            "ci_low": 0.4108,
+            "estimate": 0.442,
+            "sd": 0.016045820888941766
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.06880000000000001,
+            "ci_low": 0.04760000000000001,
+            "estimate": 0.058,
+            "sd": 0.0054077753509553265
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.7028,
+            "ci_low": 0.6496000000000001,
+            "estimate": 0.676,
+            "sd": 0.01353901316338824
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.3008,
+            "ci_low": 0.2484,
+            "estimate": 0.2744,
+            "sd": 0.013250899098189528
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.7064,
+            "ci_low": 0.6532,
+            "estimate": 0.6796,
+            "sd": 0.013525362210247827
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.29560000000000003,
+            "ci_low": 0.24280000000000002,
+            "estimate": 0.2688000000000001,
+            "sd": 0.013318642210615916
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.7516,
+            "ci_low": 0.6992,
+            "estimate": 0.7255999999999999,
+            "sd": 0.013372261821187916
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.2384,
+            "ci_low": 0.1928,
+            "estimate": 0.21520000000000003,
+            "sd": 0.011624729103355484
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.7704099999999999,
+            "ci_low": 0.7188,
+            "estimate": 0.7448,
+            "sd": 0.01323495642691732
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.22000000000000003,
+            "ci_low": 0.1748,
+            "estimate": 0.19720000000000001,
+            "sd": 0.01165158378103166
+          }
+        }
+      ]
+    },
+    {
+      "arm": "flat",
+      "campaign_id": "hierarchy-aware-2026-10",
+      "condition_id": "gemma-4-31B-it/naive-rules-above",
+      "grid_digest": "24033196adad081be802098ede3404f4d12b84964c0c3de274c295b8e34f3328",
+      "individual_rule_context": "isolated",
+      "judge": "gemma4-31b",
+      "label_rule": "lenient_markup",
+      "model_name": "gemma-4-31B-it",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0,
+        "sd": 0.0
+      },
+      "prompt_style": "naive-rules-above",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.28720000000000007,
+            "ci_low": 0.22360000000000002,
+            "estimate": 0.25520000000000004,
+            "sd": 0.0162851696715263
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "sd": 0.0
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.32080000000000003,
+            "ci_low": 0.25680000000000003,
+            "estimate": 0.2888,
+            "sd": 0.01642990176238434
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.020399999999999998,
+            "ci_low": 0.01,
+            "estimate": 0.0148,
+            "sd": 0.0026616230834586633
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.324,
+            "ci_low": 0.25920000000000004,
+            "estimate": 0.29120000000000007,
+            "sd": 0.016526066100557627
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.02,
+            "ci_low": 0.0096,
+            "estimate": 0.014400000000000001,
+            "sd": 0.002634113231886587
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.6484,
+            "ci_low": 0.5748,
+            "estimate": 0.6116,
+            "sd": 0.018642599120036882
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.0032,
+            "ci_low": 0.0004,
+            "estimate": 0.0016,
+            "sd": 0.000795426527090969
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.7556,
+            "ci_low": 0.6856,
+            "estimate": 0.7212000000000001,
+            "sd": 0.017804196843845554
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "sd": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "arm": "hierarchy",
+      "campaign_id": "hierarchy-aware-2026-10",
+      "condition_id": "gemma-4-31B-it/naive-hierarchy",
+      "grid_digest": "ded9c4056b6d42c5d79f9b12d94f6a33c8b1449f899d810663a663802c33594f",
+      "individual_rule_context": "superiors",
+      "judge": "gemma4-31b",
+      "label_rule": "lenient_markup",
+      "model_name": "gemma-4-31B-it",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0012000000000000001,
+        "ci_low": 0.0,
+        "estimate": 0.0004,
+        "sd": 0.00040687765433850015
+      },
+      "prompt_style": "naive-hierarchy",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.264,
+            "ci_low": 0.2016,
+            "estimate": 0.2324,
+            "sd": 0.015850743957101825
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "sd": 0.0
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.2928,
+            "ci_low": 0.22960000000000003,
+            "estimate": 0.26120000000000004,
+            "sd": 0.016059788130657265
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.005199999999999999,
+            "ci_low": 0.0008,
+            "estimate": 0.0028,
+            "sd": 0.0010504777762523109
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.29680000000000006,
+            "ci_low": 0.23360000000000003,
+            "estimate": 0.26520000000000005,
+            "sd": 0.01608247779198218
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.005199999999999999,
+            "ci_low": 0.0008,
+            "estimate": 0.0028,
+            "sd": 0.0010504777762523109
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.6267999999999999,
+            "ci_low": 0.5536000000000001,
+            "estimate": 0.59,
+            "sd": 0.018700914014026158
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.0012000000000000001,
+            "ci_low": 0.0,
+            "estimate": 0.0004,
+            "sd": 0.0003980752973998764
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.658,
+            "ci_low": 0.58479,
+            "estimate": 0.622,
+            "sd": 0.018666332898306513
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.0012000000000000001,
+            "ci_low": 0.0,
+            "estimate": 0.0004,
+            "sd": 0.0003980752973998764
+          }
+        }
+      ]
+    },
+    {
+      "arm": "flat",
+      "campaign_id": "hierarchy-aware-2026-10",
+      "condition_id": "gpt-oss-120b/naive-rules-above",
+      "grid_digest": "81308fd79f4a8e7200eb568db67e701a5c72adcfcc58035c48c0f58854d91ca6",
+      "individual_rule_context": "isolated",
+      "judge": "gpt-oss-120b",
+      "label_rule": "lenient_markup",
+      "model_name": "gpt-oss-120b",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0012000000000000001,
+        "ci_low": 0.0,
+        "estimate": 0.0004,
+        "sd": 0.0003957249873333753
+      },
+      "prompt_style": "naive-rules-above",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.2008,
+            "ci_low": 0.156,
+            "estimate": 0.178,
+            "sd": 0.011458039772596358
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.002,
+            "ci_low": 0.0,
+            "estimate": 0.0008,
+            "sd": 0.0005641235098805935
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.4716,
+            "ci_low": 0.4132,
+            "estimate": 0.44160000000000005,
+            "sd": 0.01491478246438747
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.2836,
+            "ci_low": 0.23160000000000003,
+            "estimate": 0.25720000000000004,
+            "sd": 0.013372400809488174
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.4852,
+            "ci_low": 0.42640000000000006,
+            "estimate": 0.4556,
+            "sd": 0.015106548663728587
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.2572,
+            "ci_low": 0.2064,
+            "estimate": 0.2312,
+            "sd": 0.012988755886596684
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.584,
+            "ci_low": 0.518,
+            "estimate": 0.5512,
+            "sd": 0.016816052892590465
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.1052,
+            "ci_low": 0.0724,
+            "estimate": 0.088,
+            "sd": 0.008439084462191382
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.6607999999999999,
+            "ci_low": 0.5892000000000001,
+            "estimate": 0.626,
+            "sd": 0.018143757548600564
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.014,
+            "ci_low": 0.0036,
+            "estimate": 0.008400000000000001,
+            "sd": 0.0026486111291769503
+          }
+        }
+      ]
+    },
+    {
+      "arm": "hierarchy",
+      "campaign_id": "hierarchy-aware-2026-10",
+      "condition_id": "gpt-oss-120b/naive-hierarchy",
+      "grid_digest": "de13c48407a484dfd6aab0e69fd174b1b4dd689b42414ea5e5e7350a62d393c0",
+      "individual_rule_context": "superiors",
+      "judge": "gpt-oss-120b",
+      "label_rule": "lenient_markup",
+      "model_name": "gpt-oss-120b",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0028000000000000004,
+        "ci_low": 0.0,
+        "estimate": 0.0012000000000000001,
+        "sd": 0.0006925738014103624
+      },
+      "prompt_style": "naive-hierarchy",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.3036099999999999,
+            "ci_low": 0.24520000000000003,
+            "estimate": 0.2744,
+            "sd": 0.014873170695127518
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.002,
+            "ci_low": 0.0,
+            "estimate": 0.0008,
+            "sd": 0.0005650710043879441
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.3792,
+            "ci_low": 0.3196,
+            "estimate": 0.34920000000000007,
+            "sd": 0.014985083728828478
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.07959999999999999,
+            "ci_low": 0.0536,
+            "estimate": 0.0664,
+            "sd": 0.006593039848931599
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.38680999999999993,
+            "ci_low": 0.3276,
+            "estimate": 0.35719999999999996,
+            "sd": 0.015054220680407206
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.074,
+            "ci_low": 0.0488,
+            "estimate": 0.06120000000000001,
+            "sd": 0.00633481632870283
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.5284,
+            "ci_low": 0.4623900000000001,
+            "estimate": 0.4952,
+            "sd": 0.016686475961088968
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.0268,
+            "ci_low": 0.014,
+            "estimate": 0.02,
+            "sd": 0.003227032106688745
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.6112000000000001,
+            "ci_low": 0.5408,
+            "estimate": 0.5775999999999999,
+            "sd": 0.018168571751417336
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.0044,
+            "ci_low": 0.0008,
+            "estimate": 0.0024,
+            "sd": 0.0009737428580482633
+          }
+        }
+      ]
+    },
+    {
+      "arm": "flat",
+      "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+      "condition_id": "Muse-Glimmer-30B/naive-rules-above",
+      "grid_digest": "73332927c93a3a3d076f5ba43dd11c85604ec9614743f2ae2e0a49793a22bcb0",
+      "individual_rule_context": "isolated",
+      "judge": "muse-glimmer-30b",
+      "label_rule": "lenient_last_line",
+      "model_name": "Muse-Glimmer-30B",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0,
+        "sd": 0.0
+      },
+      "prompt_style": "naive-rules-above",
+      "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.2836,
+            "ci_low": 0.22520000000000004,
+            "estimate": 0.254,
+            "sd": 0.014792657362137474
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.015200000000000002,
+            "ci_low": 0.0068000000000000005,
+            "estimate": 0.0108,
+            "sd": 0.0021695593473330015
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.4608099999999999,
+            "ci_low": 0.39239000000000007,
+            "estimate": 0.4264,
+            "sd": 0.01759319396694074
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.20959999999999998,
+            "ci_low": 0.15480000000000002,
+            "estimate": 0.1816,
+            "sd": 0.013774018040876817
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.4608099999999999,
+            "ci_low": 0.39239000000000007,
+            "estimate": 0.4264,
+            "sd": 0.01759319396694074
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.18680000000000002,
+            "ci_low": 0.1352,
+            "estimate": 0.1608,
+            "sd": 0.013190994576543498
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.4736,
+            "ci_low": 0.4036,
+            "estimate": 0.4384,
+            "sd": 0.017817190071388923
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.0528,
+            "ci_low": 0.0268,
+            "estimate": 0.039200000000000006,
+            "sd": 0.006676255421836405
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.47879999999999995,
+            "ci_low": 0.4076,
+            "estimate": 0.44239999999999996,
+            "sd": 0.018106622098933857
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "sd": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "arm": "hierarchy",
+      "campaign_id": "hierarchy-aware-2026-10-glimmer",
+      "condition_id": "Muse-Glimmer-30B/naive-hierarchy",
+      "grid_digest": "415b1b66195f7b9aae7a60cdf4b2930f1c1a05fc08d4eaad49fc654f17dee8a3",
+      "individual_rule_context": "superiors",
+      "judge": "muse-glimmer-30b",
+      "label_rule": "lenient_last_line",
+      "model_name": "Muse-Glimmer-30B",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0012000000000000001,
+        "ci_low": 0.0,
+        "estimate": 0.0004,
+        "sd": 0.00040119860219098476
+      },
+      "prompt_style": "naive-hierarchy",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-glimmer",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.43560000000000004,
+            "ci_low": 0.364,
+            "estimate": 0.3996,
+            "sd": 0.018208314162491815
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.026000000000000002,
+            "ci_low": 0.0128,
+            "estimate": 0.0192,
+            "sd": 0.0033802436305094934
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.622,
+            "ci_low": 0.5471999999999999,
+            "estimate": 0.5848,
+            "sd": 0.019105697461898635
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.23160000000000003,
+            "ci_low": 0.1728,
+            "estimate": 0.20160000000000003,
+            "sd": 0.014965095750258334
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.6232000000000001,
+            "ci_low": 0.548,
+            "estimate": 0.5856,
+            "sd": 0.019120838990128022
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.2244,
+            "ci_low": 0.1664,
+            "estimate": 0.19440000000000002,
+            "sd": 0.014801486007506139
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.6347999999999999,
+            "ci_low": 0.5595999999999999,
+            "estimate": 0.5972000000000001,
+            "sd": 0.01913331876466809
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.07000999999999986,
+            "ci_low": 0.042,
+            "estimate": 0.055600000000000004,
+            "sd": 0.007199247236093507
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.6376,
+            "ci_low": 0.5624,
+            "estimate": 0.6,
+            "sd": 0.019165067317846812
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.033600000000000005,
+            "ci_low": 0.016800000000000002,
+            "estimate": 0.024799999999999996,
+            "sd": 0.00427068943492734
+          }
+        }
+      ]
+    },
+    {
+      "arm": "flat",
+      "campaign_id": "final-2026-09-luna",
+      "condition_id": "gpt-5.6-luna/naive-rules-above",
+      "grid_digest": "d27a2badfe387de889dab985ece516930b1af3a3426d2f4fe52b47666311c17c",
+      "individual_rule_context": "isolated",
+      "judge": "gpt-5.6-luna",
+      "label_rule": "lenient_last_line",
+      "model_name": "gpt-5.6-luna",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0044,
+        "ci_low": 0.0004,
+        "estimate": 0.002,
+        "sd": 0.0010565145291949372
+      },
+      "prompt_style": "naive-rules-above",
+      "root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.1864,
+            "ci_low": 0.1364,
+            "estimate": 0.16119999999999998,
+            "sd": 0.012822097998939175
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "sd": 0.0
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.33920000000000006,
+            "ci_low": 0.2756,
+            "estimate": 0.30679999999999996,
+            "sd": 0.01619088757596692
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.1564,
+            "ci_low": 0.11319000000000008,
+            "estimate": 0.134,
+            "sd": 0.010957386241252975
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.344,
+            "ci_low": 0.28,
+            "estimate": 0.31160000000000004,
+            "sd": 0.016340364881311555
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.15120000000000003,
+            "ci_low": 0.10840000000000001,
+            "estimate": 0.12919999999999998,
+            "sd": 0.010830955657115397
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.40879999999999994,
+            "ci_low": 0.3384,
+            "estimate": 0.3728000000000001,
+            "sd": 0.017904641807084554
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.0964,
+            "ci_low": 0.0632,
+            "estimate": 0.07920000000000002,
+            "sd": 0.008486870121876499
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.4736,
+            "ci_low": 0.3976,
+            "estimate": 0.436,
+            "sd": 0.019373423445534867
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.04,
+            "ci_low": 0.020399999999999998,
+            "estimate": 0.0296,
+            "sd": 0.00504320940211687
+          }
+        }
+      ]
+    },
+    {
+      "arm": "hierarchy",
+      "campaign_id": "hierarchy-aware-2026-10-luna-sum",
+      "condition_id": "gpt-5.6-luna/naive-hierarchy",
+      "grid_digest": "9a9d14b65ee1b65d8c1a9a0667c16bb8204d7d5f2ffa856ed4aba185acf0927d",
+      "individual_rule_context": "superiors",
+      "judge": "gpt-5.6-luna",
+      "label_rule": "lenient_last_line",
+      "model_name": "gpt-5.6-luna",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.002,
+        "ci_low": 0.0,
+        "estimate": 0.0008,
+        "sd": 0.0005613220380494606
+      },
+      "prompt_style": "naive-hierarchy",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-luna-sum",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.2368,
+            "ci_low": 0.18080000000000002,
+            "estimate": 0.20840000000000003,
+            "sd": 0.01431140396070211
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "sd": 0.0
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.31760000000000005,
+            "ci_low": 0.25639000000000006,
+            "estimate": 0.28679999999999994,
+            "sd": 0.01576723582678968
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.08159999999999999,
+            "ci_low": 0.055200000000000006,
+            "estimate": 0.068,
+            "sd": 0.006756277666762964
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.3272,
+            "ci_low": 0.264,
+            "estimate": 0.29519999999999996,
+            "sd": 0.016043833277617915
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.0772,
+            "ci_low": 0.0516,
+            "estimate": 0.064,
+            "sd": 0.006583909851023175
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.414,
+            "ci_low": 0.344,
+            "estimate": 0.3792,
+            "sd": 0.017748375254090162
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.03559999999999999,
+            "ci_low": 0.019600000000000003,
+            "estimate": 0.027200000000000002,
+            "sd": 0.00406211476568548
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.4448000000000001,
+            "ci_low": 0.3728,
+            "estimate": 0.4088,
+            "sd": 0.018486056279260865
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.028,
+            "ci_low": 0.014000000000000002,
+            "estimate": 0.0208,
+            "sd": 0.0035374841842190615
+          }
+        }
+      ]
+    },
+    {
+      "arm": "flat",
+      "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+      "condition_id": "claude-haiku-5-5/naive-rules-above",
+      "grid_digest": "f0dadf17ac4f10dbb449fdcae4ccee56f75c28594caef8e518d389541e891e95",
+      "individual_rule_context": "isolated",
+      "judge": "claude-haiku-5-5",
+      "label_rule": "lenient_last_line",
+      "model_name": "claude-haiku-5-5",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.006,
+        "ci_low": 0.0012000000000000001,
+        "estimate": 0.0032,
+        "sd": 0.0012613504629562713
+      },
+      "prompt_style": "naive-rules-above",
+      "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.31639999999999996,
+            "ci_low": 0.25520000000000004,
+            "estimate": 0.2852,
+            "sd": 0.015496652374032272
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.20320000000000002,
+            "ci_low": 0.15480000000000002,
+            "estimate": 0.17839999999999998,
+            "sd": 0.012461456166532063
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.5532,
+            "ci_low": 0.476,
+            "estimate": 0.5144,
+            "sd": 0.019639019442365242
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.4448,
+            "ci_low": 0.3664,
+            "estimate": 0.40520000000000006,
+            "sd": 0.019582987388036585
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.5556,
+            "ci_low": 0.4784,
+            "estimate": 0.5167999999999999,
+            "sd": 0.019669968348566297
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.44000999999999985,
+            "ci_low": 0.362,
+            "estimate": 0.4008,
+            "sd": 0.019541561187008574
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.5912000000000001,
+            "ci_low": 0.5144,
+            "estimate": 0.5528,
+            "sd": 0.019579223152678963
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.3604,
+            "ci_low": 0.2863900000000001,
+            "estimate": 0.32280000000000003,
+            "sd": 0.018705715804919094
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.624,
+            "ci_low": 0.5475999999999999,
+            "estimate": 0.5856,
+            "sd": 0.019758246147874563
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.1644,
+            "ci_low": 0.11040000000000001,
+            "estimate": 0.1368,
+            "sd": 0.01358852218814099
+          }
+        }
+      ]
+    },
+    {
+      "arm": "hierarchy",
+      "campaign_id": "hierarchy-aware-2026-10-haiku-sum",
+      "condition_id": "claude-haiku-5-5/naive-hierarchy",
+      "grid_digest": "816c2daac6cef9568e6b309c5c791b3514c8fe4a27159bb7d5ba8e644f9e613b",
+      "individual_rule_context": "superiors",
+      "judge": "claude-haiku-5-5",
+      "label_rule": "lenient_last_line",
+      "model_name": "claude-haiku-5-5",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "over": {
+        "ci_high": 0.0076,
+        "ci_low": 0.0012000000000000001,
+        "estimate": 0.004,
+        "sd": 0.001580932370470034
+      },
+      "prompt_style": "naive-hierarchy",
+      "root": "artifact://sampling/hierarchy-aware-2026-10-haiku-sum",
+      "rungs": [
+        {
+          "levels": [
+            "root"
+          ],
+          "rate": {
+            "ci_high": 0.282,
+            "ci_low": 0.22440000000000004,
+            "estimate": 0.25279999999999997,
+            "sd": 0.014742629362172814
+          },
+          "rung": 1,
+          "under_unsure": {
+            "ci_high": 0.18320000000000003,
+            "ci_low": 0.1384,
+            "estimate": 0.16040000000000001,
+            "sd": 0.01146342777525117
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system"
+          ],
+          "rate": {
+            "ci_high": 0.5756,
+            "ci_low": 0.5004,
+            "estimate": 0.538,
+            "sd": 0.01930484154303267
+          },
+          "rung": 2,
+          "under_unsure": {
+            "ci_high": 0.4800099999999998,
+            "ci_low": 0.404,
+            "estimate": 0.4428,
+            "sd": 0.019684045919027924
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer"
+          ],
+          "rate": {
+            "ci_high": 0.5768,
+            "ci_low": 0.5015999999999999,
+            "estimate": 0.5392,
+            "sd": 0.019323469906825742
+          },
+          "rung": 3,
+          "under_unsure": {
+            "ci_high": 0.48,
+            "ci_low": 0.4036,
+            "estimate": 0.44239999999999996,
+            "sd": 0.01966958007580233
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user"
+          ],
+          "rate": {
+            "ci_high": 0.624,
+            "ci_low": 0.55,
+            "estimate": 0.5871999999999999,
+            "sd": 0.018976348153593725
+          },
+          "rung": 4,
+          "under_unsure": {
+            "ci_high": 0.44,
+            "ci_low": 0.36519999999999997,
+            "estimate": 0.4028,
+            "sd": 0.019314726265893596
+          }
+        },
+        {
+          "levels": [
+            "root",
+            "system",
+            "developer",
+            "user",
+            "guideline"
+          ],
+          "rate": {
+            "ci_high": 0.654,
+            "ci_low": 0.5788,
+            "estimate": 0.6167999999999999,
+            "sd": 0.01923118157060559
+          },
+          "rung": 5,
+          "under_unsure": {
+            "ci_high": 0.31560000000000005,
+            "ci_low": 0.246,
+            "estimate": 0.2808,
+            "sd": 0.01773260259634778
+          }
+        }
+      ]
+    }
+  ],
+  "definition": "phi(yes)=1, phi(unsure)=0.5, phi(no)=0. Per (scenario, decoder draw) of a judge's flat or hierarchy arm in the hierarchy comparison: F its full-set judgment, M the maximum of phi over its per-rule judgments, and M_k the maximum over the rules of the top k levels (root > system > developer > user > guideline). The per-rule judgments are the arm's own: on the flat arm each rule judged alone; on the hierarchy arm, whose full set shows the levels, each rule judged with its superiors (a root rule with none). Every per-rule prompt of a hierarchy arm, a root rule's too, also explains the ranking and names the rule's level, so even its root rung's per-rule judgments are not its flat arm's: at every rung, a judge's hierarchy - flat difference mixes the full-set prompt's effect with the per-rule prompts'. At rung k the cell is inconsistent iff phi(F) < M_k or phi(F) > M: the full set misses a violation of a rule at the top k levels, or exceeds every per-rule judgment. A miss of a rule below the top k levels is excused. Rung 5 is the arm's stored inconsistency phi(F) != M cell for cell and takes its published estimate and interval: the campaign's own scenario-cluster bootstrap at the same settings, run over the campaign's conditions. Every other rung, the unsure misses and the over-flag share one scenario-cluster bootstrap over the arm's grids, so a difference between rungs carries no interval here. under_unsure is the rate of misses at rung k with M_k = 0.5: no rule of the top k levels says yes, and an unsure one exceeds a no full set.",
+  "levels": {
+    "field": "rule_type",
+    "order": [
+      "root",
+      "system",
+      "developer",
+      "user",
+      "guideline"
+    ],
+    "rules": {
+      "developer": [
+        "Rule 1"
+      ],
+      "guideline": [
+        "Rule 2",
+        "Rule 3",
+        "Rule 4",
+        "Rule 5",
+        "Rule 6",
+        "Rule 7",
+        "Rule 8",
+        "Rule 9",
+        "Rule 10",
+        "Rule 11",
+        "Rule 12",
+        "Rule 13",
+        "Rule 14",
+        "Rule 15",
+        "Rule 16",
+        "Rule 17",
+        "Rule 18",
+        "Rule 19"
+      ],
+      "root": [
+        "Rule 20",
+        "Rule 21",
+        "Rule 22",
+        "Rule 23",
+        "Rule 24",
+        "Rule 25",
+        "Rule 26",
+        "Rule 27",
+        "Rule 28",
+        "Rule 29",
+        "Rule 30",
+        "Rule 31",
+        "Rule 32",
+        "Rule 33",
+        "Rule 34",
+        "Rule 35",
+        "Rule 36",
+        "Rule 37",
+        "Rule 38",
+        "Rule 39"
+      ],
+      "system": [
+        "Rule 40",
+        "Rule 41",
+        "Rule 42"
+      ],
+      "user": [
+        "Rule 43",
+        "Rule 44",
+        "Rule 45",
+        "Rule 46",
+        "Rule 47",
+        "Rule 48",
+        "Rule 49",
+        "Rule 50",
+        "Rule 51",
+        "Rule 52",
+        "Rule 53",
+        "Rule 54",
+        "Rule 55",
+        "Rule 56",
+        "Rule 57"
+      ]
+    },
+    "source": "the OpenAI Model Spec's chain of command (its levels of authority, highest first: root, system, developer, user, guideline); each rule's level is its rule_type in data/rules/modelspec/openai_rules_all_full.jsonl"
+  },
+  "provenance": {
+    "allow_incomplete": false,
+    "approved_prompts_sha256": {
+      "approved_full_set_hier.txt": "e42c8e6069b02f2aab7885ad8bce3a3b772d8c2554e66a06a00551e920cb1afe",
+      "approved_rule28_root_hier.txt": "3497da55e9c69501a61cf5e2a7b805a2eeb12a6b1667eacf8d29f5e5b965d99c",
+      "approved_rule43_user_hier.txt": "de1f51c90170b7293cf2d4c7ad9dba9184342002dad2a4bb1102b47024b45f33"
+    },
+    "bootstrap": {
+      "ci_level": 0.95,
+      "n_resamples": 10000,
+      "seed": 16
+    },
+    "campaigns": [
+      {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "conditions": [
+          "Olmo-3-32B-Think/naive-hierarchy",
+          "Olmo-3-32B-Think/naive-rules-above",
+          "gemma-4-31B-it/naive-hierarchy",
+          "gemma-4-31B-it/naive-rules-above",
+          "gpt-oss-120b/naive-hierarchy",
+          "gpt-oss-120b/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:04:34+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097/aggregate/estimates.json",
+        "estimates_sha256": "2abbb15705e139e0ad1dcc2edcc26e702782c65d7b3573f6375db8bb9f0ed437",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+        "conditions": [
+          "Muse-Glimmer-30B/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:03:16+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097/aggregate/estimates.json",
+        "estimates_sha256": "f4f93185f95cc206cd2f921020a9afba7ec110a52d41bead66a23a41aaa1a304",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "hierarchy-aware-2026-10-glimmer",
+        "conditions": [
+          "Muse-Glimmer-30B/naive-hierarchy"
+        ],
+        "created_at": "2026-10-29T15:14:28+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-glimmer/aggregate/estimates.json",
+        "estimates_sha256": "9f4f17b392368b5d1d7c1b7476c8be2e3c9ef3a9613d1ebfa09492bc8fbef5c8",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-glimmer",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+        "conditions": [
+          "claude-haiku-5-5/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:01:41+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum/aggregate/estimates.json",
+        "estimates_sha256": "345e4dbeb5a9b9e93f371cbf6b2d8e1855270ec39d7a6d291a73df444e966696",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "hierarchy-aware-2026-10-haiku-sum",
+        "conditions": [
+          "claude-haiku-5-5/naive-hierarchy"
+        ],
+        "created_at": "2026-10-29T09:56:59+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-haiku-sum/aggregate/estimates.json",
+        "estimates_sha256": "c4e6a3917d9e588043c691afff10fd758b642e2b45b7fc837e5cf645381f2e33",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-haiku-sum",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "final-2026-09-luna",
+        "conditions": [
+          "gpt-5.6-luna/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:03:40+00:00",
+        "estimates": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+        "estimates_sha256": "9c5793739ccd2bb8e5c68d394e4a55d0091ce4325c2fe351656b8ea58bd431f7",
+        "label_replay": {
+          "code_state_sha256": "47d982a235760d20082dd7a3bc0e177923b053ea053b96e5e4234a991572e77b",
+          "label_rule": "lenient_last_line",
+          "name": "label_replay.json",
+          "sha256": "846c49ab78cf53dfeaa5c00f3e13d34cec98004219858bc6e9b9c4db9c610bf5",
+          "source_label_rule": "lenient",
+          "tool": "smrc.sampling.label_replay"
+        },
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "hierarchy-aware-2026-10-luna-sum",
+        "conditions": [
+          "gpt-5.6-luna/naive-hierarchy"
+        ],
+        "created_at": "2026-10-29T10:36:59+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-luna-sum/aggregate/estimates.json",
+        "estimates_sha256": "3118bce70e249fc4f1b7e511a2159c1d2bd8d48acade1954e3af2f62d19da5e0",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/hierarchy-aware-2026-10-luna-sum",
+        "state": "complete"
+      }
+    ],
+    "inference_method": "hierarchical_bootstrap_v2",
+    "interval_basis": "scenario_cluster_bootstrap",
+    "levels": {
+      "name": "openai_rules_all_full.jsonl",
+      "sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a"
+    },
+    "n_decoder_draws": 5,
+    "n_scenarios": 500,
+    "pairs": [
+      {
+        "flat": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "Olmo-3-32B-Think/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "Olmo-3-32B-Think/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gemma-4-31B-it/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gemma-4-31B-it/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gpt-oss-120b/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gpt-oss-120b/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+          "Muse-Glimmer-30B/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-glimmer",
+          "Muse-Glimmer-30B/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+          "claude-haiku-5-5/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-haiku-sum",
+          "claude-haiku-5-5/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+          "gpt-5.6-luna/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-luna-sum",
+          "gpt-5.6-luna/naive-hierarchy"
+        ]
+      }
+    ],
+    "ruleset": {
+      "name": "openai_rules_all.jsonl",
+      "sha256": "a99062f00a9ff616cba4d548e9cd59460dc4ee52fc46e3de4a4eb2579a260228"
+    },
+    "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462"
+  },
+  "rungs": [
+    {
+      "levels": [
+        "root"
+      ],
+      "rung": 1
+    },
+    {
+      "levels": [
+        "root",
+        "system"
+      ],
+      "rung": 2
+    },
+    {
+      "levels": [
+        "root",
+        "system",
+        "developer"
+      ],
+      "rung": 3
+    },
+    {
+      "levels": [
+        "root",
+        "system",
+        "developer",
+        "user"
+      ],
+      "rung": 4
+    },
+    {
+      "levels": [
+        "root",
+        "system",
+        "developer",
+        "user",
+        "guideline"
+      ],
+      "rung": 5
+    }
+  ],
+  "schema_version": 1
+}

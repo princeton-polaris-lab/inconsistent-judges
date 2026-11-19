@@ -1,0 +1,23 @@
+# GPT-5.6-Luna through the synchronous OpenAI Responses API.
+model_name: "gpt-5.6-luna"
+model_type: "openai"
+model_path: null
+tp_size: null
+strip_thinking_model: null
+reasoning_parser: null
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: null
+attention_backend: null
+stream: false
+send_max_output_tokens: false
+reasoning_level: medium
+reasoning_summary: auto
+max_new_tokens: 65536
+fixed_temperature: 1.0
+temperature: 1 # Must be 1
+num_tries: 5
+max_retry_seconds: 300
+seed: 16

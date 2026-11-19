@@ -1,0 +1,29 @@
+# The preflight smoke of ruleforge_modelspec: one seed, one episode and minimal settings, about 1-2 h on 2 GPUs.
+backend: slurm
+gpu-count: 2
+cpus: 4
+mem-gb: 48
+timeout-min: 239
+resumable: false
+env: ["WANDB_GROUP_TIMESTAMP={launch_id}"]
+axis: ["judge_model.seed=1"]
+vars:
+  task: modelspec/openai
+  prompt: naive
+args:
+  - python
+  - -m
+  - ruleforge.launch.programs.optimize
+  - task={task}
+  - run_name=smoke
+  - model@judge_model=gemma4-31b-tp-2
+  - model@agent_model=gemma4-31b-tp-2
+  - eval_cfg.reasoning_prompt_style={prompt}
+  - max_episodes=1
+  - rule_amendment.best_of_n=2
+  - scenario_generation.target_num_scenarios=4
+  - scenario_generation.num_scenarios_per_batch=2
+  - scenario_generation.num_seed_scenarios=2
+  - scenario_generation.max_accumulation_iterations=1
+  - "hydra.run.dir=experiments/results/sweep/${task_spec}/${task_name}/{launch_id}/{member}"
+  - hydra.job.num={member}

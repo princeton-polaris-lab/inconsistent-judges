@@ -1,0 +1,28 @@
+version: 1
+formatters:
+  detailed:
+    format: '[%(asctime)s][%(name)s][%(levelname)s] %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: detailed
+    stream: ext://sys.stderr
+    level: INFO
+  file:
+    class: logging.FileHandler
+    formatter: detailed
+    filename: ${hydra:runtime.output_dir}/trainer.log
+    mode: a
+    level: DEBUG
+loggers:
+  console_logger:
+    handlers: [console]
+    propagate: false
+  file_logger:
+    handlers: [file]
+    propagate: false
+root:
+  level: DEBUG
+  handlers: [console, file]
+
+disable_existing_loggers: false

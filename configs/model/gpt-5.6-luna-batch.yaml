@@ -1,0 +1,28 @@
+# GPT-5.6-Luna through the OpenAI Batch API; needs OPENAI_API_KEY and --yes-spend.
+model_name: "gpt-5.6-luna"
+model_type: "openai_batch"
+model_path: null
+tp_size: null
+strip_thinking_model: null
+reasoning_parser: null
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: null
+attention_backend: null
+batch_root: ${oc.env:RULEFORGE_BATCH_ROOT}
+batch_endpoint: responses
+batch_poll_seconds: 60
+# Enqueued-token budget for the windowed batch scheduler; null: one request block at a time.
+max_enqueued_tokens: null
+# Null waits indefinitely; the API's completion window is 24h.
+batch_timeout_seconds: null
+send_max_output_tokens: false
+reasoning_level: medium
+reasoning_summary: auto
+max_new_tokens: 65536
+fixed_temperature: 1.0
+temperature: 1 # Must be 1
+num_tries: 3
+seed: 16

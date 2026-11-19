@@ -1,0 +1,32 @@
+# @package _global_
+task_spec: "modelspec"
+
+max_episodes: 25
+
+scenario_generation:
+  initial_scenario_seed_type: "wildchat"
+  good_seed_scenario_path: "data/scenarios/seeds/modelspec/wildchat_5k_gpt-oss-120b_threshold_above_90.jsonl"
+  bad_seed_scenario_path: "data/scenarios/seeds/modelspec/wildchat_5k_gpt-oss-120b_threshold_below_10.jsonl"
+  num_seed_scenarios: 5
+  # Scenarios per episode.
+  target_num_scenarios: 20
+  # Scenarios per LLM call.
+  num_scenarios_per_batch: 10
+  entropy_threshold: 0.9
+  entropy_method: "consensus"
+  max_accumulation_iterations: 3
+  termination_threshold: 0.1
+  termination_episodes: 3
+  trigger_threshold: 0.5
+  posterior_update_temperature: 0.2
+  posterior_sampling_temperature: 1
+
+rule_amendment:
+  intent_weight: 1.0
+  entropy_method: "consensus"
+  intent_method: "rubric_orig_standards"
+  best_of_n: 5
+  termination_threshold: 0.9
+  termination_episodes: 15
+  posterior_update_temperature: 0.2
+  posterior_sampling_temperature: 1

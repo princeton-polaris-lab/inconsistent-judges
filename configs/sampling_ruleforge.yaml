@@ -1,0 +1,39 @@
+# The RuleForge evaluation under repeated stochastic decoding: one judge, three rulesets, five temperature-1 draws each.
+defaults:
+  - sampling_campaign
+  - _self_
+
+run_name: sampling_ruleforge
+
+ruleforge:
+  ruleset: initial            # initial | seed5_winner | seed9_runner_up
+  rulesets:
+    initial:
+      path: data/rules/modelspec/openai_rules_all.jsonl
+      sha256: a99062f00a9ff616cba4d548e9cd59460dc4ee52fc46e3de4a4eb2579a260228
+    seed5_winner:
+      path: data/rules/modelspec/ruleforge/seed5_winner.jsonl
+      sha256: f2eab3b856b93b49dfa2e71fc168b356d5facc3853b518f4747beab9f6c7058c
+    seed9_runner_up:
+      path: data/rules/modelspec/ruleforge/seed9_runner_up.jsonl
+      sha256: d543f4ce67b1def85a23a60ba018c857ce0fb68fce3d11d8ce386c07300b78b5
+
+condition_id: ${judge_model.model_name}/${rf.recorded:ruleforge}/${ruleforge.ruleset}
+condition_extra:
+  figure: ${rf.recorded:ruleforge}
+  ruleset: ${ruleforge.ruleset}
+  # '+'-joined rulesets, contrasted and Holm-adjusted as one family once all are complete.
+  ruleset_family: initial+seed5_winner+seed9_runner_up
+rule_set_path: ${ruleforge.rulesets.${ruleforge.ruleset}.path}
+approved_rule_set_sha256: ${ruleforge.rulesets.${ruleforge.ruleset}.sha256}
+
+scenario_set_path: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/populations/frozen_500_r3.jsonl
+approved_scenario_sha256: c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4
+
+eval_cfg:
+  individual_rule_context: implicated
+
+sampling:
+  campaign_mode: final
+  num_decoder_draws: 5
+  max_semantic_attempts: 20

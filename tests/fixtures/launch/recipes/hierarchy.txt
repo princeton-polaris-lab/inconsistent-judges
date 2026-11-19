@@ -1,0 +1,10 @@
+launch campaign --spec hierarchy --var campaign_id=hierarchy-aware-2026-10 \
+--var models=gpt-oss-tp-2 --shards 3
+launch campaign --spec hierarchy --var campaign_id=hierarchy-aware-2026-10 \
+--var models=olmo3-32b-tp-2 --shards 7
+launch campaign --spec hierarchy --var campaign_id=hierarchy-aware-2026-10 \
+--var models=gemma4-31b-tp-2 --shards 8
+launch campaign --spec hierarchy --var campaign_id=hierarchy-aware-2026-10-glimmer \
+--var models=muse-glimmer-30b --var styles=naive-hierarchy --var retry_scope=component
+launch campaign --spec hierarchy --var campaign_id=hierarchy-aware-2026-10-qwen3-8b \
+--var models=qwen3-8b --var retry_scope=component

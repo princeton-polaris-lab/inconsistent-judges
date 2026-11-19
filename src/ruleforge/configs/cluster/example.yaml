@@ -1,0 +1,17 @@
+# A SLURM cluster for `ruleforge ... --slurm example`: copy it to a profile of your own in --cluster-dir,
+# $RULEFORGE_CLUSTER_DIR or a checkout's configs/cluster/.
+partition: gpu            # sbatch --partition
+account: null             # sbatch --account; null: the user's default account
+qos:
+  gpu: null               # a GPU job's --qos; null: the partition's default
+  cpu: null               # a CPU job's --qos; a QOS that requires a GPU leaves a CPU job pending forever
+gpus_per_node: 8          # the most GPUs one job may ask for
+exclude: []               # nodes no job runs on (sbatch --exclude); optional
+defaults:
+  timeout_min: 240        # each job's wall, in minutes
+  cpus: 8                 # CPUs per job
+  mem_gb: 32              # a CPU job's memory
+  mem_gb_per_gpu: 64      # a GPU job's memory, per GPU
+  signal_delay_s: 120     # how long before its wall a job is warned
+setup:                    # shell lines each job runs before its command (module loads, exports)
+  - "export VLLM_NO_USAGE_STATS=1"

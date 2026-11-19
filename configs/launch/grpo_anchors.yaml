@@ -1,0 +1,28 @@
+# GRPO's base-model campaigns over a training pool on SLURM GPUs, for any judge: the stages of
+# configs/sampling_training_anchors.yaml.
+backend: slurm
+gpu-count: 1
+cpus: 4
+timeout-min: "{timeout_min}"
+qos: normal
+resumable: true
+root-template: "sampling/{campaign_prefix}-{stage}/{block}"
+vars:
+  judge: null               # a config name under configs/model/
+  weights: null             # a directory name under $RULEFORGE_MODEL_ROOT
+  strict_think: null        # "true" for a judge whose thinking closes with </think>, else "false"
+  stage: null               # bank | top_up | full | confirm | yes_side | mixscreen
+  campaign_prefix: null
+  request_block: null  # scenarios a vLLM call
+  timeout_min: 360
+args:
+  - --config-name
+  - sampling_training_anchors
+  - grpo_anchors.stage={stage}
+  - grpo_anchors.campaign_prefix={campaign_prefix}
+  - model@judge_model={judge}
+  - model@agent_model={judge}
+  - "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/{weights}"
+  - judge_model.tp_size=1
+  - sampling.strict_think={strict_think}
+  - grpo_anchors.stages.{stage}.request_block={request_block}

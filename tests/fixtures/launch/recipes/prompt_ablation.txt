@@ -1,0 +1,9 @@
+launch campaign --spec prompt_ablation --var campaign_id=prompt-ablation-v2-2026-10 --preflight-only
+launch campaign --spec prompt_ablation --var campaign_id=prompt-ablation-v2-2026-10
+launch campaign --spec prompt_ablation --var campaign_id=prompt-ablation-v2-open-2026-10 \
+--var models=gpt-oss-tp-2 --var styles=encouraged,forced
+launch campaign --spec prompt_ablation --var campaign_id=prompt-ablation-v2-open-2026-10 \
+--var models=olmo3-32b-tp-2 --var styles=encouraged,forced --shards 10
+launch campaign --spec prompt_ablation --var campaign_id=prompt-ablation-v2-2026-10-glimmer \
+--var models=muse-glimmer-30b --var styles=naive-rules-above,encouraged,forced --var retry_scope=component \
+--campaign-root sampling/prompt-ablation-v2-2026-10-glimmer-pop-6f528dcb --new-root

@@ -1,0 +1,18 @@
+# @package _global_
+# GRPO training on Qwen3-8B under the judgment-mix recipe: qwen3_8b.yaml with that recipe's objective and layout.
+defaults:
+  - qwen3_8b
+  - _self_
+
+reward:
+  favoured_no_rate: true
+
+anchor:
+  anchor_accum: 2  # replay rows per rank per step
+
+wandb:
+  group: qwen-grpo-mix
+
+grpo:
+  gradient_accumulation_steps: 4
+  max_steps: 500

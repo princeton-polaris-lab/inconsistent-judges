@@ -1,0 +1,19 @@
+# Muse-Glimmer-30B judge (meta-models/Muse-Glimmer-30B, revision cec94fcfd6512f2cfe708138c32533b346ea4f69), served by
+# vLLM on one GPU, thinking always on.
+model_name: "Muse-Glimmer-30B"
+model_type: "local"
+model_path: "${oc.env:RULEFORGE_MODEL_ROOT}/Muse-Glimmer-30B"
+tp_size: 1
+num_tries: 5
+strip_thinking_model: "muse_glimmer"
+reasoning_parser: "muse_glimmer"
+max_new_tokens: 65536
+seed: 16
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: true
+attention_backend: "FLASH_ATTN"
+language_model_only: true
+disable_log_stats: false

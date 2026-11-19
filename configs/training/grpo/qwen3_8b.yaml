@@ -1,0 +1,8 @@
+# @package _global_
+# GRPO training on Qwen3-8B: the base weights, the LoRA preset its architecture selects and its sampling.
+defaults:
+  - base
+  - _self_
+
+model:
+  path: ${oc.env:RULEFORGE_MODEL_ROOT}/Qwen3-8B

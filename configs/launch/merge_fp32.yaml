@@ -1,0 +1,36 @@
+# A GRPO checkpoint's LoRA adapter merged into its base in fp32, on CPU at a fixed thread count.
+backend: slurm
+cpus: "{threads}"
+mem-gb: 80
+timeout-min: 60
+env: [HF_HUB_OFFLINE=1, TRANSFORMERS_OFFLINE=1]
+output: ["training/{run}/merged/checkpoint-{step}"]
+vars:
+  run: null
+  step: null
+  base: Qwen3-8B
+  threads: 8
+args:
+  - python
+  - -m
+  - ruleforge
+  - grpo
+  - merge
+  - --base
+  - "{model_root}/{base}"
+  - --adapter
+  - "{artifact_root}/training/{run}/checkpoint-{step}"
+  - --out
+  - "{artifact_root}/training/{run}/merged/checkpoint-{step}"
+  - --threads
+  - "{threads}"
+  - --expect-rank
+  - "32"
+  - --expect-alpha
+  - "64"
+  - --expect-base-model
+  - "{base}"
+  - --training-run
+  - "{run}"
+  - --training-step
+  - "{step}"

@@ -1,0 +1,2 @@
+# Kept out of the public tree, which is made with git archive
+tests/test_code_style.py export-ignore

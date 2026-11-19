@@ -1,0 +1,10 @@
+# @package _global_
+# How the training evaluation and the dev campaigns serve their arms: merged checkpoints on the fp32 engine.
+defaults:
+  - override /model@judge_model: qwen3-8b-fp32
+  - override /model@agent_model: qwen3-8b-fp32
+
+judge_model:
+  model_path: ${training.policies.${training.policy}.model_path}
+approved_model_weights_sha256: ${training.policies.${training.policy}.weights_sha256}
+approved_adapter_sha256: null

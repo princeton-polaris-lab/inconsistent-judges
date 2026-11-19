@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "_comment": "The ruleset-size subsets with the full ruleset drawn per seed. Every file below size 57 is the same file data/rules/subset_manifest/ pins; each seed's size-57 file holds the 57 rules in an order of its own. The files are not committed: they regenerate byte for byte from the generator, ruleset and seeds below, and manifest.sha256 pins all 1400.",
+  "generator_module": "ruleforge.rulesets.subsets:generate_subset_files",
+  "sampling_strategy": "with_replacement_shuffled_full",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "source_ruleset": {
+    "path": "data/rules/modelspec/openai_rules_all_full.jsonl",
+    "sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a",
+    "bytes": 299339,
+    "n_rules": 57
+  },
+  "reproducibility": {
+    "rng": "random.seed(seed), then random.sample for sizes 2..57 in order, from one stream",
+    "python_requires": ">=3.12,<3.13",
+    "python_used": "3.12.13",
+    "serialization": "json.dumps(record, ensure_ascii=False) + '\\n', utf-8"
+  },
+  "files": {
+    "count": 1400,
+    "per_seed": 56,
+    "sizes": [
+      2,
+      57
+    ]
+  },
+  "files_manifest": "manifest.sha256"
+}

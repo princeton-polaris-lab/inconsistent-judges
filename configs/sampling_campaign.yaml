@@ -1,0 +1,83 @@
+# One condition of a repeated stochastic-decoding campaign: a model and prompt style over the paper's population, five
+# temperature-1 draws per scenario. Run from the checkout's top.
+defaults:
+  - model@judge_model: gemma4-31b-tp-2
+  - model@agent_model: gemma4-31b-tp-2
+  - eval_rule_set@eval_cfg: prompt_ablation
+  - task: modelspec/openai
+  - _self_
+
+run_name: sampling_campaign
+
+campaign_id: ???
+campaign_root: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/sampling/${campaign_id}
+# The campaign root, or exactly ${campaign_root}.shards/${condition_id}/shard-<i>-of-<n> for one shard.
+job_root: ${campaign_root}
+condition_id: ${judge_model.model_name}/${eval_cfg.reasoning_prompt_style}
+# null for an ordinary arm; else a mapping of condition-identity axes.
+condition_extra: null
+# null runs every declared draw in this job; a list runs a subset.
+decoder_draw_ids: null
+
+scenario_set_path: data/populations/frozen_500_r3.jsonl
+approved_scenario_sha256: c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4
+rule_set_path: data/rules/modelspec/openai_rules_all.jsonl
+# Optional digest the ruleset file must carry; null skips the check.
+approved_rule_set_sha256: null
+# Optional digest of judge_model.adapter_path; null skips the check, and it must stay null when no adapter is served.
+approved_adapter_sha256: null
+approved_model_weights_sha256: null
+
+evaluation_mode: both
+interpretation: No_Interpretation
+num_tries: 1
+save_raw_outputs: true
+max_transport_retries: 3
+
+eval_cfg:
+  judge_types: ["${interpretation}"]
+  individual_rule_context: isolated
+  evaluation_temperature: 1.0
+  reasoning_prompt_style: naive-rules-above
+
+sampling:
+  enabled: true
+  schema_version: 2
+  campaign_mode: final                 # final = exactly 500 scenarios; pilot = any count
+  temperature: 1.0
+  num_decoder_draws: 5
+  max_semantic_attempts: 5
+  # scenario_bundle: every component of the rejected bundle; component: only the invalid ones. Condition identity.
+  retry_scope: scenario_bundle
+  require_complete: true
+  generation_seed_base: 16
+  # Scenarios per request block; a paid Batch provider must use null (one block per pass).
+  scenarios_per_request_block: 50
+  forced_json_requirement: complete_rule_map
+  # model_default applies the truncation in the model's generation_config.json.
+  truncation: model_default
+  # true: a finished output with no closing </think> is invalid. Condition identity when true.
+  strict_think: false
+  bootstrap:
+    n_resamples: 10000
+    ci_level: 0.95
+    seed: 16
+
+# How this job schedules generation; not campaign identity.
+execution:
+  pack_draws: false
+  # Prompts per packed call; a larger request block runs alone.
+  pack_max_prompts: 4096
+  # Draws per packed run; null: every draw of the job.
+  pack_max_draws: null
+  # true: let a local judge add attempts to a draw recorded on another inference stack or engine configuration.
+  allow_stack_change: false
+  num_shards: null
+  shard_index: null
+
+hydra:
+  run:
+    dir: ${rf.unpinned:${job_root}}/hydra/${condition_id}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ${rf.unpinned:${job_root}}/hydra
+    subdir: ${condition_id}/${now:%Y-%m-%d_%H-%M-%S}

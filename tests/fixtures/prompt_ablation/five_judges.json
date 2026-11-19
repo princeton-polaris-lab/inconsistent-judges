@@ -1,0 +1,164 @@
+{
+  "bars": {
+    "Olmo3-32B": {
+      "per_bar": {
+        "forced": {
+          "ci_high": 0.6664,
+          "ci_low": 0.604,
+          "degenerate": false,
+          "mean": 0.6355999999999999,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0072,
+          "ci_low": 0.002,
+          "degenerate": false,
+          "mean": 0.0044,
+          "n": 500
+        },
+        "encouraged": {
+          "ci_high": 0.7315999999999999,
+          "ci_low": 0.6704000000000001,
+          "degenerate": false,
+          "mean": 0.7012,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.764,
+          "ci_low": 0.7064,
+          "degenerate": false,
+          "mean": 0.7352000000000001,
+          "n": 500
+        }
+      }
+    },
+    "claude-haiku-5-5": {
+      "per_bar": {
+        "forced": {
+          "ci_high": 0.5912099999999999,
+          "ci_low": 0.5144,
+          "degenerate": false,
+          "mean": 0.5528000000000001,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.042,
+          "ci_low": 0.0256,
+          "degenerate": false,
+          "mean": 0.033600000000000005,
+          "n": 500
+        },
+        "encouraged": {
+          "ci_high": 0.5828099999999999,
+          "ci_low": 0.5044,
+          "degenerate": false,
+          "mean": 0.5435999999999999,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.5740099999999998,
+          "ci_low": 0.4952,
+          "degenerate": false,
+          "mean": 0.5344000000000001,
+          "n": 500
+        }
+      }
+    },
+    "gemma4-31b": {
+      "per_bar": {
+        "forced": {
+          "ci_high": 0.6955999999999999,
+          "ci_low": 0.6227999999999999,
+          "degenerate": false,
+          "mean": 0.6596000000000001,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "degenerate": true,
+          "mean": 0.0,
+          "n": 500
+        },
+        "encouraged": {
+          "ci_high": 0.6468099999999999,
+          "ci_low": 0.57479,
+          "degenerate": false,
+          "mean": 0.6112000000000001,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.7024,
+          "ci_low": 0.6292000000000001,
+          "degenerate": false,
+          "mean": 0.6652,
+          "n": 500
+        }
+      }
+    },
+    "gpt-5.6-luna": {
+      "per_bar": {
+        "forced": {
+          "ci_high": 0.3836,
+          "ci_low": 0.30760000000000004,
+          "degenerate": false,
+          "mean": 0.34520000000000006,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "degenerate": true,
+          "mean": 0.0,
+          "n": 500
+        },
+        "encouraged": {
+          "ci_high": 0.396,
+          "ci_low": 0.3184,
+          "degenerate": false,
+          "mean": 0.3572000000000001,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.4184,
+          "ci_low": 0.344,
+          "degenerate": false,
+          "mean": 0.3808000000000001,
+          "n": 500
+        }
+      }
+    },
+    "gpt-oss-120b": {
+      "per_bar": {
+        "forced": {
+          "ci_high": 0.452,
+          "ci_low": 0.38120000000000004,
+          "degenerate": false,
+          "mean": 0.4168,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0012000000000000001,
+          "ci_low": 0.0,
+          "degenerate": false,
+          "mean": 0.0004,
+          "n": 500
+        },
+        "encouraged": {
+          "ci_high": 0.488,
+          "ci_low": 0.416,
+          "degenerate": false,
+          "mean": 0.452,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.6072000000000001,
+          "ci_low": 0.534,
+          "degenerate": false,
+          "mean": 0.5704,
+          "n": 500
+        }
+      }
+    }
+  }
+}

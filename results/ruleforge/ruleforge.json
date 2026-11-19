@@ -1,0 +1,298 @@
+{
+  "data_version": 6,
+  "source": "stochastic_campaign",
+  "num_paired_scenarios": 500,
+  "num_total_scenarios": 500,
+  "n_decoder_draws": 5,
+  "dropped_scenarios": {},
+  "labels": [
+    "Initial",
+    "Seed 5 (winner)",
+    "Seed 9 (runner-up)"
+  ],
+  "inference_method": "hierarchical_bootstrap_v2",
+  "num_bootstrap": 10000,
+  "confidence_level": 0.95,
+  "random_state": 16,
+  "randomization_test": {
+    "n_permutations": 100000,
+    "seed": 16
+  },
+  "transition_method": "independent_draw_expected_shares_v1",
+  "transition_units": "share",
+  "rulesets": {
+    "Initial": {
+      "ci_low": 0.6916,
+      "ci_high": 0.7612000000000001,
+      "sd": 0.017665260415855748,
+      "interval_basis": "scenario_cluster_bootstrap",
+      "two_stage": {
+        "ci_low": 0.6908,
+        "ci_high": 0.762,
+        "sd": 0.018170670746717084
+      },
+      "variance_components": {
+        "n_scenarios": 500,
+        "n_decoder_draws": 5,
+        "within_draw": 0.05600000000000001,
+        "between_scenario": 0.1428698997995992,
+        "icc": 0.7184088690323116,
+        "se_analytic": 0.017553911233659535,
+        "decoder_share_of_variance": 0.07269427717268587,
+        "se_projection": {
+          "n_scenarios": 500,
+          "by_draws": {
+            "1": 0.019943414943263814,
+            "2": 0.018486205657170386,
+            "5": 0.017553911233659535,
+            "10": 0.01723194126032231,
+            "20": 0.017068678906089905
+          },
+          "infinite_draws": 0.01690383978861603
+        }
+      },
+      "n_scenarios": 500,
+      "n_decoder_draws": 5,
+      "grid_digest": "819dbfdb27cd8e97dde95ef2b1b6256b4b7ec33f53cf3e7f5e0424c20cbea99a",
+      "condition_fingerprint": "0b9ef986ba59006ee84f8fb23572193b071fd14c7486cebdc788bd67e40b0c69",
+      "prompt_style": "naive-rules-above",
+      "model_name": "gemma-4-31B-it",
+      "rule_set_name": "openai_rules_all.jsonl",
+      "rule_set_sha256": "a99062f00a9ff616cba4d548e9cd59460dc4ee52fc46e3de4a4eb2579a260228",
+      "extra": {
+        "figure": "figure4",
+        "ruleset": "initial",
+        "ruleset_family": "initial+seed5_winner+seed9_runner_up"
+      },
+      "sampling_truncation": {
+        "min_p": 0.0,
+        "repetition_penalty": 1.0,
+        "top_k": 64,
+        "top_p": 0.95
+      },
+      "attempt_statistics": {
+        "attempts_histogram": {
+          "1": 2488,
+          "2": 7,
+          "3": 5
+        },
+        "rejected_attempts": 17,
+        "transport_failed_attempts": 0,
+        "invalid_components": {
+          "invalid_label": 12,
+          "truncated": 7
+        },
+        "invalid_attempt_rate": 0.006754072308303536
+      },
+      "mean": 0.7268,
+      "condition_id": "gemma-4-31B-it/figure4/initial"
+    },
+    "Seed 5 (winner)": {
+      "ci_low": 0.5512,
+      "ci_high": 0.6252000000000001,
+      "sd": 0.018723954165464088,
+      "interval_basis": "scenario_cluster_bootstrap",
+      "two_stage": {
+        "ci_low": 0.55079,
+        "ci_high": 0.6264,
+        "sd": 0.019412833060880114
+      },
+      "variance_components": {
+        "n_scenarios": 500,
+        "n_decoder_draws": 5,
+        "within_draw": 0.08380000000000001,
+        "between_scenario": 0.15866541082164332,
+        "icc": 0.6543836924366792,
+        "se_analytic": 0.01873101229627717,
+        "decoder_share_of_variance": 0.09553918056398372,
+        "se_projection": {
+          "n_scenarios": 500,
+          "by_draws": {
+            "1": 0.022021144875852543,
+            "2": 0.020028250588688134,
+            "5": 0.01873101229627717,
+            "10": 0.018278151483213136,
+            "20": 0.018047460254653192
+          },
+          "infinite_draws": 0.01781378178948217
+        }
+      },
+      "n_scenarios": 500,
+      "n_decoder_draws": 5,
+      "grid_digest": "82724ee905c6b6d6e1609a4ee470825f8a52b58c428bc492616604ef7db88c68",
+      "condition_fingerprint": "03a90da608c73b806355b6d40dcbb067682480257b2b43d890373edc6453a3b1",
+      "prompt_style": "naive-rules-above",
+      "model_name": "gemma-4-31B-it",
+      "rule_set_name": "seed5_winner.jsonl",
+      "rule_set_sha256": "f2eab3b856b93b49dfa2e71fc168b356d5facc3853b518f4747beab9f6c7058c",
+      "extra": {
+        "figure": "figure4",
+        "ruleset": "seed5_winner",
+        "ruleset_family": "initial+seed5_winner+seed9_runner_up"
+      },
+      "sampling_truncation": {
+        "min_p": 0.0,
+        "repetition_penalty": 1.0,
+        "top_k": 64,
+        "top_p": 0.95
+      },
+      "attempt_statistics": {
+        "attempts_histogram": {
+          "1": 2494,
+          "2": 5,
+          "3": 1
+        },
+        "rejected_attempts": 7,
+        "transport_failed_attempts": 0,
+        "invalid_components": {
+          "invalid_label": 1,
+          "truncated": 6
+        },
+        "invalid_attempt_rate": 0.002792181890706023
+      },
+      "mean": 0.5888000000000001,
+      "condition_id": "gemma-4-31B-it/figure4/seed5_winner"
+    },
+    "Seed 9 (runner-up)": {
+      "ci_low": 0.5159900000000001,
+      "ci_high": 0.588,
+      "sd": 0.018333112617163513,
+      "interval_basis": "scenario_cluster_bootstrap",
+      "two_stage": {
+        "ci_low": 0.5148,
+        "ci_high": 0.5896,
+        "sd": 0.01914899375198603
+      },
+      "variance_components": {
+        "n_scenarios": 500,
+        "n_decoder_draws": 5,
+        "within_draw": 0.10100000000000002,
+        "between_scenario": 0.14662965931863728,
+        "icc": 0.5921328637373025,
+        "se_analytic": 0.01826634387712206,
+        "decoder_share_of_variance": 0.12108158754564675,
+        "se_projection": {
+          "n_scenarios": 500,
+          "by_draws": {
+            "1": 0.022254422451217976,
+            "2": 0.019855964308924272,
+            "5": 0.01826634387712206,
+            "10": 0.017704782366278173,
+            "20": 0.01741721328563426
+          },
+          "infinite_draws": 0.01712481587163128
+        }
+      },
+      "n_scenarios": 500,
+      "n_decoder_draws": 5,
+      "grid_digest": "78e8df1b2b100e35d0a6ede8d45b9b54fc8c04758c0231a622fe690a72a8d4d3",
+      "condition_fingerprint": "674a49ac1cded4e287373c6b532ed8f4fc56f7b1e49c57c86801a3c633b39f3a",
+      "prompt_style": "naive-rules-above",
+      "model_name": "gemma-4-31B-it",
+      "rule_set_name": "seed9_runner_up.jsonl",
+      "rule_set_sha256": "d543f4ce67b1def85a23a60ba018c857ce0fb68fce3d11d8ce386c07300b78b5",
+      "extra": {
+        "figure": "figure4",
+        "ruleset": "seed9_runner_up",
+        "ruleset_family": "initial+seed5_winner+seed9_runner_up"
+      },
+      "sampling_truncation": {
+        "min_p": 0.0,
+        "repetition_penalty": 1.0,
+        "top_k": 64,
+        "top_p": 0.95
+      },
+      "attempt_statistics": {
+        "attempts_histogram": {
+          "1": 2493,
+          "2": 3,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1
+        },
+        "rejected_attempts": 17,
+        "transport_failed_attempts": 0,
+        "invalid_components": {
+          "invalid_label": 13,
+          "truncated": 7
+        },
+        "invalid_attempt_rate": 0.006754072308303536
+      },
+      "mean": 0.552,
+      "condition_id": "gemma-4-31B-it/figure4/seed9_runner_up"
+    }
+  },
+  "paired_deltas": {
+    "Seed 5 (winner) - Initial": {
+      "mean": -0.1379999999999999,
+      "ci_low": -0.1644,
+      "ci_high": -0.11239999999999983,
+      "p_value": 9.99990000099999e-06,
+      "p_holm": 2.999970000299997e-05,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "family_size": 3,
+      "interval_basis": "scenario_cluster_bootstrap"
+    },
+    "Seed 9 (runner-up) - Initial": {
+      "mean": -0.17479999999999996,
+      "ci_low": -0.20200000000000007,
+      "ci_high": -0.14759999999999995,
+      "p_value": 9.99990000099999e-06,
+      "p_holm": 2.999970000299997e-05,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "family_size": 3,
+      "interval_basis": "scenario_cluster_bootstrap"
+    },
+    "Seed 9 (runner-up) - Seed 5 (winner)": {
+      "mean": -0.036800000000000055,
+      "ci_low": -0.06720000000000004,
+      "ci_high": -0.006800000000000028,
+      "p_value": 0.02004979950200498,
+      "p_holm": 0.02004979950200498,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "family_size": 3,
+      "interval_basis": "scenario_cluster_bootstrap"
+    }
+  },
+  "paired_transitions": {
+    "Seed 5 (winner) - Initial": {
+      "both_consistent": 0.23272,
+      "fixed": 0.17848,
+      "regressed": 0.04048,
+      "both_inconsistent": 0.54832
+    },
+    "Seed 9 (runner-up) - Initial": {
+      "both_consistent": 0.23351999999999998,
+      "fixed": 0.21448000000000003,
+      "regressed": 0.03968,
+      "both_inconsistent": 0.5123199999999999
+    },
+    "Seed 9 (runner-up) - Seed 5 (winner)": {
+      "both_consistent": 0.29392,
+      "fixed": 0.15408000000000002,
+      "regressed": 0.11728,
+      "both_inconsistent": 0.43472000000000005
+    }
+  },
+  "provenance": {
+    "complete": true,
+    "campaign_root": "artifact://sampling/fig4-2026-09-pop-a22af097-rescored-lenient_last_line",
+    "estimates": {
+      "uri": "artifact://sampling/fig4-2026-09-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+      "sha256": "94d9387c1b668cffdb63ca067e019eba3afe2e19ec71a02783d529e4a7a49059"
+    },
+    "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462",
+    "scenario_source_sha256": "c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4",
+    "scenario_set": "frozen_500_r3.jsonl",
+    "temperature": 1.0,
+    "truncation": "model_default",
+    "max_semantic_attempts": 20,
+    "judge": {
+      "model_name": "gemma-4-31B-it",
+      "judge_type": "No_Interpretation",
+      "individual_rule_context": "implicated",
+      "evaluation_mode": "both"
+    }
+  }
+}

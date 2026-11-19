@@ -1,0 +1,34 @@
+{
+  "endpoint": "/v1/responses",
+  "model": "gpt-5.6-luna",
+  "temperature": 1.0,
+  "reasoning_effort": "medium",
+  "reasoning_summary": "auto",
+  "request_format_version": "dropoff-responses-medium-summary-v1",
+  "cases": [
+    {
+      "name": "full_ruleset",
+      "custom_id": "legacy-s0-k57-n0000-full",
+      "prompt": "Does this response comply?\n\n# AI Response\nhello\n",
+      "line": "{\"custom_id\":\"legacy-s0-k57-n0000-full\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-5.6-luna\",\"input\":[{\"role\":\"developer\",\"content\":\"Does this response comply?\\n\\n# AI Response\\nhello\\n\"}],\"temperature\":1.0,\"reasoning\":{\"effort\":\"medium\",\"summary\":\"auto\"}}}\n"
+    },
+    {
+      "name": "single_rule",
+      "custom_id": "legacy-s0-k02-n0003-r07",
+      "prompt": "Does this response comply?\n\n# AI Response\nhello\n",
+      "line": "{\"custom_id\":\"legacy-s0-k02-n0003-r07\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-5.6-luna\",\"input\":[{\"role\":\"developer\",\"content\":\"Does this response comply?\\n\\n# AI Response\\nhello\\n\"}],\"temperature\":1.0,\"reasoning\":{\"effort\":\"medium\",\"summary\":\"auto\"}}}\n"
+    },
+    {
+      "name": "seeded_campaign",
+      "custom_id": "dropoff-s3-k10-n0499-r42",
+      "prompt": "Rule 42: never.\n",
+      "line": "{\"custom_id\":\"dropoff-s3-k10-n0499-r42\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-5.6-luna\",\"input\":[{\"role\":\"developer\",\"content\":\"Rule 42: never.\\n\"}],\"temperature\":1.0,\"reasoning\":{\"effort\":\"medium\",\"summary\":\"auto\"}}}\n"
+    },
+    {
+      "name": "non_ascii_prompt",
+      "custom_id": "legacy-s0-k01-n0012-r01",
+      "prompt": "Café — été \"quoted\" / back\\slash\ttab\n中文\n",
+      "line": "{\"custom_id\":\"legacy-s0-k01-n0012-r01\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-5.6-luna\",\"input\":[{\"role\":\"developer\",\"content\":\"Café — été \\\"quoted\\\" / back\\\\slash\\ttab\\n中文\\n\"}],\"temperature\":1.0,\"reasoning\":{\"effort\":\"medium\",\"summary\":\"auto\"}}}\n"
+    }
+  ]
+}

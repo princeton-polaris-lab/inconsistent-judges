@@ -1,0 +1,27 @@
+# The hierarchy conditions for the local judges: per judge, a flat control and a hierarchy arm.
+backend: slurm
+gpu-count: 1
+cpus: 4
+timeout-min: 360
+shards: 8
+qos: normal
+resumable: true
+campaign-id: "{campaign_id}"
+population: populations/frozen_500_r3.jsonl
+expect-population-sha256: c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4
+axis:
+  - "model@judge_model+model@agent_model={models}"
+  - "eval_cfg.reasoning_prompt_style={styles}"
+vars:
+  campaign_id: null
+  models: null  # one model config name
+  styles: naive-rules-above,naive-hierarchy
+  attempts: 20
+  retry_scope: scenario_bundle
+args:
+  - +hierarchy=model_spec
+  - sampling.campaign_mode=final
+  - sampling.num_decoder_draws=5
+  - sampling.max_semantic_attempts={attempts}
+  - judge_model.tp_size=1
+  - sampling.retry_scope={retry_scope}

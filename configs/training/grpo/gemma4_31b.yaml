@@ -1,0 +1,37 @@
+# @package _global_
+# GRPO training on Gemma 4 31B-it: base.yaml with this model's data, memory plan and layout.
+defaults:
+  - base
+  - _self_
+
+model:
+  path: ${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it
+  # null: float32; or bfloat16
+  master_dtype: null
+
+sync_probe:
+  plain_modules: [model.language_model.norm]
+
+anchor:
+  anchor_accum: 2  # replay rows per rank per step
+
+reward:
+  favoured_no_rate: true
+
+wandb:
+  group: gemma-grpo
+
+grpo:
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 8
+  # 1, 2 or 4: it must divide Gemma's 32 attention heads and 4 global KV heads
+  vllm_tensor_parallel_size: 4
+  vllm_gpu_memory_utilization: 0.40
+  fsdp: true
+  fsdp_config:
+    version: 2
+    transformer_layer_cls_to_wrap: [Gemma4TextDecoderLayer]
+    reshard_after_forward: true
+    # Must be false.
+    cpu_ram_efficient_loading: false
+    state_dict_type: FULL_STATE_DICT

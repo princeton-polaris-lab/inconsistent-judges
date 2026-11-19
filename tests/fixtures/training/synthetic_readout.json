@@ -1,0 +1,768 @@
+{
+  "arms": {
+    "base": {
+      "always_yes_floor": {
+        "ci_high": 0.25,
+        "ci_low": 0.0,
+        "estimate": 0.08333333333333333
+      },
+      "attempt_statistics": {
+        "attempts_histogram": {
+          "1": 24
+        },
+        "component_attempts_histogram": {
+          "1": 72
+        },
+        "invalid_attempt_rate": 0.0,
+        "invalid_components": {},
+        "rejected_attempts": 0,
+        "transport_failed_attempts": 0
+      },
+      "condition_id": "qwen/figure5/base",
+      "first_attempt_acceptance_share": 1.0,
+      "flat": {
+        "ci_high": 1.0,
+        "ci_low": 0.75,
+        "estimate": 0.9166666666666666,
+        "grid_digest": "f6e747c618cb1dd4bda5819b3fa6df4f84c58f266fdbaa2be65d034fa1c0042d"
+      },
+      "kappa": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0,
+        "p_chance": 0.08333333333333333,
+        "p_observed": 0.08333333333333333
+      },
+      "label": "Qwen3-8B",
+      "m_stratified": {
+        "M!=yes": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "n_draws": 2
+        },
+        "M=no": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "n_draws": 2
+        },
+        "M=unsure": {
+          "ci_high": null,
+          "ci_low": null,
+          "estimate": null,
+          "n_draws": 0
+        },
+        "M=yes": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "estimate": 1.0,
+          "n_draws": 22
+        }
+      },
+      "model_path": "Qwen3-8B",
+      "model_weights_sha256": null,
+      "reference": true,
+      "same_call": {
+        "between_arm_contrast": null,
+        "completeness": {
+          "ci_high": 1.0,
+          "ci_low": 0.8322916666666669,
+          "estimate": 0.9166666666666666,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.05299207225823711,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "incomplete_reasons": {
+          "missing_rule_ids": 2
+        },
+        "method": "post_hoc_complete_rule_map_reclassification_v1",
+        "n_complete_maps": 22,
+        "n_outputs": 24,
+        "same_call_rate": {
+          "ci_high": 0.15,
+          "ci_low": 0.0,
+          "estimate": 0.045454545454545456,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.04452927636990271,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "serving_dtype": "float32",
+      "yes_rate": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0
+      }
+    },
+    "final": {
+      "always_yes_floor": {
+        "ci_high": 0.29270833333333357,
+        "ci_low": 0.0,
+        "estimate": 0.125
+      },
+      "attempt_statistics": {
+        "attempts_histogram": {
+          "1": 24
+        },
+        "component_attempts_histogram": {
+          "1": 72
+        },
+        "invalid_attempt_rate": 0.0,
+        "invalid_components": {},
+        "rejected_attempts": 0,
+        "transport_failed_attempts": 0
+      },
+      "condition_id": "qwen/figure5/final",
+      "first_attempt_acceptance_share": 1.0,
+      "flat": {
+        "ci_high": 0.29270833333333357,
+        "ci_low": 0.0,
+        "estimate": 0.125,
+        "grid_digest": "f56e8b48b78c225d21f2b75b5cbe3a0f18cfd27c83d8e90cbcd1dbc9c0f80538"
+      },
+      "kappa": {
+        "ci_high": 2.664535259100371e-15,
+        "ci_low": -1.332267629550189e-15,
+        "estimate": 0.0,
+        "p_chance": 0.875,
+        "p_observed": 0.875
+      },
+      "label": "GRPO (final)",
+      "m_stratified": {
+        "M!=yes": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "estimate": 1.0,
+          "n_draws": 3
+        },
+        "M=no": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "estimate": 1.0,
+          "n_draws": 3
+        },
+        "M=unsure": {
+          "ci_high": null,
+          "ci_low": null,
+          "estimate": null,
+          "n_draws": 0
+        },
+        "M=yes": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "n_draws": 21
+        }
+      },
+      "model_path": "final",
+      "model_weights_sha256": "c6d7abb0390a9379343abb72fa22974c8271f3839d9677760ea8f5dbb80192ca",
+      "reference": false,
+      "same_call": {
+        "between_arm_contrast": null,
+        "completeness": {
+          "ci_high": 1.0,
+          "ci_low": 0.75,
+          "estimate": 0.9166666666666666,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.08063980268935296,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "incomplete_reasons": {
+          "missing_rule_ids": 2
+        },
+        "method": "post_hoc_complete_rule_map_reclassification_v1",
+        "n_complete_maps": 22,
+        "n_outputs": 24,
+        "same_call_rate": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "estimate": 1.0,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.0,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "serving_dtype": "float32",
+      "yes_rate": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0
+      }
+    },
+    "grpo": {
+      "always_yes_floor": {
+        "ci_high": 0.2916666666666667,
+        "ci_low": 0.0,
+        "estimate": 0.125
+      },
+      "attempt_statistics": {
+        "attempts_histogram": {
+          "1": 23,
+          "2": 1
+        },
+        "component_attempts_histogram": {
+          "1": 71,
+          "2": 1
+        },
+        "invalid_attempt_rate": 0.04,
+        "invalid_components": {
+          "invalid_json": 1
+        },
+        "rejected_attempts": 1,
+        "transport_failed_attempts": 0
+      },
+      "condition_id": "qwen/figure5/grpo",
+      "first_attempt_acceptance_share": 0.9583333333333334,
+      "flat": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0,
+        "grid_digest": "7655447aba8335c0d8e239bf2594af6695bf415ccf0b664ac8a8bf5435a3dd41"
+      },
+      "kappa": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0,
+        "p_chance": 0.7847222222222222,
+        "p_observed": 1.0
+      },
+      "label": "GRPO",
+      "m_stratified": {
+        "M!=yes": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "n_draws": 3
+        },
+        "M=no": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "n_draws": 2
+        },
+        "M=unsure": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "n_draws": 1
+        },
+        "M=yes": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "n_draws": 21
+        }
+      },
+      "model_path": "grpo",
+      "model_weights_sha256": "8f88bc8799b4699286fe9534335333d9e83f11a8711a666f5462b4a1f92bb086",
+      "reference": false,
+      "same_call": {
+        "between_arm_contrast": null,
+        "completeness": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "estimate": 1.0,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.0,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "incomplete_reasons": {},
+        "method": "post_hoc_complete_rule_map_reclassification_v1",
+        "n_complete_maps": 24,
+        "n_outputs": 24,
+        "same_call_rate": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.0,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "serving_dtype": "float32",
+      "yes_rate": {
+        "ci_high": 1.0,
+        "ci_low": 0.7083333333333334,
+        "estimate": 0.875
+      }
+    }
+  },
+  "claim_rule": "Two Holm families over the reference-against-each pairs, flat inconsistency and the kappa difference; 'more consistent' only when both are significant in the policy's favour (an intersection-union test, so no correction across the two)",
+  "comparisons": {
+    "final": {
+      "claim": "yes_shift",
+      "decomposition": {
+        "cells": {
+          "F_member|M_member": {
+            "ci_high": 0.29270833333333357,
+            "ci_low": 0.0,
+            "estimate": 0.125,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.08483004864302376,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "F_member|M_reference": {
+            "ci_high": 0.25,
+            "ci_low": 0.0,
+            "estimate": 0.08333333333333333,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.07991314729824567,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "F_reference|M_member": {
+            "ci_high": 1.0,
+            "ci_low": 0.7072916666666669,
+            "estimate": 0.875,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.08483004864302376,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "F_reference|M_reference": {
+            "ci_high": 1.0,
+            "ci_low": 0.75,
+            "estimate": 0.9166666666666666,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.07991314729824567,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "method": "independent_draw_expected_shares_v1",
+        "orientation": "cell(reference, reference) - cell(member, member), split into judgment and reference parts",
+        "reference_effect": {
+          "ci_high": 2.7755575615628914e-17,
+          "ci_low": -3.469446951953614e-17,
+          "estimate": -2.0816681711721685e-17,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 1.8282825077346892e-17,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "total": {
+          "ci_high": 1.0,
+          "ci_low": 0.4583333333333333,
+          "estimate": 0.7916666666666666,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.1609637586452995,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "verdict_effect": {
+          "ci_high": 1.0,
+          "ci_low": 0.45833333333333337,
+          "estimate": 0.7916666666666666,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.1609637586452995,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "flat": {
+        "a": "qwen/figure5/base",
+        "b": "qwen/figure5/final",
+        "bootstrap_seed": 16,
+        "ci_high": 1.0,
+        "ci_low": 0.4583333333333333,
+        "estimate": 0.7916666666666666,
+        "family_size": 2,
+        "interval_basis": "scenario_cluster_bootstrap",
+        "n_permutations": 2000,
+        "p_holm": 0.009995002498750625,
+        "p_value": 0.009995002498750625,
+        "policy_a": "base",
+        "policy_b": "final",
+        "sd": 0.1609637586452995,
+        "significant_holm": true,
+        "test_method": "scenario_clustered_paired_randomization_v1"
+      },
+      "harm_flag": {
+        "flagged": true,
+        "stratum": "M!=yes",
+        "threshold": 0.1
+      },
+      "kappa": {
+        "a": "qwen/figure5/base",
+        "b": "qwen/figure5/final",
+        "bootstrap_seed": 16,
+        "ci_high": 2.664535259100371e-15,
+        "ci_low": -1.332267629550189e-15,
+        "estimate": 0.0,
+        "family_size": 2,
+        "interval_basis": "scenario_cluster_bootstrap",
+        "n_permutations": 2000,
+        "n_undefined_replicates": 22,
+        "p_holm": 1.0,
+        "p_randomization": 1.0,
+        "p_value": 1.0,
+        "policy_a": "base",
+        "policy_b": "final",
+        "sd": 1.109067443481426e-15,
+        "significant_holm": false,
+        "test_method": "scenario_cluster_bootstrap_percentile_test_v1"
+      },
+      "stratified_differences": {
+        "differences": {
+          "M!=yes": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "estimate": 1.0,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 71,
+            "sd": 0.0,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "M=no": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "estimate": 1.0,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 71,
+            "sd": 0.0,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "M=unsure": {
+            "ci_high": null,
+            "ci_low": null,
+            "estimate": null,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 200,
+            "sd": null,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "M=yes": {
+            "ci_high": -1.0,
+            "ci_low": -1.0,
+            "estimate": -1.0,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "harm_flag": {
+          "flagged": true,
+          "stratum": "M!=yes",
+          "threshold": 0.1
+        },
+        "orientation": "rate(member) - rate(reference)"
+      }
+    },
+    "grpo": {
+      "claim": "more_consistent",
+      "decomposition": {
+        "cells": {
+          "F_member|M_member": {
+            "ci_high": 0.125,
+            "ci_low": 0.0,
+            "estimate": 0.041666666666666664,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.03823129535399558,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "F_member|M_reference": {
+            "ci_high": 0.125,
+            "ci_low": 0.0,
+            "estimate": 0.041666666666666664,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.03823129535399558,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "F_reference|M_member": {
+            "ci_high": 1.0,
+            "ci_low": 0.75,
+            "estimate": 0.9166666666666666,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.07991314729824567,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "F_reference|M_reference": {
+            "ci_high": 1.0,
+            "ci_low": 0.75,
+            "estimate": 0.9166666666666666,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.07991314729824567,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "method": "independent_draw_expected_shares_v1",
+        "orientation": "cell(reference, reference) - cell(member, member), split into judgment and reference parts",
+        "reference_effect": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.0,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "total": {
+          "ci_high": 1.0,
+          "ci_low": 0.7083333333333334,
+          "estimate": 0.875,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.08787123628734642,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "verdict_effect": {
+          "ci_high": 1.0,
+          "ci_low": 0.7083333333333334,
+          "estimate": 0.875,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.08787123628734642,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "flat": {
+        "a": "qwen/figure5/base",
+        "b": "qwen/figure5/grpo",
+        "bootstrap_seed": 16,
+        "ci_high": 1.0,
+        "ci_low": 0.75,
+        "estimate": 0.9166666666666666,
+        "family_size": 2,
+        "interval_basis": "scenario_cluster_bootstrap",
+        "n_permutations": 2000,
+        "p_holm": 0.0029985007496251873,
+        "p_value": 0.0014992503748125937,
+        "policy_a": "base",
+        "policy_b": "grpo",
+        "sd": 0.07991314729824567,
+        "significant_holm": true,
+        "test_method": "scenario_clustered_paired_randomization_v1"
+      },
+      "harm_flag": {
+        "flagged": false,
+        "stratum": "M!=yes",
+        "threshold": 0.1
+      },
+      "kappa": {
+        "a": "qwen/figure5/base",
+        "b": "qwen/figure5/grpo",
+        "bootstrap_seed": 16,
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0,
+        "family_size": 2,
+        "interval_basis": "scenario_cluster_bootstrap",
+        "n_permutations": 2000,
+        "n_undefined_replicates": 28,
+        "p_holm": 0.023121387283236993,
+        "p_randomization": 0.0014992503748125937,
+        "p_value": 0.011560693641618497,
+        "policy_a": "base",
+        "policy_b": "grpo",
+        "sd": 0.0,
+        "significant_holm": true,
+        "test_method": "scenario_cluster_bootstrap_percentile_test_v1"
+      },
+      "stratified_differences": {
+        "differences": {
+          "M!=yes": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 71,
+            "sd": 0.0,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "M=no": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "estimate": 0.0,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 71,
+            "sd": 0.0,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "M=unsure": {
+            "ci_high": null,
+            "ci_low": null,
+            "estimate": null,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 200,
+            "sd": null,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "M=yes": {
+            "ci_high": -1.0,
+            "ci_low": -1.0,
+            "estimate": -1.0,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "harm_flag": {
+          "flagged": false,
+          "stratum": "M!=yes",
+          "threshold": 0.1
+        },
+        "orientation": "rate(member) - rate(reference)"
+      }
+    }
+  },
+  "disclosure": {
+    "engine": {
+      "TRITON_F32_DEFAULT": "unset",
+      "VLLM_BATCH_INVARIANT": "0",
+      "VLLM_FLOAT32_MATMUL_PRECISION": "highest",
+      "attention_backend": "TRITON_ATTN",
+      "vllm_version": "0.28.0+cu129"
+    },
+    "lines": [
+      "Each GRPO policy arm (grpo, final) is its checkpoint merged into the Qwen3-8B weights in fp32 and served in fp32.",
+      "Every arm runs on one fp32 engine: vLLM 0.28.0+cu129, dtype float32, attention backend TRITON_ATTN with Triton's default precision for fp32 dot products (TF32; TRITON_F32_DEFAULT unset), fp32 GEMMs at VLLM_FLOAT32_MATMUL_PRECISION=highest; only the weights differ between arms.",
+      "Parity B (HF-PEFT in fp32 against the merged checkpoint served in fp32, in prefill and decode arms), a merge check expected at about 1 and gated at rho >= 0.99 where its 95% interval's half-width is at most 0.01: grpo: prefill rho = 1.0001 [0.9996, 1.0009], decode rho = 0.9998 [0.9990, 1.0007]; final: prefill rho = 0.9993 [0.9981, 1.0004], decode rho = 0.9998 [0.9990, 1.0007].",
+      "The base arm (base: Qwen3-8B with no adapter) is served in fp32 on vLLM 0.28.0+cu129; it is not the bf16 Qwen3-8B of the ruleset-size experiment (vLLM 0.19, naive-rules-above prompt).",
+      "Training sampled its rollouts from TRL's bf16 colocated engine, a rounded copy of the policy, with token-level importance sampling. The evaluation measures the merged policy itself, not that engine's copy."
+    ],
+    "parity_b": {
+      "final": {
+        "decode": {
+          "arm": "decode",
+          "mode": "merged",
+          "passed": true,
+          "report": "artifact://parity/final/decode_report.json",
+          "report_sha256": "e97d8029ebd719bc290c71572b66619c15873f6ff51c880b57e7d4a6f8fc8e22",
+          "rho": 0.9998,
+          "rho_ci": [
+            0.999,
+            1.0007
+          ],
+          "rho_gated": {
+            "all": true
+          },
+          "segment": "completion"
+        },
+        "prefill": {
+          "arm": "prefill",
+          "mode": "merged",
+          "passed": true,
+          "report": "artifact://parity/final/prefill_report.json",
+          "report_sha256": "ccf7601eed4fac378d8ed68b2361caf258d9916a9348eecc82d742148e411244",
+          "rho": 0.9993,
+          "rho_ci": [
+            0.9981,
+            1.0004
+          ],
+          "rho_gated": {
+            "all": true
+          },
+          "segment": "all"
+        }
+      },
+      "grpo": {
+        "decode": {
+          "arm": "decode",
+          "mode": "merged",
+          "passed": true,
+          "report": "artifact://parity/grpo/decode_report.json",
+          "report_sha256": "e97d8029ebd719bc290c71572b66619c15873f6ff51c880b57e7d4a6f8fc8e22",
+          "rho": 0.9998,
+          "rho_ci": [
+            0.999,
+            1.0007
+          ],
+          "rho_gated": {
+            "all": true
+          },
+          "segment": "completion"
+        },
+        "prefill": {
+          "arm": "prefill",
+          "mode": "merged",
+          "passed": true,
+          "report": "artifact://parity/grpo/prefill_report.json",
+          "report_sha256": "9ab9e21acb8f14f1fe93c2baeeebb206839a025f25c19e8bc4350777bea6c0ad",
+          "rho": 1.0001,
+          "rho_ci": [
+            0.9996,
+            1.0009
+          ],
+          "rho_gated": {
+            "all": true
+          },
+          "segment": "all"
+        }
+      }
+    },
+    "regime": "merged_fp32",
+    "serving_dtype": "float32"
+  },
+  "flat_orientation": "rate(reference) - rate(member)",
+  "kappa_orientation": "kappa(member) - kappa(reference)",
+  "metric": "flat",
+  "policies": [
+    "base",
+    "grpo",
+    "final"
+  ],
+  "provenance": {
+    "bootstrap": {
+      "ci_level": 0.95,
+      "n_resamples": 200,
+      "seed": 16
+    },
+    "campaign_id": "camp",
+    "campaign_mode": "final",
+    "campaign_root": "artifact://root",
+    "complete": true,
+    "estimates": {
+      "sha256": "7bee3aca9ee3501e6b89c934c6b927d341401b1e4646d2c710f4b007269df9df",
+      "uri": "artifact://root/aggregate/estimates.json"
+    },
+    "forced_json_requirement": "label_only",
+    "inference_method": "hierarchical_bootstrap_v2",
+    "judge": {
+      "individual_rule_context": "isolated",
+      "judge_type": "No_Interpretation",
+      "model_name": "Qwen3-8B",
+      "prompt_style": "forced-grpo",
+      "rule_set_name": "rules.jsonl",
+      "rule_set_sha256": "3b3338238435ff0089d83efae8d597c1324dfc362a49492b4fbf0bd6f76d4d02"
+    },
+    "max_semantic_attempts": 5,
+    "n_decoder_draws": 2,
+    "n_scenarios": 12,
+    "policy_family": "qwen/figure5/base+qwen/figure5/grpo+qwen/figure5/final",
+    "randomization_test": {
+      "n_permutations": 2000,
+      "seed": 16
+    },
+    "retry_scope": "component",
+    "scenario_manifest_sha256": "07c706ad6abf0b6ecc2be2768acc719d3bef50cde15d4102a763eb9875a95ead",
+    "scenario_set": "training_population.jsonl",
+    "scenario_source_sha256": "11f31cae00f79b8087061a38ef1dbddd047652d1f443e554ee57be8f1b0185e1",
+    "strict_think": true,
+    "temperature": 1.0,
+    "truncation": "model_default"
+  },
+  "reference_policy": "base",
+  "schema_version": 1,
+  "source": "stochastic_campaign",
+  "strata": {
+    "counts": {
+      "stress": 6,
+      "wildchat": 6
+    },
+    "field": "source"
+  }
+}

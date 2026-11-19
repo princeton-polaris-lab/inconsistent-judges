@@ -1,0 +1,213 @@
+# The Hub repositories: each experiment's campaign roots, each with its compact archive's members digest, and the other
+# files it reads, each with where it lands under an artifact root (dest). `python -m ruleforge.hub pack` reads this file;
+# data/README.md describes the compact tier.
+format: 1
+dataset: ai-law-society-lab/inconsistent-judges
+model: ai-law-society-lab/inconsistent-judges
+compact:
+  attempts_conditions: ["forced*"]
+  # Files of every campaign root that no rebuild reads: the draws' summaries and implicated-rule lists, the root's own
+  # completion gate, each condition's stack record and the root's campaign markers.
+  omit: ["**/smrc_summary.json", "**/implicated_rules.json", "completion.json", "**/condition_stack.json", ".ruleforge-*"]
+experiments:
+  populations:
+    files:
+      # The paper's 500 evaluation scenarios, as data/populations/ in the code repository holds them.
+      - {path: frozen_500_r3.jsonl, kind: input, dest: populations/frozen_500_r3.jsonl, sha256: c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4}
+  ruleset-size:
+    # Each judge's bank and sizes 2 to 56, then each judge's size 57, whose analysis joins them. Each root's profile
+    # (ruleforge.hub.PROFILES) names what its readers read of its files.
+    profile: ruleset-size
+    roots:
+      fig2-2026-09-pop-a22af097-rescored-lenient_last_line: c8de445475b44aff6eb48e192c6502c86fc6eed6c56474e08e98a1b7014b513f
+      fig2-2026-09-luna-pop-a22af097-rescored-lenient_last_line: 2d2f295f153b58c3dbbbe9796324f57ac5a9becfb9ef88682d9b8ef0cfe79a5d
+      fig2-2026-10-haiku-sum-rescored-lenient_last_line: 84f2465bed1badadd634aef3061f048a7393c44dafe9d22a3e88e567ae633954
+      fig2-2026-10-glimmer-pop-a22af097: 5351533bea285e2326cb2df67f3d95b2f8c82720acd2dd277131ae37ef786a05
+      k57-shuffled-2026-11: a30125eec126975f6240290cb008a9f7e70307fd28ad911dd25759ba8e3b1fdf
+      k57-shuffled-2026-11-luna: 74e132104046fa8fcf559e26da4870f9c87503d075cbf90f45a655c018aaea71
+      k57-shuffled-2026-11-haiku: c145f5762ea0cea86dddc368a56a890c9ef11f84f582255371d699bf08671125
+      k57-shuffled-2026-11-glimmer: a18372b9887fbb0ac9ecd5f3b6eccd74a2fdb1336478108afcf9b7f4836d677a
+    # What the ruleset-size rebuild does not read: the draws' run logs, provenance and request blocks; of a bank root,
+    # its manifests, its own size-57 draws (size 57 is read from the k57 roots), its estimates and its re-score or
+    # rebase record; of a k57 root, its sampling manifest.
+    omit:
+      fig2-2026-09-pop-a22af097-rescored-lenient_last_line: &bank_rescored ["**/runs.jsonl", "**/draw_provenance.json", "**/request_blocks.jsonl", "*/subsets/*/k57/draw-*/*", "sampling_manifest.json", "scenario_manifest.json", "aggregate/figure2_estimates.json", "label_replay.json"]
+      fig2-2026-09-luna-pop-a22af097-rescored-lenient_last_line: *bank_rescored
+      fig2-2026-10-haiku-sum-rescored-lenient_last_line: *bank_rescored
+      fig2-2026-10-glimmer-pop-a22af097: ["**/runs.jsonl", "**/draw_provenance.json", "**/request_blocks.jsonl", "*/subsets/*/k57/draw-*/*", "sampling_manifest.json", "scenario_manifest.json", "aggregate/figure2_estimates.json", "rebase.json"]
+      k57-shuffled-2026-11: &k57 ["**/runs.jsonl", "**/draw_provenance.json", "**/request_blocks.jsonl", "sampling_manifest.json"]
+      k57-shuffled-2026-11-luna: *k57
+      k57-shuffled-2026-11-haiku: *k57
+      k57-shuffled-2026-11-glimmer: *k57
+  prompt-ablation:
+    profile: prompt-ablation-local
+    profiles:
+      final-2026-09-luna-pop-a22af097-rescored-lenient_last_line: prompt-ablation-api
+      prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line: prompt-ablation-api
+      prompt-ablation-v2-2026-10-haiku-sum: prompt-ablation-api
+    # Roots that keep every attempt ledger (published as its accepted attempts): a local judge's inference stack, and a
+    # re-scored arm's request dates, are read from it.
+    all_attempts:
+      - prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line
+      - prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line
+      - final-2026-09-pop-a22af097-rescored-lenient_last_line
+      - prompt-ablation-v2-2026-10-glimmer-pop-a22af097
+      - final-2026-09-luna-pop-a22af097-rescored-lenient_last_line
+      - prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line
+    roots:
+      prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line: d6bd46ce42c9f6e5c6be04f27f3c2dee98f1cb7094ef35de5e93d24903d71754
+      prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line: 6e8622a74cfe693408c3030ef758ded9f420ecbcf38ff91149c7093994f410c8
+      prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line: 639b26cbd39effb2016b2cf1ef4c9ce4f06e95bb919d7899e6aa4b370e8a2fec
+      prompt-ablation-v2-2026-10-haiku-sum: 302fe2f57d5d21a5d2074e41d5f0526f3fbdd37307c50e946d8a74da7b2ee6fe
+      final-2026-09-pop-a22af097-rescored-lenient_last_line: 226352e12e5e13ec0170b51291908b2d9d9658b85cfad6587ad917a370f2e66f
+      final-2026-09-luna-pop-a22af097-rescored-lenient_last_line: d807f59819e4cd54aa145b36b6dc0c85c1c0dc71b7422bd17fe5a342c1186197
+      prompt-ablation-v2-2026-10-glimmer-pop-a22af097: 4fc30e42aaccfbe932d8224f68a1f5b90b94c198cd0c554ee3c933e27faeb6db
+    # Condition directories the paper does not read (the root's aggregate keeps their rows). A local judge's draws keep
+    # their run logs and provenance, which its stack is read from, and an API judge's their request blocks, which its
+    # request dates are read from; neither reads the other's.
+    omit:
+      final-2026-09-luna-pop-a22af097-rescored-lenient_last_line:
+        - gpt-5.6-luna/good/**
+        - gpt-5.6-luna/forced-grpo/**
+        - "**/runs.jsonl"
+        - "**/draw_provenance.json"
+      prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line: &api ["**/runs.jsonl", "**/draw_provenance.json"]
+      prompt-ablation-v2-2026-10-haiku-sum: *api
+      prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line: &local ["**/request_blocks.jsonl"]
+      prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line: *local
+      final-2026-09-pop-a22af097-rescored-lenient_last_line: *local
+      prompt-ablation-v2-2026-10-glimmer-pop-a22af097: ["**/request_blocks.jsonl", "rebase.json"]
+  ruleforge:
+    profile: ruleforge
+    roots:
+      fig4-2026-09-pop-a22af097-rescored-lenient_last_line: 0269c394242dd5052097e682385ff07b87e3df095640bc88489ef494215f7b03
+    # The draws' run logs, provenance and request blocks, and the re-score record.
+    omit:
+      fig4-2026-09-pop-a22af097-rescored-lenient_last_line: ["**/runs.jsonl", "**/draw_provenance.json", "**/request_blocks.jsonl", "label_replay.json"]
+    files:
+      - path: inputs/sweep_modelspec_openai.tar.zst
+        kind: input
+        format: tar.zst
+        prefix: sweep/modelspec/openai
+        dest: ruleforge/sweep/modelspec/openai
+        # The paper's launch alone, without its run records (logs, submitit records and Hydra configs name hosts,
+        # accounts and paths) or the selection written beside it.
+        omit: ["**/trainer.log", "**/.submitit/**", "**/.hydra/**", "**/multirun.yaml", "selection.json",
+               "2026-07-08/23-03-42/**", "2026-07-08/23-29-11/**", "2026-07-09/09-47-03/**", "2026-07-09/16-49-54/**",
+               "2026-07-09/19-13-24/**"]
+        members_digest: ea58f03d8c38ce50b7fd1ff7dce95e05966d3f767f21589ae9885b299d4cb74f
+  training:
+    profile: training-gemma
+    profiles:
+      fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097: training-qwen
+      fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097: training-qwen
+    draw0_evaluations: true
+    all_attempts: &training_roots
+      - fig5-gemma-2026-10-07-pop-a22af097
+      - fig5-gemma-ckpt600-2026-10-09-pop-a22af097
+      - fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097
+      - fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097
+    raw_outputs: *training_roots
+    # The arms of earlier checkpoints, which the paper does not read (each root's aggregate keeps their rows); the
+    # draws' request blocks.
+    omit:
+      fig5-gemma-2026-10-07-pop-a22af097:
+        - gemma-4-31B-it/figure5/grpo/**
+        - "**/request_blocks.jsonl"
+      fig5-gemma-ckpt600-2026-10-09-pop-a22af097: ["**/request_blocks.jsonl"]
+      fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097:
+        - Qwen3-8B/figure5/grpo/**
+        - "**/request_blocks.jsonl"
+      fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097: ["**/request_blocks.jsonl"]
+    roots:
+      fig5-gemma-2026-10-07-pop-a22af097: b311be3299267f63430fba5f29e1f892a81a3c49866915146a22941d0cf8f528
+      fig5-gemma-ckpt600-2026-10-09-pop-a22af097: 71eccb114bd310595361288fdee1820f0a25fe62ff7051710cc4f9af720b9898
+      fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097: 3f9dfd8fd4fe83ae5b6d02dcfd382130a6aebe0e2188bdf381fab6baf134987c
+      fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097: 4d1111b0ca9cafafcd597f34f2cb6bb656ec99036a3ad5b216f7619b5badf4bf
+    files:
+      # The merged checkpoints' manifests and Qwen's parity reports.
+      - path: selection/gemma-grpo-mix-2026-10-04/merge_manifest.json
+        kind: selection
+        dest: selection/gemma-grpo-mix-2026-10-04/modal_root/finetuning/gemma-grpo-mix-2026-10-04/merged/checkpoint-600/merge_manifest.json
+        sha256: ca4ab806d959d1022cbfec16299ffbf8d98104e3a09776de363eae6d69f8b8de
+      - path: selection/qwen-grpo-mix-2026-10-11/merge_manifest.json
+        kind: selection
+        dest: selection/qwen-grpo-mix-2026-10-11/modal_root/finetuning/qwen-grpo-mix-2026-10-11/merged/checkpoint-300/merge_manifest.json
+        sha256: c3fa949f4773e80198c39e8f655c60758e506f788fefd91216c6fdf127c39591
+      - path: selection/qwen-grpo-mix-2026-10-11/parity/prefill_report.json
+        kind: selection
+        dest: selection/qwen-grpo-mix-2026-10-11/selection/checkpoints/checkpoint-300/parity/prefill_report.json
+        sha256: 1eb2c3125e938c90244153a82df933d9c0c2ff95bd226eed009229b42e6e51d7
+      - path: selection/qwen-grpo-mix-2026-10-11/parity/decode_report.json
+        kind: selection
+        dest: selection/qwen-grpo-mix-2026-10-11/selection/checkpoints/checkpoint-300/parity/decode_report.json
+        sha256: f39cf8c3a888385e3e0c9dc90abd3a640675218ab7c2bd896d9233daa9644a92
+      # The 300-scenario development set the checkpoints were chosen on, which the training rows were held apart from.
+      - {path: inputs/development.jsonl, kind: input, dest: populations/grpo_v2_dev.jsonl, sha256: cf8b3591dd38b7d5c5065af705f412872d4698b5f434959b4f071bc3bd89b778}
+      # Training inputs: each run's rows, replay rows (decompress to replay_rows.jsonl), markers and manifest, and the
+      # anchor condition the training launch checks (its condition.json; the launch reads none of its draws).
+      - {path: inputs/gemma/grpo_rows.jsonl, kind: input, dest: grpo_data/gemma-mix2-2026-10-03-train/grpo_rows.jsonl, sha256: 2ea0e4e8ab32d709b805e8f55f125c553f4899ebdcdcb220f7eb45f545c6577b}
+      - {path: inputs/gemma/grpo_rows.jsonl.disjoint.json, kind: input, dest: grpo_data/gemma-mix2-2026-10-03-train/grpo_rows.jsonl.disjoint.json, sha256: 20451ad501f3ba26d79cb82e1a3edb61839a9d98fc6a8679c68564c8a9da3b24}
+      - {path: inputs/gemma/replay_rows.jsonl.zst, kind: input, dest: grpo_data/gemma-mix2-2026-10-03-train/replay_rows.jsonl.zst, sha256: 87a5aae37f0589410cdb750808b8b8580b43048839baa3083c767ce1a71c8298}
+      - {path: inputs/gemma/replay_rows.jsonl.disjoint.json, kind: input, dest: grpo_data/gemma-mix2-2026-10-03-train/replay_rows.jsonl.disjoint.json, sha256: d449d52d0e863b15f0e05d92bf2d198be37468d48b05ad4b14f7241a09811c37}
+      - {path: inputs/gemma/scenarios.jsonl, kind: input, dest: grpo_data/gemma-mix2-2026-10-03-train/scenarios.jsonl, sha256: 5c80528a91df9549917166611525d89c32a0c976e0c3199cd61bce611dc09ed4}
+      - {path: inputs/gemma/scenarios.jsonl.disjoint.json, kind: input, dest: grpo_data/gemma-mix2-2026-10-03-train/scenarios.jsonl.disjoint.json, sha256: ffe798bb6e4578503ab8141f1ceae49eb2949599a8a39d5583aece53a305d86b}
+      - {path: inputs/gemma/grpo_data_manifest.json, kind: input, dest: grpo_data/gemma-mix2-2026-10-03-train/grpo_data_manifest.json, sha256: d957964e2c34fde11e06aa31184e5069d2420e2fd382d4a40b604e98477abf3e}
+      - path: inputs/gemma/anchor_condition.tar.zst
+        kind: input
+        format: tar.zst
+        prefix: confirm
+        omit: ["**/condition_stack.json", "draw-*/**"]
+        dest: sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm
+        members_digest: 61292da6585f519986e5fe2bd8e9061028429ff0f77e4eb55c313c846bbd751c
+      - {path: inputs/qwen/grpo_rows.jsonl, kind: input, dest: grpo_data/qwen-mix-2026-10-11/grpo_rows.jsonl, sha256: 6a9cef42d4ca9b55017d2a720c77184c2842e4e979e38240dd2c59482f87ff89}
+      - {path: inputs/qwen/grpo_rows.jsonl.disjoint.json, kind: input, dest: grpo_data/qwen-mix-2026-10-11/grpo_rows.jsonl.disjoint.json, sha256: ec306dbbf1d503efaca09bf19089c975ac85a3d4b9052eb6ec3d669036e57fa2}
+      - {path: inputs/qwen/replay_rows.jsonl.zst, kind: input, dest: grpo_data/qwen-mix-2026-10-11/replay_rows.jsonl.zst, sha256: 3e97f0799dd5bf0999091961d006a56570f957a0b4b6c7a6cf64f7d937ddaf6c}
+      - {path: inputs/qwen/replay_rows.jsonl.disjoint.json, kind: input, dest: grpo_data/qwen-mix-2026-10-11/replay_rows.jsonl.disjoint.json, sha256: 9ea65b49eb47cadce62c791cb350668552162e0ab58fefaa2d9cd553c5841cc0}
+      - {path: inputs/qwen/scenarios.jsonl, kind: input, dest: grpo_data/qwen-mix-2026-10-11/scenarios.jsonl, sha256: 591893b90ef5d96cf0771a6ab0176f2a932bddcd475e50ce6a5ef32053fd78b9}
+      - {path: inputs/qwen/scenarios.jsonl.disjoint.json, kind: input, dest: grpo_data/qwen-mix-2026-10-11/scenarios.jsonl.disjoint.json, sha256: 7bedd163391c9be49a07133c9b60f26cf9daf34a0249665e8ac99556dcca23da}
+      - {path: inputs/qwen/grpo_data_manifest.json, kind: input, dest: grpo_data/qwen-mix-2026-10-11/grpo_data_manifest.json, sha256: b1a0a0e4d599f15e769e5797c730ae7c483ea4d3059fd3a15d743bddeddeb861}
+      - path: inputs/qwen/anchor_condition.tar.zst
+        kind: input
+        format: tar.zst
+        prefix: bank
+        omit: ["**/condition_stack.json", "draw-*/**"]
+        dest: sampling/grpo-v2-anchors-2026-09-26-bank/grpo_v2_train.block-000/Qwen3-8B/grpo-v2-anchors/bank
+        members_digest: 883440c896958186918c3931312dc6c266e3c2a0fab986c39c7406ff4d6d6af9
+  hierarchy:
+    # The golden also reads three flat arms from prompt-ablation roots, where those roots are listed.
+    profile: hierarchy-local
+    profiles:
+      hierarchy-aware-2026-10-haiku-sum: hierarchy-api
+      hierarchy-aware-2026-10-luna-sum: hierarchy-api
+    all_attempts:
+      - hierarchy-aware-2026-10-pop-a22af097
+      - hierarchy-aware-2026-10-glimmer
+    roots:
+      hierarchy-aware-2026-10-pop-a22af097: 3e336632dd426564c8bd85301ed6e23c32fceae5744224f1b80f73d852ef032a
+      hierarchy-aware-2026-10-glimmer: 0680fd2e53481503390c902748d8939be162e7dc7ca571356dcdf72e10cf8ab2
+      hierarchy-aware-2026-10-haiku-sum: f538300acfe36e782f476283aa5ab7d0cf16d59c6aaeb80cd5a612ab7ba7f06b
+      hierarchy-aware-2026-10-luna-sum: 08b5bb8392beb647b5a84ba506315c4bca1c63882528f6ae169ca4bcd2feaf86
+    # As in prompt-ablation: a local judge's draws without their request blocks, an API judge's without their run logs
+    # and provenance.
+    omit:
+      hierarchy-aware-2026-10-pop-a22af097: ["**/request_blocks.jsonl", "rebase.json"]
+      hierarchy-aware-2026-10-glimmer: ["**/request_blocks.jsonl"]
+      hierarchy-aware-2026-10-haiku-sum: ["**/runs.jsonl", "**/draw_provenance.json"]
+      hierarchy-aware-2026-10-luna-sum: ["**/runs.jsonl", "**/draw_provenance.json"]
+# The model repository: the two GRPO LoRA adapters, each with its base model's Hub id.
+models:
+  - dir: gemma4-31b-it/checkpoint-600
+    base_model: google/gemma-4-31b-it
+    dest: selection/gemma-grpo-mix-2026-10-04/adapters/checkpoint-600
+    files:
+      adapter_model.safetensors: feb49e7598c5a249059f7147eed98def7c7813a546810ecda14779f0a5690b01
+      adapter_config.json: ed4a0810156f162bf7922e3b535b25c891114746a139826a14ab88ce2c348f75
+      trainer_state.json: 89a02a557f689b1cc94818caa107984d23480e03ded8e61389bf32c9c8b71b81
+  - dir: qwen3-8b/checkpoint-300
+    base_model: Qwen/Qwen3-8B
+    dest: selection/qwen-grpo-mix-2026-10-11/adapters/checkpoint-300
+    files:
+      adapter_model.safetensors: 413850243855d0364f4c13591eb8530423260c3eaaa2a848b894db2abb67769d
+      adapter_config.json: 0893426dfa7bbede41729abf8cfc9324be91ce8ad7aac0532c754af1a2300dbf
+      trainer_state.json: 6bc2f091d5d11320e8cd7cb42c8a8965509a00e024f4a0a9d6b07e474e2ca7a1

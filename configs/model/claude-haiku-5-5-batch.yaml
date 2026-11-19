@@ -1,0 +1,27 @@
+# Claude Haiku 5.5 through Anthropic's Message Batches API; needs ANTHROPIC_API_KEY and --yes-spend.
+model_name: "claude-haiku-5-5"
+model_type: "anthropic_batch"
+model_path: null
+tp_size: null
+strip_thinking_model: null
+reasoning_parser: null
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: null
+attention_backend: null
+batch_root: ${oc.env:RULEFORGE_BATCH_ROOT}
+batch_poll_seconds: 60
+max_enqueued_tokens: null
+# Null waits indefinitely; a request expires on Anthropic's side after 24 h.
+batch_timeout_seconds: null
+send_max_output_tokens: true
+reasoning_level: medium
+thinking_display: summarized
+max_new_tokens: 16384
+fixed_temperature: 1.0
+temperature: 1
+# Each retry is a whole batch.
+num_tries: 3
+seed: 16

@@ -1,0 +1,51 @@
+# `ruleforge optimize`: RuleForge on one ruleset, the scenario generator and the rule amender taking turns until a judge
+# panel reads it consistently.
+defaults:
+  # The panel: --judge NAME, FILE.yaml, fake[:SEED] or PROVIDER:MODEL. The agents: --agent, the same way; none: the
+  # judge's engine.
+  - model@judge_model: ???
+  - model@agent_model: null
+  - eval_rule_set@eval_cfg: default
+  - _self_
+
+task_spec: modelspec                 # modelspec | legal
+out: ???                             # the run's directory: new, or empty
+# The agents' and the intent rubric's attempts per call, and their retry budget.
+num_tries: ${oc.select:judge_model.num_tries,5}
+max_retry_seconds: ${oc.select:judge_model.max_retry_seconds,null}
+max_episodes: 25
+
+# Each episode's metrics on W&B (the wandb extra), off unless enabled.
+wandb:
+  enabled: false
+  project: ruleforge
+  entity: null                       # null: WANDB_ENTITY, else the W&B key's default entity
+  group: null
+
+scenario_generation:
+  initial_scenario_seed_type: null   # null: the task's (modelspec: wildchat, legal: single_seed); or none
+  good_seed_scenario_path: null      # wildchat's seed files: --seeds-good, --seeds-bad
+  bad_seed_scenario_path: null
+  seed_scenario_path: null           # single_seed's: --seeds
+  num_seed_scenarios: null           # null: the task's
+  target_num_scenarios: 20
+  num_scenarios_per_batch: 10
+  entropy_threshold: 0.9
+  entropy_method: null               # null: the rule amender's, which scores both rewards
+  max_accumulation_iterations: 3
+  termination_threshold: 0.1
+  termination_episodes: 3
+  trigger_threshold: 0.5
+  posterior_update_temperature: 0.2
+  posterior_sampling_temperature: 1.0
+
+rule_amendment:
+  initial_rule_set_path: ???         # --rules
+  intent_weight: 1.0
+  entropy_method: consensus
+  intent_method: rubric_orig_standards
+  best_of_n: 5
+  termination_threshold: 0.9
+  termination_episodes: 15
+  posterior_update_temperature: 0.2
+  posterior_sampling_temperature: 1.0

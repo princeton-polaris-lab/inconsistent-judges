@@ -1,0 +1,6 @@
+# GRPO on Gemma 4 31B-it: the training program with training/grpo/gemma4_31b.
+preset: grpo_train_run
+vars:
+  recipe: training/grpo/gemma4_31b
+  gpus: "4"
+  mem_gb: "320"  # GB

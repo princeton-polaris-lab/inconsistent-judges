@@ -1,0 +1,17 @@
+# Gemma 4 31B-it in float32 on two GPUs, the engine its GRPO checkpoints are evaluated on.
+model_name: "gemma-4-31B-it"
+model_type: "local"
+model_path: "${rf.env:MODEL_ROOT}/gemma-4-31B-it"
+tp_size: 2
+num_tries: 5
+strip_thinking_model: "gemma4"
+reasoning_parser: "gemma4"
+max_new_tokens: 65536
+seed: 16
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: true
+attention_backend: "TRITON_ATTN"
+dtype: "float32"

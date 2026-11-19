@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - modelspec/base
+
+task_name: openai
+
+rule_amendment:
+  initial_rule_set_path: "data/rules/modelspec/openai_rules_all.jsonl"

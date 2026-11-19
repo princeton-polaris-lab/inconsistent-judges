@@ -1,0 +1,155 @@
+{
+  "about": "Muse-Glimmer-30B's raw outputs as the records hold them (text only, no token ids) and the answer ruleforge.judges.models._strip_muse_glimmer_thinking reads from each: the body of the last to=user message, whitespace stripped, or \"\" when no answer message opened or the framing cannot be read with certainty. tests/test_thinking_strippers.py holds the strip to every case; a reader of the raw outputs elsewhere can hold its own split to the same cases.",
+  "cases": [
+    {
+      "case": "one reasoning message, then the answer (vLLM drops the <|eot|> it stops on)",
+      "text": " to=self<|message|>Check each rule. Nothing applies.<|eom|><|start|>assistant to=user<|message|>no",
+      "answer": "no"
+    },
+    {
+      "case": "an answer with a trailer",
+      "text": " to=self<|message|>Rule 3 concerns privacy.<|eom|><|start|>assistant to=user<|message|>Final Judgment: yes",
+      "answer": "Final Judgment: yes"
+    },
+    {
+      "case": "a fenced JSON answer",
+      "text": " to=self<|message|>Go rule by rule.<|eom|><|start|>assistant to=user<|message|>```json\n{\"Rule 1\": \"no\"}\n```",
+      "answer": "```json\n{\"Rule 1\": \"no\"}\n```"
+    },
+    {
+      "case": "the turn's end kept, whitespace around the answer",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>  unsure \n<|eot|>",
+      "answer": "unsure"
+    },
+    {
+      "case": "whitespace after the turn's end",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>no<|eot|>  \n",
+      "answer": "no"
+    },
+    {
+      "case": "several reasoning messages",
+      "text": " to=self<|message|>a<|eom|><|start|>assistant to=self<|message|>b<|eom|><|start|>assistant to=user<|message|>yes",
+      "answer": "yes"
+    },
+    {
+      "case": "a first message that answers at once",
+      "text": " to=user<|message|>yes",
+      "answer": "yes"
+    },
+    {
+      "case": "a reasoning message left without <|eom|>, ended by the next message's <|start|>",
+      "text": " to=self<|message|>reasoning yes<|start|>assistant to=user<|message|>no",
+      "answer": "no"
+    },
+    {
+      "case": "two answers: the last is the verdict",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>yes<|eom|><|start|>assistant to=self<|message|>wait<|eom|><|start|>assistant to=user<|message|>no",
+      "answer": "no"
+    },
+    {
+      "case": "an answer, then reasoning cut off: the answer stands",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>yes<|eom|><|start|>assistant to=self<|message|>hmm no",
+      "answer": "yes"
+    },
+    {
+      "case": "an answer, then the output cut off after its <|eom|>",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>yes<|eom|>",
+      "answer": "yes"
+    },
+    {
+      "case": "an answer body ends where another message starts",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>yes<|start|>assistant to=self<|message|>more",
+      "answer": "yes"
+    },
+    {
+      "case": "a message to another recipient is not the answer",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=functions.x<|message|>call<|eom|><|start|>assistant to=user<|message|>no",
+      "answer": "no"
+    },
+    {
+      "case": "recipient-like words that are not a header are body text",
+      "text": " to=user<|message|>{\"verdict\": \"yes\"} to=self is fine",
+      "answer": "{\"verdict\": \"yes\"} to=self is fine"
+    },
+    {
+      "case": "cut off while reasoning",
+      "text": " to=self<|message|>Let me think about rule 1 and rule 2 and",
+      "answer": ""
+    },
+    {
+      "case": "the turn ended without an answer",
+      "text": " to=self<|message|>Done thinking. So output yes.<|eom|>",
+      "answer": ""
+    },
+    {
+      "case": "reasoning that ends on a label line, then a <|start|> that opens nothing",
+      "text": " to=self<|message|>Final answer:\n\nyes<|eom|><|start|>assistant",
+      "answer": ""
+    },
+    {
+      "case": "unclosed reasoning, then another reasoning message",
+      "text": " to=self<|message|>unclosed reasoning quoting no answer header <|start|>assistant to=self<|message|>x",
+      "answer": ""
+    },
+    {
+      "case": "no channel at all",
+      "text": "yes",
+      "answer": ""
+    },
+    {
+      "case": "an empty output",
+      "text": "",
+      "answer": ""
+    },
+    {
+      "case": "an answer header inside closed reasoning",
+      "text": " to=self<|message|>I could say to=user<|message|>yes<|eom|>",
+      "answer": ""
+    },
+    {
+      "case": "an answer header inside unclosed reasoning",
+      "text": " to=self<|message|>I could say to=user<|message|>yes",
+      "answer": ""
+    },
+    {
+      "case": "an answer header inside reasoning with no close",
+      "text": " to=self<|message|>thinking without a close to=user<|message|>no",
+      "answer": ""
+    },
+    {
+      "case": "an answer header inside reasoning before a real answer",
+      "text": " to=self<|message|>I will write to=user<|message|>yes then stop<|eom|><|start|>assistant to=user<|message|>no",
+      "answer": ""
+    },
+    {
+      "case": "an answer, then reasoning that quotes an answer header",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>no<|eom|><|start|>assistant to=self<|message|>I said to=user<|message|>yes<|eom|>",
+      "answer": ""
+    },
+    {
+      "case": "an answer body holding a header with no <|start|> before it",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>no to=tool.fn<|message|>x",
+      "answer": ""
+    },
+    {
+      "case": "an answer body holding an answer header",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>no, not to=user<|message|>yes",
+      "answer": ""
+    },
+    {
+      "case": "a <|start|> that opens no message",
+      "text": " to=self<|message|>I'd write <|start|>assistant, then<|eom|><|start|>assistant to=user<|message|>no",
+      "answer": ""
+    },
+    {
+      "case": "text after the turn's end",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user<|message|>no<|eot|>yes",
+      "answer": ""
+    },
+    {
+      "case": "a header with a space before <|message|>",
+      "text": " to=self<|message|>r<|eom|><|start|>assistant to=user <|message|>no",
+      "answer": ""
+    }
+  ]
+}

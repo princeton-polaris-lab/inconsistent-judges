@@ -1,0 +1,2 @@
+dir: experiments/results/sweep/${task_spec}/${task_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+subdir: ${hydra.job.num}

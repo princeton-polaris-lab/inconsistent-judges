@@ -1,0 +1,26 @@
+# The prompt ablation's protocol for a judge served through a provider Batch API, run on this machine.
+backend: local
+campaign-id: "{campaign_id}"
+population: "{population}"
+expect-population-sha256: "{population_sha256}"
+axis:
+  - "eval_cfg.reasoning_prompt_style={styles}"
+vars:
+  campaign_id: null
+  model: null           # a Batch config: gpt-5.6-luna-batch, claude-haiku-5-5-batch
+  population: null
+  population_sha256: null
+  request_block: 500    # scenarios per request block
+  mode: final
+  draws: 5
+  styles: naive-rules-above,encouraged,forced
+  attempts: 20
+  retry_scope: scenario_bundle
+args:
+  - model@judge_model={model}
+  - model@agent_model={model}
+  - sampling.campaign_mode={mode}
+  - sampling.num_decoder_draws={draws}
+  - sampling.max_semantic_attempts={attempts}
+  - sampling.scenarios_per_request_block={request_block}
+  - sampling.retry_scope={retry_scope}

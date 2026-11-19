@@ -1,0 +1,22 @@
+# A GRPO training run on SLURM GPUs, for any model.
+backend: slurm
+qos: normal
+gpu-count: "{gpus}"
+mem-gb: "{mem_gb}"
+timeout-min: 2880
+completions-per-step: 32
+replay-rows-per-step: 8
+env: [HF_HUB_OFFLINE=1, TRANSFORMERS_OFFLINE=1, MAX_JOBS=8, PYTHONUNBUFFERED=1]
+vars:
+  recipe: null              # a config path under configs/
+  gpus: "4"
+  mem_gb: "480"             # GB
+  rows: null
+  condition: null           # the rows manifest's anchor_condition, an artifact path
+args:
+  - --config-name
+  - "{recipe}"
+  - "data.train=${oc.env:RULEFORGE_ARTIFACT_ROOT}/{rows}/grpo_rows.jsonl"
+  - "data.replay=${oc.env:RULEFORGE_ARTIFACT_ROOT}/{rows}/replay_rows.jsonl"
+  - "data.anchor_condition=${oc.env:RULEFORGE_ARTIFACT_ROOT}/{condition}"
+  - reward.truncated=zero

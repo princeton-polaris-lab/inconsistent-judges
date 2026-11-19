@@ -1,0 +1,18 @@
+# The hierarchy readout's pairs: the six judges' flat and hierarchy arms, each a campaign root and a condition's
+# public id.
+version: 1
+judges:
+  - flat: {root: artifact://sampling/hierarchy-aware-2026-10-pop-a22af097, condition: Olmo-3-32B-Think/naive-rules-above}
+    hierarchy: {root: artifact://sampling/hierarchy-aware-2026-10-pop-a22af097,
+                condition: Olmo-3-32B-Think/naive-hierarchy}
+  - flat: {root: artifact://sampling/hierarchy-aware-2026-10-pop-a22af097, condition: gemma-4-31B-it/naive-rules-above}
+    hierarchy: {root: artifact://sampling/hierarchy-aware-2026-10-pop-a22af097, condition: gemma-4-31B-it/naive-hierarchy}
+  - flat: {root: artifact://sampling/hierarchy-aware-2026-10-pop-a22af097, condition: gpt-oss-120b/naive-rules-above}
+    hierarchy: {root: artifact://sampling/hierarchy-aware-2026-10-pop-a22af097, condition: gpt-oss-120b/naive-hierarchy}
+  - flat: {root: artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097, condition: Muse-Glimmer-30B/naive-rules-above}
+    hierarchy: {root: artifact://sampling/hierarchy-aware-2026-10-glimmer, condition: Muse-Glimmer-30B/naive-hierarchy}
+  - flat: {root: artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum, condition: claude-haiku-5-5/naive-rules-above}
+    hierarchy: {root: artifact://sampling/hierarchy-aware-2026-10-haiku-sum, condition: claude-haiku-5-5/naive-hierarchy}
+  - flat: {root: artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line,
+           condition: gpt-5.6-luna/naive-rules-above}
+    hierarchy: {root: artifact://sampling/hierarchy-aware-2026-10-luna-sum, condition: gpt-5.6-luna/naive-hierarchy}

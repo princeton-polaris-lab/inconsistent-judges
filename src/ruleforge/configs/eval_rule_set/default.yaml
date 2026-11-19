@@ -1,0 +1,22 @@
+judge_types:
+  - "No_Interpretation"
+  - "Narrow"
+  - "Broad"
+  - "Ordinary_Meaning"
+  - "Omitted_Case"
+  - "General_Terms"
+  - "Negative_Implication"
+  - "Grammar_Based"
+  - "Whole_Principle"
+  - "Consistent_Usage"
+  - "Surplus_Meaning"
+  - "Harmonization"
+  - "Specific_over_General"
+individual_rule_context: "isolated"
+# Scenarios per flush.
+save_batch_size: 10
+evaluation_temperature: 0.1
+# One of ruleforge.prompts.styles.VALID_REASONING_PROMPT_STYLES.
+reasoning_prompt_style: "naive"
+intent_temperature: 0.0
+intent_seed: 16

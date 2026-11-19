@@ -1,0 +1,33 @@
+# Submitit SLURM launcher for GPU jobs. The cluster comes from the submitting shell: RULEFORGE_SLURM_PARTITION (required) and
+# RULEFORGE_SLURM_ACCOUNT (optional).
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+
+setup:
+  - "export VLLM_NO_USAGE_STATS=1"
+  # Concurrent kernel-compile jobs.
+  - "export MAX_JOBS=${oc.env:MAX_JOBS,8}"
+  - "export VLLM_FLOAT32_MATMUL_PRECISION=highest"
+  - "export VLLM_BATCH_INVARIANT=0"
+  - "unset TRITON_F32_DEFAULT"
+  # A pre-filled openai_harmony vocabulary cache.
+  - "export TIKTOKEN_RS_CACHE_DIR=$HOME/.cache/tiktoken"
+
+submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+
+partition: ${oc.env:RULEFORGE_SLURM_PARTITION}
+account: ${oc.env:RULEFORGE_SLURM_ACCOUNT,null}
+
+timeout_min: 2880          # minutes
+nodes: 1
+tasks_per_node: 1
+cpus_per_task: 4
+mem_per_gpu: "24G"
+
+name: ${hydra.job.name}
+signal_delay_s: 120       # seconds before the time limit
+max_num_timeout: 0        # resubmissions after a timeout (0: none)
+
+gres: "gpu:2"
+
+additional_parameters:
+  no_requeue: true

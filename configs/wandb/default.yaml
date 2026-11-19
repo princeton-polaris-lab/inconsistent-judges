@@ -1,0 +1,5 @@
+entity: ${oc.env:WANDB_ENTITY,null}  # your W&B team or user; null = the API key's default entity
+project: "ruleforge"
+mode: online            # or "offline" when running without network
+dir: experiments/wandb
+group: "${oc.env:WANDB_GROUP_TIMESTAMP,${now:%Y-%m-%d}}-${run_name}"

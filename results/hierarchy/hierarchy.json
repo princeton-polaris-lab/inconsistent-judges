@@ -1,0 +1,1601 @@
+{
+  "analysis": "hierarchy",
+  "definition": "phi(yes)=1, phi(unsure)=0.5, phi(no)=0. Flat (separate-call): F the full-set judgment, I_r rule r's judgment judged alone, M = max_r phi(I_r); a (scenario, decoder draw) is inconsistent iff phi(F) != M. Hierarchy: F_H the full-set judgment with every rule's level shown and the ranking explained, C_r rule r's judgment judged with its superiors (the rules at strictly higher levels of the Model Spec's chain of command; rules of its own level never), M_H = max_r phi(C_r); hierarchy-inconsistent iff phi(F_H) != M_H. Both are the separate-call computation (calculate_inconsistency, each accepted bundle's stored contradiction) on their own condition's bundles: unsure handling, validity, attrition, the label rule and the clustering by scenario are the flat rate's.",
+  "judges": [
+    {
+      "flat": {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "condition_fingerprint": "5a94234f9e8b0c2923a4e15e2588b17ca10b7fe1610d0d6378f308ea558de207",
+        "condition_id": "Olmo-3-32B-Think/naive-rules-above",
+        "grid_digest": "003791f08bdccb9b273e556c6460f63923258b028cfe395a3bdc7ec22c15bdce",
+        "individual_rule_context": "isolated",
+        "label_rule": "lenient_markup",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "rule_levels_sha256": null,
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=9320284de5d2c6e5",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "hierarchy": {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "condition_fingerprint": "7f6d2420d895460cb558f7493769253368c9b2516d814d90bf870eb1462d2bc9",
+        "condition_id": "Olmo-3-32B-Think/naive-hierarchy",
+        "grid_digest": "5d67b9d95db5ab297d6daa15a9ec95786ad4d736c7dc0d4d87c5d543fe05e8f7",
+        "individual_rule_context": "superiors",
+        "label_rule": "lenient_markup",
+        "prompt_style": "naive-hierarchy",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "rule_levels_sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a",
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=9320284de5d2c6e5",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "judge": "Olmo3-32B",
+      "model_name": "Olmo-3-32B-Think",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "primary": {
+        "difference": {
+          "ci_high": 0.018400000000000083,
+          "ci_low": -0.03959999999999986,
+          "estimate": -0.010800000000000032,
+          "family_size": 6,
+          "grid_digest_a": "5d67b9d95db5ab297d6daa15a9ec95786ad4d736c7dc0d4d87c5d543fe05e8f7",
+          "grid_digest_b": "003791f08bdccb9b273e556c6460f63923258b028cfe395a3bdc7ec22c15bdce",
+          "inner_resample": "independent",
+          "n_permutations": 100000,
+          "p_holm": 0.4864651353486465,
+          "p_value": 0.4864651353486465,
+          "sd": 0.01490395910912265,
+          "se_analytic": 0.014936294915795657,
+          "significant_holm": false,
+          "test_method": "scenario_clustered_paired_randomization_v1"
+        },
+        "difference_of": "hierarchy - flat",
+        "flat_rate": {
+          "ci_high": 0.784,
+          "ci_low": 0.726,
+          "estimate": 0.7556,
+          "sd": 0.014766081390809142
+        },
+        "hierarchy_rate": {
+          "ci_high": 0.7704099999999999,
+          "ci_low": 0.7188,
+          "estimate": 0.7448,
+          "sd": 0.01323495642691732
+        }
+      },
+      "secondary": {
+        "level_shift": {
+          "developer": {
+            "ci_high": -0.012399999999999998,
+            "ci_low": -0.046200000000000005,
+            "estimate": -0.0294,
+            "n_rules": 1,
+            "placebo": false,
+            "sd": 0.008630586839282714
+          },
+          "guideline": {
+            "ci_high": -0.09125555555555556,
+            "ci_low": -0.10665555555555553,
+            "estimate": -0.09908888888888889,
+            "n_rules": 18,
+            "placebo": false,
+            "sd": 0.003896559093971069
+          },
+          "root": {
+            "ci_high": -0.004690000000000001,
+            "ci_low": -0.010040249999999999,
+            "estimate": -0.007390000000000001,
+            "n_rules": 20,
+            "placebo": true,
+            "sd": 0.0013794801912456012
+          },
+          "system": {
+            "ci_high": -0.0366,
+            "ci_low": -0.05113333333333332,
+            "estimate": -0.04386666666666666,
+            "n_rules": 3,
+            "placebo": false,
+            "sd": 0.003709439984513985
+          },
+          "user": {
+            "ci_high": -0.038759999999999996,
+            "ci_low": -0.04953333333333333,
+            "estimate": -0.04410666666666667,
+            "n_rules": 15,
+            "placebo": false,
+            "sd": 0.0027453699952546366
+          }
+        },
+        "over_under": {
+          "flat": {
+            "over": {
+              "ci_high": 0.0028,
+              "ci_low": 0.0,
+              "estimate": 0.0012000000000000001,
+              "sd": 0.0006857968398877324
+            },
+            "under": {
+              "ci_high": 0.7828,
+              "ci_low": 0.7248000000000001,
+              "estimate": 0.7544000000000001,
+              "sd": 0.014799238797667941
+            }
+          },
+          "hierarchy": {
+            "over": {
+              "ci_high": 0.0072,
+              "ci_low": 0.002,
+              "estimate": 0.0044,
+              "sd": 0.0013157685966764825
+            },
+            "under": {
+              "ci_high": 0.7656000000000001,
+              "ci_low": 0.7148,
+              "estimate": 0.7403999999999998,
+              "sd": 0.013104251679573313
+            }
+          }
+        },
+        "root_floor": {
+          "ci_high": 0.44840999999999986,
+          "ci_low": 0.3864,
+          "estimate": 0.4176,
+          "sd": 0.015932887696836377
+        },
+        "two_by_two": {
+          "flat": {
+            "ci_high": 0.7844,
+            "ci_low": 0.7263899999999999,
+            "estimate": 0.7556,
+            "full_set": "F",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.014832370417758587
+          },
+          "hierarchy": {
+            "ci_high": 0.7704,
+            "ci_low": 0.7192000000000001,
+            "estimate": 0.7448,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "C",
+            "sd": 0.013122820067409292
+          },
+          "hierarchy_full_set_isolated_rules": {
+            "ci_high": 0.884,
+            "ci_low": 0.8364000000000001,
+            "estimate": 0.8603999999999999,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.012165441077149649
+          },
+          "mismatched_flat_full_set_conditioned_rules": {
+            "ci_high": 0.6836,
+            "ci_low": 0.628,
+            "estimate": 0.6556,
+            "full_set": "F",
+            "mismatched": true,
+            "reference": "C",
+            "sd": 0.014291404821584195
+          }
+        },
+        "under_flags_by_top_level": {
+          "developer": {
+            "count": 24,
+            "rate": 0.0096,
+            "share_of_under_flags": 0.012965964343598054
+          },
+          "guideline": {
+            "count": 101,
+            "rate": 0.0404,
+            "share_of_under_flags": 0.05456509994597515
+          },
+          "root": {
+            "count": 1033,
+            "rate": 0.4132,
+            "share_of_under_flags": 0.5580767152890329
+          },
+          "system": {
+            "count": 417,
+            "rate": 0.1668,
+            "share_of_under_flags": 0.2252836304700162
+          },
+          "user": {
+            "count": 276,
+            "rate": 0.1104,
+            "share_of_under_flags": 0.14910858995137763
+          }
+        }
+      }
+    },
+    {
+      "flat": {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "condition_fingerprint": "17646ddc22e27d2c9698c6db0f35c328d7f25c55f06df6d0b156e67a83a9dbd5",
+        "condition_id": "gemma-4-31B-it/naive-rules-above",
+        "grid_digest": "24033196adad081be802098ede3404f4d12b84964c0c3de274c295b8e34f3328",
+        "individual_rule_context": "isolated",
+        "label_rule": "lenient_markup",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "rule_levels_sha256": null,
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"TRITON_ATTN\"} / engine_args.max_model_len=null / engine_args=b4de527ca7469bb7",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "hierarchy": {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "condition_fingerprint": "133406f222433317e4a4ce012b7abd50c2ac75e22cb99bf4f6275bff3e0c8b76",
+        "condition_id": "gemma-4-31B-it/naive-hierarchy",
+        "grid_digest": "ded9c4056b6d42c5d79f9b12d94f6a33c8b1449f899d810663a663802c33594f",
+        "individual_rule_context": "superiors",
+        "label_rule": "lenient_markup",
+        "prompt_style": "naive-hierarchy",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "rule_levels_sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a",
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"TRITON_ATTN\"} / engine_args.max_model_len=null / engine_args=b4de527ca7469bb7",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "judge": "gemma4-31b",
+      "model_name": "gemma-4-31B-it",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "primary": {
+        "difference": {
+          "ci_high": -0.0739900000000001,
+          "ci_low": -0.12439999999999996,
+          "estimate": -0.09920000000000007,
+          "family_size": 6,
+          "grid_digest_a": "ded9c4056b6d42c5d79f9b12d94f6a33c8b1449f899d810663a663802c33594f",
+          "grid_digest_b": "24033196adad081be802098ede3404f4d12b84964c0c3de274c295b8e34f3328",
+          "inner_resample": "independent",
+          "n_permutations": 100000,
+          "p_holm": 5.999940000599994e-05,
+          "p_value": 9.99990000099999e-06,
+          "sd": 0.01277906715318454,
+          "se_analytic": 0.012918688207787198,
+          "significant_holm": true,
+          "test_method": "scenario_clustered_paired_randomization_v1"
+        },
+        "difference_of": "hierarchy - flat",
+        "flat_rate": {
+          "ci_high": 0.7556,
+          "ci_low": 0.6856,
+          "estimate": 0.7212000000000001,
+          "sd": 0.017804196843845554
+        },
+        "hierarchy_rate": {
+          "ci_high": 0.658,
+          "ci_low": 0.58479,
+          "estimate": 0.622,
+          "sd": 0.018666332898306513
+        }
+      },
+      "secondary": {
+        "level_shift": {
+          "developer": {
+            "ci_high": 0.002,
+            "ci_low": -0.0148,
+            "estimate": -0.0064,
+            "n_rules": 1,
+            "placebo": false,
+            "sd": 0.004247068146380512
+          },
+          "guideline": {
+            "ci_high": -0.06922222222222223,
+            "ci_low": -0.07817777777777778,
+            "estimate": -0.07373333333333333,
+            "n_rules": 18,
+            "placebo": false,
+            "sd": 0.002309909255445993
+          },
+          "root": {
+            "ci_high": 3.999999999999984e-05,
+            "ci_low": -0.0035,
+            "estimate": -0.0017400000000000002,
+            "n_rules": 20,
+            "placebo": true,
+            "sd": 0.0009098484332590787
+          },
+          "system": {
+            "ci_high": 0.0048683333333333105,
+            "ci_low": -0.004666666666666666,
+            "estimate": 0.00013333333333333348,
+            "n_rules": 3,
+            "placebo": false,
+            "sd": 0.0024275882059635514
+          },
+          "user": {
+            "ci_high": -0.011706666666666667,
+            "ci_low": -0.020426666666666662,
+            "estimate": -0.016,
+            "n_rules": 15,
+            "placebo": false,
+            "sd": 0.0022599767746834133
+          }
+        },
+        "over_under": {
+          "flat": {
+            "over": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "estimate": 0.0,
+              "sd": 0.0
+            },
+            "under": {
+              "ci_high": 0.7552000000000001,
+              "ci_low": 0.686,
+              "estimate": 0.7212000000000001,
+              "sd": 0.017673420907294658
+            }
+          },
+          "hierarchy": {
+            "over": {
+              "ci_high": 0.0012000000000000001,
+              "ci_low": 0.0,
+              "estimate": 0.0004,
+              "sd": 0.00040687765433850015
+            },
+            "under": {
+              "ci_high": 0.6576000000000001,
+              "ci_low": 0.58599,
+              "estimate": 0.6215999999999999,
+              "sd": 0.01849233742214326
+            }
+          }
+        },
+        "root_floor": {
+          "ci_high": 0.264,
+          "ci_low": 0.2016,
+          "estimate": 0.2324,
+          "sd": 0.015850743957101825
+        },
+        "two_by_two": {
+          "flat": {
+            "ci_high": 0.7552000000000001,
+            "ci_low": 0.686,
+            "estimate": 0.7212000000000001,
+            "full_set": "F",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.017673420907294658
+          },
+          "hierarchy": {
+            "ci_high": 0.658,
+            "ci_low": 0.586,
+            "estimate": 0.622,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "C",
+            "sd": 0.01848659664076652
+          },
+          "hierarchy_full_set_isolated_rules": {
+            "ci_high": 0.7644000000000001,
+            "ci_low": 0.6976,
+            "estimate": 0.7315999999999999,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.017178895078601535
+          },
+          "mismatched_flat_full_set_conditioned_rules": {
+            "ci_high": 0.648,
+            "ci_low": 0.5744000000000001,
+            "estimate": 0.6108,
+            "full_set": "F",
+            "mismatched": true,
+            "reference": "C",
+            "sd": 0.018844195532460386
+          }
+        },
+        "under_flags_by_top_level": {
+          "developer": {
+            "count": 10,
+            "rate": 0.004,
+            "share_of_under_flags": 0.006435006435006435
+          },
+          "guideline": {
+            "count": 80,
+            "rate": 0.032,
+            "share_of_under_flags": 0.05148005148005148
+          },
+          "root": {
+            "count": 580,
+            "rate": 0.232,
+            "share_of_under_flags": 0.3732303732303732
+          },
+          "system": {
+            "count": 66,
+            "rate": 0.0264,
+            "share_of_under_flags": 0.04247104247104247
+          },
+          "user": {
+            "count": 818,
+            "rate": 0.3272,
+            "share_of_under_flags": 0.5263835263835264
+          }
+        }
+      }
+    },
+    {
+      "flat": {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "condition_fingerprint": "5cdb1d75ef852ef840d4157cf8ad9475856e2cf9c92d96927f6b795a8e6e9a7e",
+        "condition_id": "gpt-oss-120b/naive-rules-above",
+        "grid_digest": "81308fd79f4a8e7200eb568db67e701a5c72adcfcc58035c48c0f58854d91ca6",
+        "individual_rule_context": "isolated",
+        "label_rule": "lenient_markup",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "rule_levels_sha256": null,
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=51df8d972a9cbf87",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "hierarchy": {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "condition_fingerprint": "5c43a079569d05f9b2c2c67a10ad130ba47ebb2c85494db94eda87daff1cd2e0",
+        "condition_id": "gpt-oss-120b/naive-hierarchy",
+        "grid_digest": "de13c48407a484dfd6aab0e69fd174b1b4dd689b42414ea5e5e7350a62d393c0",
+        "individual_rule_context": "superiors",
+        "label_rule": "lenient_markup",
+        "prompt_style": "naive-hierarchy",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "rule_levels_sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a",
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=51df8d972a9cbf87",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "judge": "gpt-oss-120b",
+      "model_name": "gpt-oss-120b",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "primary": {
+        "difference": {
+          "ci_high": -0.028800000000000048,
+          "ci_low": -0.06879999999999997,
+          "estimate": -0.04840000000000011,
+          "family_size": 6,
+          "grid_digest_a": "de13c48407a484dfd6aab0e69fd174b1b4dd689b42414ea5e5e7350a62d393c0",
+          "grid_digest_b": "81308fd79f4a8e7200eb568db67e701a5c72adcfcc58035c48c0f58854d91ca6",
+          "inner_resample": "independent",
+          "n_permutations": 100000,
+          "p_holm": 5.999940000599994e-05,
+          "p_value": 9.99990000099999e-06,
+          "sd": 0.01018300520757993,
+          "se_analytic": 0.010268679152796925,
+          "significant_holm": true,
+          "test_method": "scenario_clustered_paired_randomization_v1"
+        },
+        "difference_of": "hierarchy - flat",
+        "flat_rate": {
+          "ci_high": 0.6607999999999999,
+          "ci_low": 0.5892000000000001,
+          "estimate": 0.626,
+          "sd": 0.018143757548600564
+        },
+        "hierarchy_rate": {
+          "ci_high": 0.6112000000000001,
+          "ci_low": 0.5408,
+          "estimate": 0.5775999999999999,
+          "sd": 0.018168571751417336
+        }
+      },
+      "secondary": {
+        "level_shift": {
+          "developer": {
+            "ci_high": 0.0728,
+            "ci_low": 0.027200000000000005,
+            "estimate": 0.0498,
+            "n_rules": 1,
+            "placebo": false,
+            "sd": 0.01161761213398003
+          },
+          "guideline": {
+            "ci_high": 0.12896694444444445,
+            "ci_low": 0.09845527777777777,
+            "estimate": 0.11356666666666666,
+            "n_rules": 18,
+            "placebo": false,
+            "sd": 0.007875952035439789
+          },
+          "root": {
+            "ci_high": 0.01703,
+            "ci_low": 0.01196,
+            "estimate": 0.01449,
+            "n_rules": 20,
+            "placebo": true,
+            "sd": 0.0012943182759723362
+          },
+          "system": {
+            "ci_high": 0.05026666666666667,
+            "ci_low": 0.0162,
+            "estimate": 0.03286666666666667,
+            "n_rules": 3,
+            "placebo": false,
+            "sd": 0.00864698539382753
+          },
+          "user": {
+            "ci_high": 0.11374733333333334,
+            "ci_low": 0.08615933333333334,
+            "estimate": 0.09978666666666666,
+            "n_rules": 15,
+            "placebo": false,
+            "sd": 0.0070913843264941035
+          }
+        },
+        "over_under": {
+          "flat": {
+            "over": {
+              "ci_high": 0.0012000000000000001,
+              "ci_low": 0.0,
+              "estimate": 0.0004,
+              "sd": 0.0003957249873333753
+            },
+            "under": {
+              "ci_high": 0.6607999999999999,
+              "ci_low": 0.59,
+              "estimate": 0.6256,
+              "sd": 0.018010948076056407
+            }
+          },
+          "hierarchy": {
+            "over": {
+              "ci_high": 0.0028000000000000004,
+              "ci_low": 0.0,
+              "estimate": 0.0012000000000000001,
+              "sd": 0.0006925738014103624
+            },
+            "under": {
+              "ci_high": 0.6116099999999999,
+              "ci_low": 0.5404000000000001,
+              "estimate": 0.5764,
+              "sd": 0.017967838798208315
+            }
+          }
+        },
+        "root_floor": {
+          "ci_high": 0.30319999999999997,
+          "ci_low": 0.24440000000000003,
+          "estimate": 0.2736,
+          "sd": 0.014871419476781628
+        },
+        "two_by_two": {
+          "flat": {
+            "ci_high": 0.6608099999999999,
+            "ci_low": 0.5903999999999999,
+            "estimate": 0.626,
+            "full_set": "F",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.018024942091845953
+          },
+          "hierarchy": {
+            "ci_high": 0.61281,
+            "ci_low": 0.5416,
+            "estimate": 0.5775999999999999,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "C",
+            "sd": 0.018017082578486453
+          },
+          "hierarchy_full_set_isolated_rules": {
+            "ci_high": 0.6164,
+            "ci_low": 0.5448000000000001,
+            "estimate": 0.5811999999999999,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.018043567547732904
+          },
+          "mismatched_flat_full_set_conditioned_rules": {
+            "ci_high": 0.6564,
+            "ci_low": 0.586,
+            "estimate": 0.6212000000000001,
+            "full_set": "F",
+            "mismatched": true,
+            "reference": "C",
+            "sd": 0.01794299112634234
+          }
+        },
+        "under_flags_by_top_level": {
+          "developer": {
+            "count": 33,
+            "rate": 0.0132,
+            "share_of_under_flags": 0.022900763358778626
+          },
+          "guideline": {
+            "count": 250,
+            "rate": 0.1,
+            "share_of_under_flags": 0.1734906315058987
+          },
+          "root": {
+            "count": 681,
+            "rate": 0.2724,
+            "share_of_under_flags": 0.472588480222068
+          },
+          "system": {
+            "count": 29,
+            "rate": 0.0116,
+            "share_of_under_flags": 0.020124913254684247
+          },
+          "user": {
+            "count": 448,
+            "rate": 0.1792,
+            "share_of_under_flags": 0.3108952116585704
+          }
+        }
+      }
+    },
+    {
+      "flat": {
+        "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+        "condition_fingerprint": "409dcd61f25450aca7aaf07739e873251fa7a6a2d1df2167477434ec8d164559",
+        "condition_id": "Muse-Glimmer-30B/naive-rules-above",
+        "grid_digest": "73332927c93a3a3d076f5ba43dd11c85604ec9614743f2ae2e0a49793a22bcb0",
+        "individual_rule_context": "isolated",
+        "label_rule": "lenient_last_line",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+        "rule_levels_sha256": null,
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=4fb7b98f0cf575c6",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "hierarchy": {
+        "campaign_id": "hierarchy-aware-2026-10-glimmer",
+        "condition_fingerprint": "ac7dc6980f5e721a3a7d8654f8c1d3ff9a33c9918b15f13aa417eca3b3e94c2a",
+        "condition_id": "Muse-Glimmer-30B/naive-hierarchy",
+        "grid_digest": "415b1b66195f7b9aae7a60cdf4b2930f1c1a05fc08d4eaad49fc654f17dee8a3",
+        "individual_rule_context": "superiors",
+        "label_rule": "lenient_last_line",
+        "prompt_style": "naive-hierarchy",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-glimmer",
+        "rule_levels_sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a",
+        "stack": {
+          "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=4fb7b98f0cf575c6",
+          "kind": "local",
+          "model_type": "local",
+          "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+        }
+      },
+      "judge": "muse-glimmer-30b",
+      "model_name": "Muse-Glimmer-30B",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "primary": {
+        "difference": {
+          "ci_high": 0.18280000000000007,
+          "ci_low": 0.13319999999999999,
+          "estimate": 0.15760000000000002,
+          "family_size": 6,
+          "grid_digest_a": "415b1b66195f7b9aae7a60cdf4b2930f1c1a05fc08d4eaad49fc654f17dee8a3",
+          "grid_digest_b": "73332927c93a3a3d076f5ba43dd11c85604ec9614743f2ae2e0a49793a22bcb0",
+          "inner_resample": "independent",
+          "n_permutations": 100000,
+          "p_holm": 5.999940000599994e-05,
+          "p_value": 9.99990000099999e-06,
+          "sd": 0.01274735074593933,
+          "se_analytic": 0.01283487233655994,
+          "significant_holm": true,
+          "test_method": "scenario_clustered_paired_randomization_v1"
+        },
+        "difference_of": "hierarchy - flat",
+        "flat_rate": {
+          "ci_high": 0.47879999999999995,
+          "ci_low": 0.4076,
+          "estimate": 0.44239999999999996,
+          "sd": 0.018106622098933857
+        },
+        "hierarchy_rate": {
+          "ci_high": 0.6376,
+          "ci_low": 0.5624,
+          "estimate": 0.6,
+          "sd": 0.019165067317846812
+        }
+      },
+      "secondary": {
+        "level_shift": {
+          "developer": {
+            "ci_high": -0.0624,
+            "ci_low": -0.1024,
+            "estimate": -0.082,
+            "n_rules": 1,
+            "placebo": false,
+            "sd": 0.010293380353295025
+          },
+          "guideline": {
+            "ci_high": -0.21562222222222222,
+            "ci_low": -0.22874472222222222,
+            "estimate": -0.22215555555555558,
+            "n_rules": 18,
+            "placebo": false,
+            "sd": 0.0033467994634621993
+          },
+          "root": {
+            "ci_high": -0.00492,
+            "ci_low": -0.01415,
+            "estimate": -0.00948,
+            "n_rules": 20,
+            "placebo": true,
+            "sd": 0.0023475814596215826
+          },
+          "system": {
+            "ci_high": -0.000866666666666667,
+            "ci_low": -0.008934999999999985,
+            "estimate": -0.004933333333333334,
+            "n_rules": 3,
+            "placebo": false,
+            "sd": 0.0020689048332551852
+          },
+          "user": {
+            "ci_high": -0.034986666666666666,
+            "ci_low": -0.04751999999999999,
+            "estimate": -0.041133333333333334,
+            "n_rules": 15,
+            "placebo": false,
+            "sd": 0.0031798991761713313
+          }
+        },
+        "over_under": {
+          "flat": {
+            "over": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "estimate": 0.0,
+              "sd": 0.0
+            },
+            "under": {
+              "ci_high": 0.478,
+              "ci_low": 0.4076,
+              "estimate": 0.44239999999999996,
+              "sd": 0.017930153462767686
+            }
+          },
+          "hierarchy": {
+            "over": {
+              "ci_high": 0.0012000000000000001,
+              "ci_low": 0.0,
+              "estimate": 0.0004,
+              "sd": 0.00040119860219098476
+            },
+            "under": {
+              "ci_high": 0.6372000000000001,
+              "ci_low": 0.562,
+              "estimate": 0.5996,
+              "sd": 0.01915919278783947
+            }
+          }
+        },
+        "root_floor": {
+          "ci_high": 0.418,
+          "ci_low": 0.3456,
+          "estimate": 0.38160000000000005,
+          "sd": 0.018332962105060926
+        },
+        "two_by_two": {
+          "flat": {
+            "ci_high": 0.478,
+            "ci_low": 0.4076,
+            "estimate": 0.44239999999999996,
+            "full_set": "F",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.017930153462767686
+          },
+          "hierarchy": {
+            "ci_high": 0.6376,
+            "ci_low": 0.5624,
+            "estimate": 0.6,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "C",
+            "sd": 0.019165067317846812
+          },
+          "hierarchy_full_set_isolated_rules": {
+            "ci_high": 0.6384,
+            "ci_low": 0.5628,
+            "estimate": 0.6008,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.019200630839636492
+          },
+          "mismatched_flat_full_set_conditioned_rules": {
+            "ci_high": 0.48119999999999996,
+            "ci_low": 0.41040000000000004,
+            "estimate": 0.4456,
+            "full_set": "F",
+            "mismatched": true,
+            "reference": "C",
+            "sd": 0.017999330773292656
+          }
+        },
+        "under_flags_by_top_level": {
+          "developer": {
+            "count": 20,
+            "rate": 0.008,
+            "share_of_under_flags": 0.0133422281521014
+          },
+          "guideline": {
+            "count": 84,
+            "rate": 0.0336,
+            "share_of_under_flags": 0.056037358238825885
+          },
+          "root": {
+            "count": 953,
+            "rate": 0.3812,
+            "share_of_under_flags": 0.6357571714476318
+          },
+          "system": {
+            "count": 66,
+            "rate": 0.0264,
+            "share_of_under_flags": 0.044029352901934625
+          },
+          "user": {
+            "count": 376,
+            "rate": 0.1504,
+            "share_of_under_flags": 0.25083388925950634
+          }
+        }
+      }
+    },
+    {
+      "flat": {
+        "campaign_id": "final-2026-09-luna",
+        "condition_fingerprint": "0fcaa2ed99d95253a0bcd2cb2ba92af7ab344e780db2317c33cb89d7509fb0ae",
+        "condition_id": "gpt-5.6-luna/naive-rules-above",
+        "grid_digest": "d27a2badfe387de889dab985ece516930b1af3a3426d2f4fe52b47666311c17c",
+        "individual_rule_context": "isolated",
+        "label_rule": "lenient_last_line",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+        "rule_levels_sha256": null,
+        "stack": {
+          "dates": {
+            "first_request_block": "2026-09-12T05:05:19+00:00",
+            "last_request_block": "2026-10-28T02:28:11+00:00"
+          },
+          "description": "provider (openai_batch): no inference stack recorded",
+          "kind": "provider",
+          "model_type": "openai_batch",
+          "short": "provider"
+        }
+      },
+      "hierarchy": {
+        "campaign_id": "hierarchy-aware-2026-10-luna-sum",
+        "condition_fingerprint": "8a3576aa23aa0bd7f72aa347b3a34feb87811e7569236d0fd439c721cdfb916c",
+        "condition_id": "gpt-5.6-luna/naive-hierarchy",
+        "grid_digest": "9a9d14b65ee1b65d8c1a9a0667c16bb8204d7d5f2ffa856ed4aba185acf0927d",
+        "individual_rule_context": "superiors",
+        "label_rule": "lenient_last_line",
+        "prompt_style": "naive-hierarchy",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-luna-sum",
+        "rule_levels_sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a",
+        "stack": {
+          "dates": {
+            "first_request_block": "2026-10-29T06:25:30+00:00",
+            "last_request_block": "2026-10-29T09:57:57+00:00"
+          },
+          "description": "provider (openai_batch): no inference stack recorded",
+          "kind": "provider",
+          "model_type": "openai_batch",
+          "short": "provider"
+        }
+      },
+      "judge": "gpt-5.6-luna",
+      "model_name": "gpt-5.6-luna",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "primary": {
+        "difference": {
+          "ci_high": -0.0036000000000000476,
+          "ci_low": -0.050000000000000044,
+          "estimate": -0.027200000000000002,
+          "family_size": 6,
+          "grid_digest_a": "9a9d14b65ee1b65d8c1a9a0667c16bb8204d7d5f2ffa856ed4aba185acf0927d",
+          "grid_digest_b": "d27a2badfe387de889dab985ece516930b1af3a3426d2f4fe52b47666311c17c",
+          "inner_resample": "independent",
+          "n_permutations": 100000,
+          "p_holm": 0.044619553804461955,
+          "p_value": 0.022309776902230977,
+          "sd": 0.011903130935749637,
+          "se_analytic": 0.011706168834317876,
+          "significant_holm": true,
+          "test_method": "scenario_clustered_paired_randomization_v1"
+        },
+        "difference_of": "hierarchy - flat",
+        "flat_rate": {
+          "ci_high": 0.4736,
+          "ci_low": 0.3976,
+          "estimate": 0.436,
+          "sd": 0.019373423445534867
+        },
+        "hierarchy_rate": {
+          "ci_high": 0.4448000000000001,
+          "ci_low": 0.3728,
+          "estimate": 0.4088,
+          "sd": 0.018486056279260865
+        }
+      },
+      "secondary": {
+        "level_shift": {
+          "developer": {
+            "ci_high": 0.0268,
+            "ci_low": 0.0036,
+            "estimate": 0.0148,
+            "n_rules": 1,
+            "placebo": false,
+            "sd": 0.005869118049724337
+          },
+          "guideline": {
+            "ci_high": -0.042755555555555554,
+            "ci_low": -0.0526,
+            "estimate": -0.04774444444444444,
+            "n_rules": 18,
+            "placebo": false,
+            "sd": 0.0024887456906322793
+          },
+          "root": {
+            "ci_high": 0.004420499999999994,
+            "ci_low": -0.0017599999999999998,
+            "estimate": 0.0012600000000000007,
+            "n_rules": 20,
+            "placebo": true,
+            "sd": 0.0015772339639457428
+          },
+          "system": {
+            "ci_high": -0.015198333333333357,
+            "ci_low": -0.028,
+            "estimate": -0.021533333333333335,
+            "n_rules": 3,
+            "placebo": false,
+            "sd": 0.003308104755455405
+          },
+          "user": {
+            "ci_high": -0.007973333333333332,
+            "ci_low": -0.016239999999999997,
+            "estimate": -0.012146666666666665,
+            "n_rules": 15,
+            "placebo": false,
+            "sd": 0.002125829010803811
+          }
+        },
+        "over_under": {
+          "flat": {
+            "over": {
+              "ci_high": 0.0044,
+              "ci_low": 0.0004,
+              "estimate": 0.002,
+              "sd": 0.0010565145291949372
+            },
+            "under": {
+              "ci_high": 0.47240000000000004,
+              "ci_low": 0.396,
+              "estimate": 0.434,
+              "sd": 0.01938389890192373
+            }
+          },
+          "hierarchy": {
+            "over": {
+              "ci_high": 0.002,
+              "ci_low": 0.0,
+              "estimate": 0.0008,
+              "sd": 0.0005613220380494606
+            },
+            "under": {
+              "ci_high": 0.44439999999999996,
+              "ci_low": 0.372,
+              "estimate": 0.408,
+              "sd": 0.01846117288512298
+            }
+          }
+        },
+        "root_floor": {
+          "ci_high": 0.2368,
+          "ci_low": 0.18080000000000002,
+          "estimate": 0.20840000000000003,
+          "sd": 0.01431140396070211
+        },
+        "two_by_two": {
+          "flat": {
+            "ci_high": 0.47440000000000004,
+            "ci_low": 0.398,
+            "estimate": 0.436,
+            "full_set": "F",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.019409659542567972
+          },
+          "hierarchy": {
+            "ci_high": 0.4448000000000001,
+            "ci_low": 0.3728,
+            "estimate": 0.4088,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "C",
+            "sd": 0.018486056279260865
+          },
+          "hierarchy_full_set_isolated_rules": {
+            "ci_high": 0.4924,
+            "ci_low": 0.4156,
+            "estimate": 0.454,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.019505919224645632
+          },
+          "mismatched_flat_full_set_conditioned_rules": {
+            "ci_high": 0.42720999999999987,
+            "ci_low": 0.356,
+            "estimate": 0.3916,
+            "full_set": "F",
+            "mismatched": true,
+            "reference": "C",
+            "sd": 0.01834249432281226
+          }
+        },
+        "under_flags_by_top_level": {
+          "developer": {
+            "count": 31,
+            "rate": 0.0124,
+            "share_of_under_flags": 0.030392156862745098
+          },
+          "guideline": {
+            "count": 90,
+            "rate": 0.036,
+            "share_of_under_flags": 0.08823529411764706
+          },
+          "root": {
+            "count": 519,
+            "rate": 0.2076,
+            "share_of_under_flags": 0.5088235294117647
+          },
+          "system": {
+            "count": 78,
+            "rate": 0.0312,
+            "share_of_under_flags": 0.07647058823529412
+          },
+          "user": {
+            "count": 302,
+            "rate": 0.1208,
+            "share_of_under_flags": 0.296078431372549
+          }
+        }
+      }
+    },
+    {
+      "flat": {
+        "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+        "condition_fingerprint": "806fc5b850b61bed1a5d4d5dafa07400a970b82118ade8450e1bbba397b4392a",
+        "condition_id": "claude-haiku-5-5/naive-rules-above",
+        "grid_digest": "f0dadf17ac4f10dbb449fdcae4ccee56f75c28594caef8e518d389541e891e95",
+        "individual_rule_context": "isolated",
+        "label_rule": "lenient_last_line",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+        "rule_levels_sha256": null,
+        "stack": {
+          "dates": {
+            "first_request_block": "2026-10-28T11:31:26+00:00",
+            "last_request_block": "2026-10-28T17:12:39+00:00"
+          },
+          "description": "provider (anthropic_batch): no inference stack recorded",
+          "kind": "provider",
+          "model_type": "anthropic_batch",
+          "short": "provider"
+        }
+      },
+      "hierarchy": {
+        "campaign_id": "hierarchy-aware-2026-10-haiku-sum",
+        "condition_fingerprint": "cf3206a9b45c049e46bc2601d0ce73f96c18948490e3a637685d8b6dcc2bfaab",
+        "condition_id": "claude-haiku-5-5/naive-hierarchy",
+        "grid_digest": "816c2daac6cef9568e6b309c5c791b3514c8fe4a27159bb7d5ba8e644f9e613b",
+        "individual_rule_context": "superiors",
+        "label_rule": "lenient_last_line",
+        "prompt_style": "naive-hierarchy",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-haiku-sum",
+        "rule_levels_sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a",
+        "stack": {
+          "dates": {
+            "first_request_block": "2026-10-28T13:19:57+00:00",
+            "last_request_block": "2026-10-28T17:58:51+00:00"
+          },
+          "description": "provider (anthropic_batch): no inference stack recorded",
+          "kind": "provider",
+          "model_type": "anthropic_batch",
+          "short": "provider"
+        }
+      },
+      "judge": "claude-haiku-5-5",
+      "model_name": "claude-haiku-5-5",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "primary": {
+        "difference": {
+          "ci_high": 0.05279999999999996,
+          "ci_low": 0.010000000000000009,
+          "estimate": 0.031199999999999894,
+          "family_size": 6,
+          "grid_digest_a": "816c2daac6cef9568e6b309c5c791b3514c8fe4a27159bb7d5ba8e644f9e613b",
+          "grid_digest_b": "f0dadf17ac4f10dbb449fdcae4ccee56f75c28594caef8e518d389541e891e95",
+          "inner_resample": "independent",
+          "n_permutations": 100000,
+          "p_holm": 0.014759852401475985,
+          "p_value": 0.004919950800491995,
+          "sd": 0.010917373653328899,
+          "se_analytic": 0.011022527488033264,
+          "significant_holm": true,
+          "test_method": "scenario_clustered_paired_randomization_v1"
+        },
+        "difference_of": "hierarchy - flat",
+        "flat_rate": {
+          "ci_high": 0.624,
+          "ci_low": 0.5475999999999999,
+          "estimate": 0.5856,
+          "sd": 0.019758246147874563
+        },
+        "hierarchy_rate": {
+          "ci_high": 0.654,
+          "ci_low": 0.5788,
+          "estimate": 0.6167999999999999,
+          "sd": 0.01923118157060559
+        }
+      },
+      "secondary": {
+        "level_shift": {
+          "developer": {
+            "ci_high": -0.031000000000000003,
+            "ci_low": -0.0562,
+            "estimate": -0.043199999999999995,
+            "n_rules": 1,
+            "placebo": false,
+            "sd": 0.006343120490736401
+          },
+          "guideline": {
+            "ci_high": -0.05525555555555555,
+            "ci_low": -0.06567833333333332,
+            "estimate": -0.06042222222222222,
+            "n_rules": 18,
+            "placebo": false,
+            "sd": 0.002642769286619858
+          },
+          "root": {
+            "ci_high": -0.015509750000000003,
+            "ci_low": -0.02121,
+            "estimate": -0.01832,
+            "n_rules": 20,
+            "placebo": true,
+            "sd": 0.0014591797991899422
+          },
+          "system": {
+            "ci_high": -0.010733333333333334,
+            "ci_low": -0.018466666666666666,
+            "estimate": -0.014600000000000002,
+            "n_rules": 3,
+            "placebo": false,
+            "sd": 0.0019607050248429633
+          },
+          "user": {
+            "ci_high": -0.04594666666666666,
+            "ci_low": -0.056813333333333334,
+            "estimate": -0.05142666666666666,
+            "n_rules": 15,
+            "placebo": false,
+            "sd": 0.00275141904745735
+          }
+        },
+        "over_under": {
+          "flat": {
+            "over": {
+              "ci_high": 0.006,
+              "ci_low": 0.0012000000000000001,
+              "estimate": 0.0032,
+              "sd": 0.0012613504629562713
+            },
+            "under": {
+              "ci_high": 0.6212000000000001,
+              "ci_low": 0.5424,
+              "estimate": 0.5824000000000001,
+              "sd": 0.020063558219059748
+            }
+          },
+          "hierarchy": {
+            "over": {
+              "ci_high": 0.0076,
+              "ci_low": 0.0012000000000000001,
+              "estimate": 0.004,
+              "sd": 0.001580932370470034
+            },
+            "under": {
+              "ci_high": 0.65,
+              "ci_low": 0.57479,
+              "estimate": 0.6127999999999999,
+              "sd": 0.019292619640515384
+            }
+          }
+        },
+        "root_floor": {
+          "ci_high": 0.196,
+          "ci_low": 0.146,
+          "estimate": 0.17,
+          "sd": 0.01274956988137247
+        },
+        "two_by_two": {
+          "flat": {
+            "ci_high": 0.6244,
+            "ci_low": 0.546,
+            "estimate": 0.5856,
+            "full_set": "F",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.02002335131026772
+          },
+          "hierarchy": {
+            "ci_high": 0.654,
+            "ci_low": 0.5788,
+            "estimate": 0.6167999999999999,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "C",
+            "sd": 0.01923118157060559
+          },
+          "hierarchy_full_set_isolated_rules": {
+            "ci_high": 0.68641,
+            "ci_low": 0.6092000000000001,
+            "estimate": 0.6484000000000001,
+            "full_set": "F_H",
+            "mismatched": false,
+            "reference": "I",
+            "sd": 0.019674117167852792
+          },
+          "mismatched_flat_full_set_conditioned_rules": {
+            "ci_high": 0.5976,
+            "ci_low": 0.5216000000000001,
+            "estimate": 0.56,
+            "full_set": "F",
+            "mismatched": true,
+            "reference": "C",
+            "sd": 0.019331385312429113
+          }
+        },
+        "under_flags_by_top_level": {
+          "developer": {
+            "count": 5,
+            "rate": 0.002,
+            "share_of_under_flags": 0.0032637075718015664
+          },
+          "guideline": {
+            "count": 404,
+            "rate": 0.1616,
+            "share_of_under_flags": 0.26370757180156656
+          },
+          "root": {
+            "count": 415,
+            "rate": 0.166,
+            "share_of_under_flags": 0.27088772845953
+          },
+          "system": {
+            "count": 448,
+            "rate": 0.1792,
+            "share_of_under_flags": 0.2924281984334204
+          },
+          "user": {
+            "count": 260,
+            "rate": 0.104,
+            "share_of_under_flags": 0.16971279373368145
+          }
+        }
+      }
+    }
+  ],
+  "levels": {
+    "field": "rule_type",
+    "order": [
+      "root",
+      "system",
+      "developer",
+      "user",
+      "guideline"
+    ],
+    "rules": {
+      "developer": [
+        "Rule 1"
+      ],
+      "guideline": [
+        "Rule 2",
+        "Rule 3",
+        "Rule 4",
+        "Rule 5",
+        "Rule 6",
+        "Rule 7",
+        "Rule 8",
+        "Rule 9",
+        "Rule 10",
+        "Rule 11",
+        "Rule 12",
+        "Rule 13",
+        "Rule 14",
+        "Rule 15",
+        "Rule 16",
+        "Rule 17",
+        "Rule 18",
+        "Rule 19"
+      ],
+      "root": [
+        "Rule 20",
+        "Rule 21",
+        "Rule 22",
+        "Rule 23",
+        "Rule 24",
+        "Rule 25",
+        "Rule 26",
+        "Rule 27",
+        "Rule 28",
+        "Rule 29",
+        "Rule 30",
+        "Rule 31",
+        "Rule 32",
+        "Rule 33",
+        "Rule 34",
+        "Rule 35",
+        "Rule 36",
+        "Rule 37",
+        "Rule 38",
+        "Rule 39"
+      ],
+      "system": [
+        "Rule 40",
+        "Rule 41",
+        "Rule 42"
+      ],
+      "user": [
+        "Rule 43",
+        "Rule 44",
+        "Rule 45",
+        "Rule 46",
+        "Rule 47",
+        "Rule 48",
+        "Rule 49",
+        "Rule 50",
+        "Rule 51",
+        "Rule 52",
+        "Rule 53",
+        "Rule 54",
+        "Rule 55",
+        "Rule 56",
+        "Rule 57"
+      ]
+    },
+    "source": "the OpenAI Model Spec's chain of command (its levels of authority, highest first: root, system, developer, user, guideline); each rule's level is its rule_type in data/rules/modelspec/openai_rules_all_full.jsonl"
+  },
+  "multiplicity": "primary: one family, the paired differences hierarchy - flat of the judges analysed, each with its scenario-clustered paired randomization p, Holm-adjusted across them (alpha 0.05). secondary: descriptive, intervals only, no test and no multiplicity family",
+  "pairing": "The flat and hierarchy arms are paired by (scenario, decoder draw index). The primary contrast's unit is the scenario (its mean over its draws), each arm's draws resampled independently (two generations); the secondary cells pair draw d of one arm with draw d of the other, by index only (each condition's seeds derive from its own id), and share their decoder resample by that index.",
+  "provenance": {
+    "allow_incomplete": false,
+    "approved_prompts_sha256": {
+      "approved_full_set_hier.txt": "e42c8e6069b02f2aab7885ad8bce3a3b772d8c2554e66a06a00551e920cb1afe",
+      "approved_rule28_root_hier.txt": "3497da55e9c69501a61cf5e2a7b805a2eeb12a6b1667eacf8d29f5e5b965d99c",
+      "approved_rule43_user_hier.txt": "de1f51c90170b7293cf2d4c7ad9dba9184342002dad2a4bb1102b47024b45f33"
+    },
+    "bootstrap": {
+      "ci_level": 0.95,
+      "n_permutations": 100000,
+      "n_resamples": 10000,
+      "seed": 16
+    },
+    "campaigns": [
+      {
+        "campaign_id": "hierarchy-aware-2026-10",
+        "conditions": [
+          "Olmo-3-32B-Think/naive-hierarchy",
+          "Olmo-3-32B-Think/naive-rules-above",
+          "gemma-4-31B-it/naive-hierarchy",
+          "gemma-4-31B-it/naive-rules-above",
+          "gpt-oss-120b/naive-hierarchy",
+          "gpt-oss-120b/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:04:34+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097/aggregate/estimates.json",
+        "estimates_sha256": "2abbb15705e139e0ad1dcc2edcc26e702782c65d7b3573f6375db8bb9f0ed437",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+        "conditions": [
+          "Muse-Glimmer-30B/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:03:16+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097/aggregate/estimates.json",
+        "estimates_sha256": "f4f93185f95cc206cd2f921020a9afba7ec110a52d41bead66a23a41aaa1a304",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "hierarchy-aware-2026-10-glimmer",
+        "conditions": [
+          "Muse-Glimmer-30B/naive-hierarchy"
+        ],
+        "created_at": "2026-10-29T15:14:28+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-glimmer/aggregate/estimates.json",
+        "estimates_sha256": "9f4f17b392368b5d1d7c1b7476c8be2e3c9ef3a9613d1ebfa09492bc8fbef5c8",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-glimmer",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+        "conditions": [
+          "claude-haiku-5-5/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:01:41+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum/aggregate/estimates.json",
+        "estimates_sha256": "345e4dbeb5a9b9e93f371cbf6b2d8e1855270ec39d7a6d291a73df444e966696",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "hierarchy-aware-2026-10-haiku-sum",
+        "conditions": [
+          "claude-haiku-5-5/naive-hierarchy"
+        ],
+        "created_at": "2026-10-29T09:56:59+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-haiku-sum/aggregate/estimates.json",
+        "estimates_sha256": "c4e6a3917d9e588043c691afff10fd758b642e2b45b7fc837e5cf645381f2e33",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/hierarchy-aware-2026-10-haiku-sum",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "final-2026-09-luna",
+        "conditions": [
+          "gpt-5.6-luna/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:03:40+00:00",
+        "estimates": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+        "estimates_sha256": "9c5793739ccd2bb8e5c68d394e4a55d0091ce4325c2fe351656b8ea58bd431f7",
+        "label_replay": {
+          "code_state_sha256": "47d982a235760d20082dd7a3bc0e177923b053ea053b96e5e4234a991572e77b",
+          "label_rule": "lenient_last_line",
+          "name": "label_replay.json",
+          "sha256": "846c49ab78cf53dfeaa5c00f3e13d34cec98004219858bc6e9b9c4db9c610bf5",
+          "source_label_rule": "lenient",
+          "tool": "smrc.sampling.label_replay"
+        },
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "hierarchy-aware-2026-10-luna-sum",
+        "conditions": [
+          "gpt-5.6-luna/naive-hierarchy"
+        ],
+        "created_at": "2026-10-29T10:36:59+00:00",
+        "estimates": "artifact://sampling/hierarchy-aware-2026-10-luna-sum/aggregate/estimates.json",
+        "estimates_sha256": "3118bce70e249fc4f1b7e511a2159c1d2bd8d48acade1954e3af2f62d19da5e0",
+        "label_replay": null,
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/hierarchy-aware-2026-10-luna-sum",
+        "state": "complete"
+      }
+    ],
+    "inference_method": "hierarchical_bootstrap_v2",
+    "interval_basis": "scenario_cluster_bootstrap",
+    "levels": {
+      "name": "openai_rules_all_full.jsonl",
+      "sha256": "99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a"
+    },
+    "n_decoder_draws": 5,
+    "n_scenarios": 500,
+    "pairs": [
+      {
+        "flat": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "Olmo-3-32B-Think/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "Olmo-3-32B-Think/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gemma-4-31B-it/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gemma-4-31B-it/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gpt-oss-120b/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-pop-a22af097",
+          "gpt-oss-120b/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+          "Muse-Glimmer-30B/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-glimmer",
+          "Muse-Glimmer-30B/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+          "claude-haiku-5-5/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-haiku-sum",
+          "claude-haiku-5-5/naive-hierarchy"
+        ]
+      },
+      {
+        "flat": [
+          "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+          "gpt-5.6-luna/naive-rules-above"
+        ],
+        "hierarchy": [
+          "artifact://sampling/hierarchy-aware-2026-10-luna-sum",
+          "gpt-5.6-luna/naive-hierarchy"
+        ]
+      }
+    ],
+    "ruleset": {
+      "name": "openai_rules_all.jsonl",
+      "sha256": "a99062f00a9ff616cba4d548e9cd59460dc4ee52fc46e3de4a4eb2579a260228"
+    },
+    "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462",
+    "test_method": "scenario_clustered_paired_randomization_v1"
+  },
+  "schema_version": 2,
+  "secondary": "Descriptive, no test: one joint scenario-cluster bootstrap per judge over the 2x2, the over/under split, the root floor and the per-level shift (their decoder resample shared by draw index). The 2x2's flat and hierarchy cells are the primary rates, with this bootstrap's intervals; the primary intervals are the estimates'."
+}

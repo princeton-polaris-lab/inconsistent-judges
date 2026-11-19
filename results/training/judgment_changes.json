@@ -1,0 +1,1318 @@
+{
+  "definition": "Decoder draw 0 of each arm, as its accepted bundle outcomes hold it. Change rate: the share of paired judgments whose label differs between the base arm and the trained arm (ruleforge.evaluate.report.judgment_transitions, rows the base, columns the trained): individual-rule judgments paired by scenario and rule, full-ruleset judgments by scenario, over the pairs whose two labels are both valid (yes, unsure or no; every pair, since an accepted bundle holds no other label). Counts: the trained arm's labels at the same draw. Each arm's draw is its own temperature-1 sample, so a change rate holds the decoder's sampling variation beside the training's. Draw to draw: each arm's change rate between two of its own draws, paired and counted alike, for every pair of its draws, pooled over the pairs (each pair of draws holds the same n, so the pooled rate is their mean), with the lowest and the highest pair's rate: the change sampling alone gives. The aggregated rule judgment (aggregate; anchors in transitions) is a bundle's largest rule judgment under no < unsure < yes, paired by scenario and counted like the full-ruleset judgments; a bundle whose stored max_rule_phi or contradiction is not its labels' is refused.",
+  "draw": 0,
+  "families": {
+    "gemma": {
+      "changes": {
+        "aggregate": {
+          "change_rate": 0.072,
+          "changed": 36,
+          "label": "Aggregated rule judgments",
+          "n": 500
+        },
+        "full_set": {
+          "change_rate": 0.364,
+          "changed": 182,
+          "label": "Full-ruleset judgments",
+          "n": 500
+        },
+        "per_rule": {
+          "change_rate": 0.037087719298245614,
+          "changed": 1057,
+          "label": "Individual-rule judgments",
+          "n": 28500
+        }
+      },
+      "draw_to_draw": {
+        "base": {
+          "aggregate": {
+            "change_rate": 0.0644,
+            "changed": 322,
+            "max_change_rate": 0.078,
+            "min_change_rate": 0.048,
+            "n": 5000
+          },
+          "full_set": {
+            "change_rate": 0.0528,
+            "changed": 264,
+            "max_change_rate": 0.072,
+            "min_change_rate": 0.038,
+            "n": 5000
+          },
+          "n_pairs": 10,
+          "pairs": [
+            {
+              "aggregate": {
+                "changed": 28,
+                "n": 500
+              },
+              "draws": [
+                0,
+                1
+              ],
+              "full_set": {
+                "changed": 20,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1069,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 35,
+                "n": 500
+              },
+              "draws": [
+                0,
+                2
+              ],
+              "full_set": {
+                "changed": 27,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1016,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 36,
+                "n": 500
+              },
+              "draws": [
+                0,
+                3
+              ],
+              "full_set": {
+                "changed": 23,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1000,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 24,
+                "n": 500
+              },
+              "draws": [
+                0,
+                4
+              ],
+              "full_set": {
+                "changed": 25,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1013,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 35,
+                "n": 500
+              },
+              "draws": [
+                1,
+                2
+              ],
+              "full_set": {
+                "changed": 33,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1030,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 32,
+                "n": 500
+              },
+              "draws": [
+                1,
+                3
+              ],
+              "full_set": {
+                "changed": 19,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1067,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 30,
+                "n": 500
+              },
+              "draws": [
+                1,
+                4
+              ],
+              "full_set": {
+                "changed": 25,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1023,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 33,
+                "n": 500
+              },
+              "draws": [
+                2,
+                3
+              ],
+              "full_set": {
+                "changed": 30,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1034,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 39,
+                "n": 500
+              },
+              "draws": [
+                2,
+                4
+              ],
+              "full_set": {
+                "changed": 36,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1029,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 30,
+                "n": 500
+              },
+              "draws": [
+                3,
+                4
+              ],
+              "full_set": {
+                "changed": 26,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1026,
+                "n": 28500
+              }
+            }
+          ],
+          "per_rule": {
+            "change_rate": 0.036164912280701754,
+            "changed": 10307,
+            "max_change_rate": 0.03750877192982456,
+            "min_change_rate": 0.03508771929824561,
+            "n": 285000
+          }
+        },
+        "final": {
+          "aggregate": {
+            "change_rate": 0.0712,
+            "changed": 356,
+            "max_change_rate": 0.084,
+            "min_change_rate": 0.056,
+            "n": 5000
+          },
+          "full_set": {
+            "change_rate": 0.134,
+            "changed": 670,
+            "max_change_rate": 0.15,
+            "min_change_rate": 0.104,
+            "n": 5000
+          },
+          "n_pairs": 10,
+          "pairs": [
+            {
+              "aggregate": {
+                "changed": 42,
+                "n": 500
+              },
+              "draws": [
+                0,
+                1
+              ],
+              "full_set": {
+                "changed": 68,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1014,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 40,
+                "n": 500
+              },
+              "draws": [
+                0,
+                2
+              ],
+              "full_set": {
+                "changed": 61,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 971,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 28,
+                "n": 500
+              },
+              "draws": [
+                0,
+                3
+              ],
+              "full_set": {
+                "changed": 69,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 973,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 37,
+                "n": 500
+              },
+              "draws": [
+                0,
+                4
+              ],
+              "full_set": {
+                "changed": 66,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1027,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 34,
+                "n": 500
+              },
+              "draws": [
+                1,
+                2
+              ],
+              "full_set": {
+                "changed": 71,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1004,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 38,
+                "n": 500
+              },
+              "draws": [
+                1,
+                3
+              ],
+              "full_set": {
+                "changed": 73,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1066,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 35,
+                "n": 500
+              },
+              "draws": [
+                1,
+                4
+              ],
+              "full_set": {
+                "changed": 64,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1005,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 30,
+                "n": 500
+              },
+              "draws": [
+                2,
+                3
+              ],
+              "full_set": {
+                "changed": 52,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1008,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 33,
+                "n": 500
+              },
+              "draws": [
+                2,
+                4
+              ],
+              "full_set": {
+                "changed": 71,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1012,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 39,
+                "n": 500
+              },
+              "draws": [
+                3,
+                4
+              ],
+              "full_set": {
+                "changed": 75,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 1068,
+                "n": 28500
+              }
+            }
+          ],
+          "per_rule": {
+            "change_rate": 0.03560701754385965,
+            "changed": 10148,
+            "max_change_rate": 0.03747368421052632,
+            "min_change_rate": 0.034070175438596494,
+            "n": 285000
+          }
+        }
+      },
+      "labels": {
+        "base": "Gemma 4 31B-it",
+        "final": "GRPO (checkpoint-600)"
+      },
+      "member": "final",
+      "member_counts": {
+        "aggregate": {
+          "n": 500,
+          "no": 32,
+          "unsure": 0,
+          "yes": 468
+        },
+        "full_set": {
+          "n": 500,
+          "no": 208,
+          "unsure": 0,
+          "yes": 292
+        },
+        "per_rule": {
+          "n": 28500,
+          "no": 26033,
+          "unsure": 5,
+          "yes": 2462
+        }
+      },
+      "provenance": {
+        "arms": {
+          "base": {
+            "campaign_id": "fig5-gemma-2026-10-07",
+            "condition_fingerprint": "13fdb00c28c33299367d7fc0efcceff59c7a68b46e405660e01f9053c4d34903",
+            "condition_id": "gemma-4-31B-it/figure5/base",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-gemma-2026-10-07-pop-a22af097"
+          },
+          "final": {
+            "campaign_id": "fig5-gemma-ckpt600-2026-10-09",
+            "condition_fingerprint": "aba0c327ad7864721bc13904beb62f8b457c76f5845880472554f292e83f03e6",
+            "condition_id": "gemma-4-31B-it/figure5/final",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-gemma-ckpt600-2026-10-09-pop-a22af097"
+          }
+        },
+        "campaigns": [
+          {
+            "campaign_id": "fig5-gemma-2026-10-07",
+            "created_at": "2026-10-29T09:02:10+00:00",
+            "estimates": "artifact://sampling/fig5-gemma-2026-10-07-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "61729f6e8671ee5804b904c23b59da3112e4e1f84c4c7b5b22b4592950fa973c",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-gemma-2026-10-07-pop-a22af097",
+            "state": "complete"
+          },
+          {
+            "campaign_id": "fig5-gemma-ckpt600-2026-10-09",
+            "created_at": "2026-10-29T09:01:35+00:00",
+            "estimates": "artifact://sampling/fig5-gemma-ckpt600-2026-10-09-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "63fd5434d7a16f2d1fb1d5cb96f405f9420fb2726274cd92d5bb5fc6532c1952",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-gemma-ckpt600-2026-10-09-pop-a22af097",
+            "state": "complete"
+          }
+        ],
+        "n_decoder_draws": 5,
+        "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462"
+      },
+      "reference": "base",
+      "transitions": {
+        "anchors": {
+          "no": {
+            "no": 16,
+            "unsure": 0,
+            "yes": 20
+          },
+          "unsure": {
+            "no": 0,
+            "unsure": 0,
+            "yes": 0
+          },
+          "yes": {
+            "no": 16,
+            "unsure": 0,
+            "yes": 448
+          }
+        },
+        "base_marginals": {
+          "anchors": {
+            "no": 36,
+            "unsure": 0,
+            "yes": 464
+          },
+          "full_set": {
+            "no": 388,
+            "unsure": 0,
+            "yes": 112
+          },
+          "per_rule": {
+            "no": 26057,
+            "unsure": 9,
+            "yes": 2434
+          }
+        },
+        "full_set": {
+          "no": {
+            "no": 207,
+            "unsure": 0,
+            "yes": 181
+          },
+          "unsure": {
+            "no": 0,
+            "unsure": 0,
+            "yes": 0
+          },
+          "yes": {
+            "no": 1,
+            "unsure": 0,
+            "yes": 111
+          }
+        },
+        "n_base": 500,
+        "n_common": 500,
+        "n_tuned": 500,
+        "per_rule": {
+          "no": {
+            "no": 25518,
+            "unsure": 4,
+            "yes": 535
+          },
+          "unsure": {
+            "no": 7,
+            "unsure": 0,
+            "yes": 2
+          },
+          "yes": {
+            "no": 508,
+            "unsure": 1,
+            "yes": 1925
+          }
+        },
+        "per_rule_flips": {
+          "Rule 1": 8,
+          "Rule 10": 39,
+          "Rule 11": 34,
+          "Rule 12": 4,
+          "Rule 13": 1,
+          "Rule 14": 36,
+          "Rule 15": 4,
+          "Rule 16": 60,
+          "Rule 17": 14,
+          "Rule 2": 4,
+          "Rule 20": 24,
+          "Rule 21": 30,
+          "Rule 22": 54,
+          "Rule 23": 10,
+          "Rule 24": 16,
+          "Rule 25": 7,
+          "Rule 26": 19,
+          "Rule 28": 12,
+          "Rule 29": 1,
+          "Rule 3": 33,
+          "Rule 32": 1,
+          "Rule 34": 9,
+          "Rule 35": 4,
+          "Rule 36": 6,
+          "Rule 37": 3,
+          "Rule 39": 3,
+          "Rule 4": 114,
+          "Rule 40": 9,
+          "Rule 42": 34,
+          "Rule 43": 7,
+          "Rule 44": 5,
+          "Rule 45": 38,
+          "Rule 46": 26,
+          "Rule 47": 20,
+          "Rule 48": 19,
+          "Rule 49": 21,
+          "Rule 5": 64,
+          "Rule 50": 44,
+          "Rule 51": 11,
+          "Rule 52": 6,
+          "Rule 53": 15,
+          "Rule 54": 8,
+          "Rule 55": 114,
+          "Rule 56": 17,
+          "Rule 6": 30,
+          "Rule 7": 2,
+          "Rule 8": 1,
+          "Rule 9": 16
+        },
+        "summaries": {
+          "anchors": {
+            "chance_agreement": 0.873216,
+            "kappa": 0.4321049974760226,
+            "n": 500,
+            "unchanged": 464,
+            "unchanged_fraction": 0.928
+          },
+          "full_set": {
+            "chance_agreement": 0.453632,
+            "kappa": 0.333782359142556,
+            "n": 500,
+            "unchanged": 318,
+            "unchanged_fraction": 0.636
+          },
+          "per_rule": {
+            "chance_agreement": 0.842517000923361,
+            "kappa": 0.7644969964015169,
+            "n": 28500,
+            "unchanged": 27443,
+            "unchanged_fraction": 0.9629122807017544
+          }
+        }
+      }
+    },
+    "qwen": {
+      "changes": {
+        "aggregate": {
+          "change_rate": 0.076,
+          "changed": 38,
+          "label": "Aggregated rule judgments",
+          "n": 500
+        },
+        "full_set": {
+          "change_rate": 0.816,
+          "changed": 408,
+          "label": "Full-ruleset judgments",
+          "n": 500
+        },
+        "per_rule": {
+          "change_rate": 0.10287719298245614,
+          "changed": 2932,
+          "label": "Individual-rule judgments",
+          "n": 28500
+        }
+      },
+      "draw_to_draw": {
+        "base": {
+          "aggregate": {
+            "change_rate": 0.1008,
+            "changed": 504,
+            "max_change_rate": 0.12,
+            "min_change_rate": 0.084,
+            "n": 5000
+          },
+          "full_set": {
+            "change_rate": 0.1928,
+            "changed": 964,
+            "max_change_rate": 0.214,
+            "min_change_rate": 0.172,
+            "n": 5000
+          },
+          "n_pairs": 10,
+          "pairs": [
+            {
+              "aggregate": {
+                "changed": 53,
+                "n": 500
+              },
+              "draws": [
+                0,
+                1
+              ],
+              "full_set": {
+                "changed": 91,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2803,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 45,
+                "n": 500
+              },
+              "draws": [
+                0,
+                2
+              ],
+              "full_set": {
+                "changed": 95,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2863,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 46,
+                "n": 500
+              },
+              "draws": [
+                0,
+                3
+              ],
+              "full_set": {
+                "changed": 102,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2882,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 42,
+                "n": 500
+              },
+              "draws": [
+                0,
+                4
+              ],
+              "full_set": {
+                "changed": 90,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2803,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 58,
+                "n": 500
+              },
+              "draws": [
+                1,
+                2
+              ],
+              "full_set": {
+                "changed": 96,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2870,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 60,
+                "n": 500
+              },
+              "draws": [
+                1,
+                3
+              ],
+              "full_set": {
+                "changed": 93,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2867,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 51,
+                "n": 500
+              },
+              "draws": [
+                1,
+                4
+              ],
+              "full_set": {
+                "changed": 105,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2788,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 50,
+                "n": 500
+              },
+              "draws": [
+                2,
+                3
+              ],
+              "full_set": {
+                "changed": 99,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2878,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 48,
+                "n": 500
+              },
+              "draws": [
+                2,
+                4
+              ],
+              "full_set": {
+                "changed": 107,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2861,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 51,
+                "n": 500
+              },
+              "draws": [
+                3,
+                4
+              ],
+              "full_set": {
+                "changed": 86,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2788,
+                "n": 28500
+              }
+            }
+          ],
+          "per_rule": {
+            "change_rate": 0.09965964912280702,
+            "changed": 28403,
+            "max_change_rate": 0.10112280701754386,
+            "min_change_rate": 0.09782456140350877,
+            "n": 285000
+          }
+        },
+        "pick": {
+          "aggregate": {
+            "change_rate": 0.0874,
+            "changed": 437,
+            "max_change_rate": 0.11,
+            "min_change_rate": 0.074,
+            "n": 5000
+          },
+          "full_set": {
+            "change_rate": 0.0184,
+            "changed": 92,
+            "max_change_rate": 0.02,
+            "min_change_rate": 0.016,
+            "n": 5000
+          },
+          "n_pairs": 10,
+          "pairs": [
+            {
+              "aggregate": {
+                "changed": 44,
+                "n": 500
+              },
+              "draws": [
+                0,
+                1
+              ],
+              "full_set": {
+                "changed": 9,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2995,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 40,
+                "n": 500
+              },
+              "draws": [
+                0,
+                2
+              ],
+              "full_set": {
+                "changed": 8,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2966,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 43,
+                "n": 500
+              },
+              "draws": [
+                0,
+                3
+              ],
+              "full_set": {
+                "changed": 9,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 3011,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 55,
+                "n": 500
+              },
+              "draws": [
+                0,
+                4
+              ],
+              "full_set": {
+                "changed": 9,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2959,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 37,
+                "n": 500
+              },
+              "draws": [
+                1,
+                2
+              ],
+              "full_set": {
+                "changed": 9,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2945,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 39,
+                "n": 500
+              },
+              "draws": [
+                1,
+                3
+              ],
+              "full_set": {
+                "changed": 10,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2976,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 46,
+                "n": 500
+              },
+              "draws": [
+                1,
+                4
+              ],
+              "full_set": {
+                "changed": 10,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2959,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 41,
+                "n": 500
+              },
+              "draws": [
+                2,
+                3
+              ],
+              "full_set": {
+                "changed": 9,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2947,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 47,
+                "n": 500
+              },
+              "draws": [
+                2,
+                4
+              ],
+              "full_set": {
+                "changed": 9,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2912,
+                "n": 28500
+              }
+            },
+            {
+              "aggregate": {
+                "changed": 45,
+                "n": 500
+              },
+              "draws": [
+                3,
+                4
+              ],
+              "full_set": {
+                "changed": 10,
+                "n": 500
+              },
+              "per_rule": {
+                "changed": 2899,
+                "n": 28500
+              }
+            }
+          ],
+          "per_rule": {
+            "change_rate": 0.10375087719298245,
+            "changed": 29569,
+            "max_change_rate": 0.10564912280701755,
+            "min_change_rate": 0.10171929824561403,
+            "n": 285000
+          }
+        }
+      },
+      "labels": {
+        "base": "Qwen3-8B",
+        "pick": "GRPO (checkpoint-300)"
+      },
+      "member": "pick",
+      "member_counts": {
+        "aggregate": {
+          "n": 500,
+          "no": 4,
+          "unsure": 27,
+          "yes": 469
+        },
+        "full_set": {
+          "n": 500,
+          "no": 5,
+          "unsure": 0,
+          "yes": 495
+        },
+        "per_rule": {
+          "n": 28500,
+          "no": 25631,
+          "unsure": 1180,
+          "yes": 1689
+        }
+      },
+      "provenance": {
+        "arms": {
+          "base": {
+            "campaign_id": "fig5-grpo-v2-fp32-2026-09-26",
+            "condition_fingerprint": "579c9b916068568b4ea1aa4356bf69095913317b4baa34675b2d37ce1f52b061",
+            "condition_id": "Qwen3-8B/figure5/base",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097"
+          },
+          "pick": {
+            "campaign_id": "fig5-qwen-mix-2026-10-11-checkpoint-300",
+            "condition_fingerprint": "f29ee24b57c366536a1550e237d6e15dcdbde35cde7a0f0a26a466538fc017f0",
+            "condition_id": "Qwen3-8B/figure5/pick",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097"
+          }
+        },
+        "campaigns": [
+          {
+            "campaign_id": "fig5-grpo-v2-fp32-2026-09-26",
+            "created_at": "2026-10-29T09:02:09+00:00",
+            "estimates": "artifact://sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "48407fa7bf5844c0ff3f16d1073eae572700374675ac722f3f237671d1f1b55a",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097",
+            "state": "complete"
+          },
+          {
+            "campaign_id": "fig5-qwen-mix-2026-10-11-checkpoint-300",
+            "created_at": "2026-10-29T09:02:04+00:00",
+            "estimates": "artifact://sampling/fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "35b7ea36190fd4f069a3cfbc68e84841d38e02669fbcddeaee7668b071cd122f",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097",
+            "state": "complete"
+          }
+        ],
+        "n_decoder_draws": 5,
+        "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462"
+      },
+      "reference": "base",
+      "transitions": {
+        "anchors": {
+          "no": {
+            "no": 2,
+            "unsure": 3,
+            "yes": 5
+          },
+          "unsure": {
+            "no": 0,
+            "unsure": 4,
+            "yes": 8
+          },
+          "yes": {
+            "no": 2,
+            "unsure": 20,
+            "yes": 456
+          }
+        },
+        "base_marginals": {
+          "anchors": {
+            "no": 10,
+            "unsure": 12,
+            "yes": 478
+          },
+          "full_set": {
+            "no": 407,
+            "unsure": 6,
+            "yes": 87
+          },
+          "per_rule": {
+            "no": 25760,
+            "unsure": 1024,
+            "yes": 1716
+          }
+        },
+        "full_set": {
+          "no": {
+            "no": 5,
+            "unsure": 0,
+            "yes": 402
+          },
+          "unsure": {
+            "no": 0,
+            "unsure": 0,
+            "yes": 6
+          },
+          "yes": {
+            "no": 0,
+            "unsure": 0,
+            "yes": 87
+          }
+        },
+        "n_base": 500,
+        "n_common": 500,
+        "n_tuned": 500,
+        "per_rule": {
+          "no": {
+            "no": 24360,
+            "unsure": 737,
+            "yes": 663
+          },
+          "unsure": {
+            "no": 604,
+            "unsure": 301,
+            "yes": 119
+          },
+          "yes": {
+            "no": 667,
+            "unsure": 142,
+            "yes": 907
+          }
+        },
+        "per_rule_flips": {
+          "Rule 1": 50,
+          "Rule 10": 107,
+          "Rule 11": 13,
+          "Rule 12": 7,
+          "Rule 13": 6,
+          "Rule 14": 191,
+          "Rule 15": 98,
+          "Rule 16": 182,
+          "Rule 17": 75,
+          "Rule 18": 4,
+          "Rule 19": 3,
+          "Rule 2": 4,
+          "Rule 20": 36,
+          "Rule 21": 57,
+          "Rule 22": 30,
+          "Rule 23": 62,
+          "Rule 24": 102,
+          "Rule 25": 16,
+          "Rule 26": 32,
+          "Rule 27": 1,
+          "Rule 28": 27,
+          "Rule 29": 3,
+          "Rule 3": 154,
+          "Rule 30": 14,
+          "Rule 31": 7,
+          "Rule 32": 2,
+          "Rule 33": 1,
+          "Rule 34": 17,
+          "Rule 35": 16,
+          "Rule 36": 12,
+          "Rule 37": 7,
+          "Rule 38": 4,
+          "Rule 39": 25,
+          "Rule 4": 172,
+          "Rule 40": 39,
+          "Rule 41": 1,
+          "Rule 42": 186,
+          "Rule 43": 9,
+          "Rule 44": 17,
+          "Rule 45": 69,
+          "Rule 46": 168,
+          "Rule 47": 9,
+          "Rule 48": 4,
+          "Rule 49": 45,
+          "Rule 5": 108,
+          "Rule 50": 62,
+          "Rule 51": 36,
+          "Rule 52": 30,
+          "Rule 53": 37,
+          "Rule 54": 107,
+          "Rule 55": 195,
+          "Rule 56": 58,
+          "Rule 57": 4,
+          "Rule 6": 144,
+          "Rule 7": 19,
+          "Rule 8": 32,
+          "Rule 9": 16
+        },
+        "summaries": {
+          "anchors": {
+            "chance_agreement": 0.898184,
+            "kappa": 0.2535554333307148,
+            "n": 500,
+            "unchanged": 462,
+            "unchanged_fraction": 0.924
+          },
+          "full_set": {
+            "chance_agreement": 0.1804,
+            "kappa": 0.004392386530014632,
+            "n": 500,
+            "unchanged": 92,
+            "unchanged_fraction": 0.184
+          },
+          "per_rule": {
+            "chance_agreement": 0.8179269978454909,
+            "kappa": 0.4349673385670136,
+            "n": 28500,
+            "unchanged": 25568,
+            "unchanged_fraction": 0.8971228070175439
+          }
+        }
+      }
+    }
+  },
+  "population": "pop-a22af097",
+  "schema_version": 1,
+  "source": "judgment_changes"
+}

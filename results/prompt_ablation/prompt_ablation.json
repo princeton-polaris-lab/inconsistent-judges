@@ -1,0 +1,2588 @@
+{
+  "bars": {
+    "Olmo3-32B": {
+      "per_bar": {
+        "encouraged": {
+          "ci_high": 0.7544,
+          "ci_low": 0.6932,
+          "degenerate": false,
+          "mean": 0.7243999999999999,
+          "n": 500
+        },
+        "forced": {
+          "ci_high": 0.6871999999999999,
+          "ci_low": 0.6248,
+          "degenerate": false,
+          "mean": 0.6564000000000001,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0072,
+          "ci_low": 0.002,
+          "degenerate": false,
+          "mean": 0.0044,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.78,
+          "ci_low": 0.7212000000000001,
+          "degenerate": false,
+          "mean": 0.7507999999999999,
+          "n": 500
+        }
+      }
+    },
+    "claude-haiku-5-5": {
+      "per_bar": {
+        "encouraged": {
+          "ci_high": 0.6227999999999999,
+          "ci_low": 0.5456,
+          "degenerate": false,
+          "mean": 0.5844,
+          "n": 500
+        },
+        "forced": {
+          "ci_high": 0.65201,
+          "ci_low": 0.5771999999999999,
+          "degenerate": false,
+          "mean": 0.6152000000000001,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.04160000000000001,
+          "ci_low": 0.026799999999999997,
+          "degenerate": false,
+          "mean": 0.034,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.624,
+          "ci_low": 0.5475999999999999,
+          "degenerate": false,
+          "mean": 0.5856,
+          "n": 500
+        }
+      }
+    },
+    "gemma4-31b": {
+      "per_bar": {
+        "encouraged": {
+          "ci_high": 0.6971999999999999,
+          "ci_low": 0.6287999999999999,
+          "degenerate": false,
+          "mean": 0.6632,
+          "n": 500
+        },
+        "forced": {
+          "ci_high": 0.7544,
+          "ci_low": 0.6844000000000001,
+          "degenerate": false,
+          "mean": 0.7195999999999999,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "degenerate": true,
+          "mean": 0.0,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.7552000000000001,
+          "ci_low": 0.6852,
+          "degenerate": false,
+          "mean": 0.7203999999999999,
+          "n": 500
+        }
+      }
+    },
+    "gpt-5.6-luna": {
+      "per_bar": {
+        "encouraged": {
+          "ci_high": 0.4516,
+          "ci_low": 0.37360000000000004,
+          "degenerate": false,
+          "mean": 0.4124,
+          "n": 500
+        },
+        "forced": {
+          "ci_high": 0.4388,
+          "ci_low": 0.3624,
+          "degenerate": false,
+          "mean": 0.4004,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "degenerate": true,
+          "mean": 0.0,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.4736,
+          "ci_low": 0.3976,
+          "degenerate": false,
+          "mean": 0.436,
+          "n": 500
+        }
+      }
+    },
+    "gpt-oss-120b": {
+      "per_bar": {
+        "encouraged": {
+          "ci_high": 0.5468,
+          "ci_low": 0.4764,
+          "degenerate": false,
+          "mean": 0.512,
+          "n": 500
+        },
+        "forced": {
+          "ci_high": 0.5072,
+          "ci_low": 0.436,
+          "degenerate": false,
+          "mean": 0.4724,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.0012000000000000001,
+          "ci_low": 0.0,
+          "degenerate": false,
+          "mean": 0.0004,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.6632,
+          "ci_low": 0.592,
+          "degenerate": false,
+          "mean": 0.6276,
+          "n": 500
+        }
+      }
+    },
+    "muse-glimmer-30b": {
+      "per_bar": {
+        "encouraged": {
+          "ci_high": 0.416,
+          "ci_low": 0.34880000000000005,
+          "degenerate": false,
+          "mean": 0.3824,
+          "n": 500
+        },
+        "forced": {
+          "ci_high": 0.5404,
+          "ci_low": 0.46479000000000004,
+          "degenerate": false,
+          "mean": 0.5024000000000001,
+          "n": 500
+        },
+        "forced-b": {
+          "ci_high": 0.002,
+          "ci_low": 0.0,
+          "degenerate": false,
+          "mean": 0.0008,
+          "n": 500
+        },
+        "naive": {
+          "ci_high": 0.47879999999999995,
+          "ci_low": 0.4076,
+          "degenerate": false,
+          "mean": 0.44239999999999996,
+          "n": 500
+        }
+      }
+    }
+  },
+  "diagnostics": {
+    "conditions": {
+      "Muse-Glimmer-30B/encouraged": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2496,
+            "2": 4
+          },
+          "component_attempts_histogram": {
+            "1": 144995,
+            "2": 5
+          },
+          "invalid_attempt_rate": 0.001597444089456869,
+          "invalid_components": {
+            "empty_response": 5
+          },
+          "rejected_attempts": 4,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+        "condition_fingerprint": "e4823dd5a2e13f63cdc84e2e40efc112cd1a3fb60e709083f35c6f652d1cc670",
+        "grid_digest": "46d00b8bf0079f35d4cabb5e264ad8db17d8b809d9f37b5f0fad0a2f83b3ac9b",
+        "label": "muse-glimmer-30b",
+        "prompt_style": "encouraged",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+        "slot": "encouraged",
+        "variance_components": {
+          "between_scenario": 0.12626685370741483,
+          "decoder_share_of_variance": 0.14861079882040595,
+          "icc": 0.5339727396366821,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01722247680836963,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.02174703904937014,
+              "10": 0.016570265761744127,
+              "2": 0.019045569233153144,
+              "20": 0.016234337295215645,
+              "5": 0.01722247680836963
+            },
+            "infinite_draws": 0.01589130917875647,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.11020000000000002
+        }
+      },
+      "Muse-Glimmer-30B/forced": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2497,
+            "2": 3
+          },
+          "component_attempts_histogram": {
+            "1": 144996,
+            "2": 4
+          },
+          "invalid_attempt_rate": 0.0011985617259288853,
+          "invalid_components": {
+            "empty_response": 4
+          },
+          "rejected_attempts": 3,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+        "condition_fingerprint": "9537285848138848c172c724d974cb69ae506af2175eb70f95f263fa0c74dc99",
+        "grid_digest": "affcca554fbaee8b5d92df8272ac07164594c9477b0b8295f8d2f929fde7ee63",
+        "label": "muse-glimmer-30b",
+        "prompt_style": "forced",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+        "slot": "forced",
+        "variance_components": {
+          "between_scenario": 0.16475799599198399,
+          "decoder_share_of_variance": 0.09412903362292678,
+          "icc": 0.6580896101966691,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01907238820871597,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.02237668411503295,
+              "10": 0.018618162959432062,
+              "2": 0.020374395499841658,
+              "20": 0.018386842904206474,
+              "5": 0.01907238820871597
+            },
+            "infinite_draws": 0.01815257535403635,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.08560000000000001
+        }
+      },
+      "Muse-Glimmer-30B/naive-rules-above": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2498,
+            "2": 2
+          },
+          "component_attempts_histogram": {
+            "1": 144997,
+            "2": 3
+          },
+          "invalid_attempt_rate": 0.0007993605115907274,
+          "invalid_components": {
+            "empty_response": 3
+          },
+          "rejected_attempts": 2,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+        "condition_fingerprint": "409dcd61f25450aca7aaf07739e873251fa7a6a2d1df2167477434ec8d164559",
+        "grid_digest": "73332927c93a3a3d076f5ba43dd11c85604ec9614743f2ae2e0a49793a22bcb0",
+        "label": "muse-glimmer-30b",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+        "slot": "naive",
+        "variance_components": {
+          "between_scenario": 0.14000505010020042,
+          "decoder_share_of_variance": 0.13258569039020068,
+          "icc": 0.5668104763178152,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.017966916825109445,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.0222263379844814,
+              "10": 0.01736116644123893,
+              "2": 0.019672572282251267,
+              "20": 0.017050222878320413,
+              "5": 0.017966916825109445
+            },
+            "infinite_draws": 0.016733502329171885,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.10700000000000001
+        }
+      },
+      "Olmo-3-32B-Think/encouraged": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2498,
+            "2": 2
+          },
+          "invalid_attempt_rate": 0.0007993605115907274,
+          "invalid_components": {
+            "invalid_label": 1,
+            "truncated": 1
+          },
+          "rejected_attempts": 2,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-open-2026-10",
+        "condition_fingerprint": "e54bc668062796ae2708c2a1a7411fe9ee2531370a511fb7f2c8dd329978ac5c",
+        "grid_digest": "92c4cf7458b5e95174333705c2e18a62b45901d3fee0c623a4a72912c6650439",
+        "label": "Olmo3-32B",
+        "prompt_style": "encouraged",
+        "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "slot": "encouraged",
+        "variance_components": {
+          "between_scenario": 0.09948376753507013,
+          "decoder_share_of_variance": 0.16794385468081033,
+          "icc": 0.49770808686410933,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.015463749062570184,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.01999418753213394,
+              "10": 0.014800254560991181,
+              "2": 0.017302240752866092,
+              "20": 0.014457092898302212,
+              "5": 0.015463749062570184
+            },
+            "infinite_draws": 0.014105585243801132,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.10040000000000003
+        }
+      },
+      "Olmo-3-32B-Think/forced": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2197,
+            "2": 266,
+            "3": 31,
+            "4": 5,
+            "5": 1
+          },
+          "invalid_attempt_rate": 0.12188268352651914,
+          "invalid_components": {
+            "duplicate_rule_ids": 5,
+            "invalid_json": 102,
+            "missing_rule_ids": 44,
+            "truncated": 1,
+            "unexpected_rule_ids": 196
+          },
+          "rejected_attempts": 347,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-open-2026-10",
+        "condition_fingerprint": "37393897aaaf0688f359803b64d61a3a61a9b090d52c861ee1c895bf2b1816e8",
+        "grid_digest": "62de66dbb9e18f1b0d81fc4239460bc47eb337e80568d1f1ec36ceebe4196340",
+        "label": "Olmo3-32B",
+        "prompt_style": "forced",
+        "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "slot": "forced",
+        "variance_components": {
+          "between_scenario": 0.09638356713426854,
+          "decoder_share_of_variance": 0.21167385024501095,
+          "icc": 0.42688477446612105,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01563736340527191,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.021250109041332874,
+              "10": 0.014786721552411038,
+              "2": 0.017949014855098235,
+              "20": 0.014342494004479733,
+              "5": 0.01563736340527191
+            },
+            "infinite_draws": 0.013884060438810294,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.12940000000000004
+        }
+      },
+      "Olmo-3-32B-Think/naive-rules-above": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2497,
+            "2": 1,
+            "5": 2
+          },
+          "invalid_attempt_rate": 0.0035870864886408927,
+          "invalid_components": {
+            "invalid_label": 12
+          },
+          "rejected_attempts": 9,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "final-2026-09",
+        "condition_fingerprint": "a1224d6ab197277ce5a4fa485af446de19c64ba1fe3ec388e2c8b67a89b5742b",
+        "grid_digest": "7d2cc9fc8bf390b0de8c8b75970332f9687b23e83e5860ab6e1f848a37467e41",
+        "label": "Olmo3-32B",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+        "slot": "naive",
+        "variance_components": {
+          "between_scenario": 0.09192136272545093,
+          "decoder_share_of_variance": 0.17188978163441276,
+          "icc": 0.4907147876143535,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01489975588561443,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.019355689743610325,
+              "10": 0.014245094785606092,
+              "2": 0.016710557305215822,
+              "20": 0.013906211757732653,
+              "5": 0.01489975588561443
+            },
+            "infinite_draws": 0.013558861510130629,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.09540000000000001
+        }
+      },
+      "claude-haiku-5-5/encouraged": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 1401,
+            "2": 1018,
+            "3": 69,
+            "4": 6,
+            "5": 4,
+            "6": 1,
+            "8": 1
+          },
+          "component_attempts_histogram": {
+            "1": 143392,
+            "2": 1519,
+            "3": 77,
+            "4": 6,
+            "5": 4,
+            "6": 1,
+            "8": 1
+          },
+          "invalid_attempt_rate": 0.32468935710426794,
+          "invalid_components": {
+            "empty_response": 390,
+            "invalid_label": 1329
+          },
+          "rejected_attempts": 1202,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+        "condition_fingerprint": "c10a4827428b502de26d29bf49786d083e3dede1d07e88d92a40d755d021a6fe",
+        "grid_digest": "0f4488684899741418cf35980c9f5df6a2b99ad39a51d3684d9a6616d36e7d25",
+        "label": "claude-haiku-5-5",
+        "prompt_style": "encouraged",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+        "slot": "encouraged",
+        "variance_components": {
+          "between_scenario": 0.18446909819639282,
+          "decoder_share_of_variance": 0.05992994977855013,
+          "icc": 0.758292358396748,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.019810557700195762,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.022057610849608934,
+              "10": 0.01951148883075778,
+              "2": 0.020681832520180257,
+              "20": 0.019360222013003508,
+              "5": 0.019810557700195762
+            },
+            "infinite_draws": 0.019207763961294026,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.05880000000000001
+        }
+      },
+      "claude-haiku-5-5/forced": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2206,
+            "2": 257,
+            "3": 27,
+            "4": 6,
+            "5": 3,
+            "9": 1
+          },
+          "component_attempts_histogram": {
+            "1": 144664,
+            "2": 297,
+            "3": 27,
+            "4": 8,
+            "5": 3,
+            "9": 1
+          },
+          "invalid_attempt_rate": 0.1224991224991225,
+          "invalid_components": {
+            "empty_response": 359,
+            "unexpected_rule_ids": 36
+          },
+          "rejected_attempts": 349,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+        "condition_fingerprint": "4b514d52793a80b2524511b292e1aea628e3788a9ffb7139b7b35229e439c9ae",
+        "grid_digest": "4e8e583e75a82e3356cf61cc976c13fa3e99ca32264f34dabaf0b1f23b2df0bf",
+        "label": "claude-haiku-5-5",
+        "prompt_style": "forced",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+        "slot": "forced",
+        "variance_components": {
+          "between_scenario": 0.17390204408817636,
+          "decoder_share_of_variance": 0.06775952339208428,
+          "icc": 0.7334481014575461,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.019315384753515855,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.021776227592867244,
+              "10": 0.018985365105163313,
+              "2": 0.02027323575989666,
+              "20": 0.018818185039380198,
+              "5": 0.019315384753515855
+            },
+            "infinite_draws": 0.018649506378892518,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.06320000000000002
+        }
+      },
+      "claude-haiku-5-5/naive-rules-above": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2095,
+            "12": 1,
+            "2": 317,
+            "3": 52,
+            "4": 25,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 2,
+            "9": 1
+          },
+          "component_attempts_histogram": {
+            "1": 144463,
+            "12": 1,
+            "2": 442,
+            "3": 58,
+            "4": 26,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 2,
+            "9": 1
+          },
+          "invalid_attempt_rate": 0.18380672543258245,
+          "invalid_components": {
+            "empty_response": 686,
+            "invalid_label": 17
+          },
+          "rejected_attempts": 563,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+        "condition_fingerprint": "806fc5b850b61bed1a5d4d5dafa07400a970b82118ade8450e1bbba397b4392a",
+        "grid_digest": "f0dadf17ac4f10dbb449fdcae4ccee56f75c28594caef8e518d389541e891e95",
+        "label": "claude-haiku-5-5",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+        "slot": "naive",
+        "variance_components": {
+          "between_scenario": 0.1828624448897796,
+          "decoder_share_of_variance": 0.06177449444930674,
+          "icc": 0.7523270202136796,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01974347714511198,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.022048240060820255,
+              "10": 0.01943617477230433,
+              "2": 0.020637947809304082,
+              "20": 0.019280686963372422,
+              "5": 0.01974347714511198
+            },
+            "infinite_draws": 0.019123934997263486,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.06020000000000001
+        }
+      },
+      "gemma-4-31B-it/encouraged": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2498,
+            "2": 2
+          },
+          "invalid_attempt_rate": 0.0007993605115907274,
+          "invalid_components": {
+            "invalid_label": 2
+          },
+          "rejected_attempts": 2,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10",
+        "condition_fingerprint": "e47fe9bb082b18e30f75ee7710bb402b9f17df78ce2602b00c8f1cd2c7d66c1b",
+        "grid_digest": "3c4cb6428a3fdf237bc2351cd1caf3032001944b50a9f6985b1b6541b1e4205d",
+        "label": "gemma4-31b",
+        "prompt_style": "encouraged",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "slot": "encouraged",
+        "variance_components": {
+          "between_scenario": 0.13386941883767534,
+          "decoder_share_of_variance": 0.11829064576214633,
+          "icc": 0.5985146272268407,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.017425809527116688,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.021150386229933264,
+              "10": 0.01690262812923927,
+              "2": 0.018908697408212726,
+              "20": 0.016634868129184275,
+              "5": 0.017425809527116688
+            },
+            "infinite_draws": 0.016362727085524303,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.0898
+        }
+      },
+      "gemma-4-31B-it/forced": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2500
+          },
+          "invalid_attempt_rate": 0.0,
+          "invalid_components": {},
+          "rejected_attempts": 0,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10",
+        "condition_fingerprint": "385b46da3c2ffdb3f39062c46be8d027b6a8b9dcb93073a5cc39fb376cdc4915",
+        "grid_digest": "17eec077045dcaeb8d7ce78f72f6bc1765f1bb10685cfc68e1f3b4e4c1ee2b51",
+        "label": "gemma4-31b",
+        "prompt_style": "forced",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "slot": "forced",
+        "variance_components": {
+          "between_scenario": 0.14428753507014025,
+          "decoder_share_of_variance": 0.07417505830167506,
+          "icc": 0.7139853282888582,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01765488799568778,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.02010410580305129,
+              "10": 0.017324406775999012,
+              "2": 0.018611154454796202,
+              "20": 0.017156779130719158,
+              "5": 0.01765488799568778
+            },
+            "infinite_draws": 0.0169874974654974,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.05780000000000001
+        }
+      },
+      "gemma-4-31B-it/naive-rules-above": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2489,
+            "2": 9,
+            "3": 1,
+            "4": 1
+          },
+          "invalid_attempt_rate": 0.005568814638027049,
+          "invalid_components": {
+            "invalid_label": 13,
+            "truncated": 3
+          },
+          "rejected_attempts": 14,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "final-2026-09",
+        "condition_fingerprint": "b88212d1e904c488e13c11283d4341622807c1019dc82be1709e39f47055c8ce",
+        "grid_digest": "671ce5088633387ba0a0d7bd04db53ca58b642228cff78dd180e7681a9362cf5",
+        "label": "gemma4-31b",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+        "slot": "naive",
+        "variance_components": {
+          "between_scenario": 0.14874252505010016,
+          "decoder_share_of_variance": 0.06652335901334042,
+          "icc": 0.7372889033343956,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01785175201766483,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.02008693730015107,
+              "10": 0.017552351697143045,
+              "2": 0.01872124595480227,
+              "20": 0.017400719815576605,
+              "5": 0.01785175201766483
+            },
+            "infinite_draws": 0.017247754929271237,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.053000000000000005
+        }
+      },
+      "gpt-5.6-luna/encouraged": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2500
+          },
+          "invalid_attempt_rate": 0.0,
+          "invalid_components": {},
+          "rejected_attempts": 0,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-luna",
+        "condition_fingerprint": "2afa9d636805346751a49e1ed0a4cd8e0e952a0394080a9f66e9d2751780bb5c",
+        "grid_digest": "13405838e0ceef9a05970a1e7d585ea9477ab885ab2d1162b13860dc0fb9ba16",
+        "label": "gpt-5.6-luna",
+        "prompt_style": "encouraged",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+        "slot": "encouraged",
+        "variance_components": {
+          "between_scenario": 0.18251535070140282,
+          "decoder_share_of_variance": 0.061884702510590923,
+          "icc": 0.7519728363861904,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.019725889115647124,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.022032491947185765,
+              "10": 0.019418308407346034,
+              "2": 0.020621122699863013,
+              "20": 0.01926267638213355,
+              "5": 0.019725889115647124
+            },
+            "infinite_draws": 0.019105776650081664,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.060200000000000004
+        }
+      },
+      "gpt-5.6-luna/forced": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2009,
+            "2": 374,
+            "3": 84,
+            "4": 22,
+            "5": 8,
+            "6": 2,
+            "7": 1
+          },
+          "invalid_attempt_rate": 0.20785804816223066,
+          "invalid_components": {
+            "invalid_json": 644,
+            "unexpected_rule_ids": 12
+          },
+          "rejected_attempts": 656,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-2026-10-luna",
+        "condition_fingerprint": "31bc3a120c4a3f0feb387d4ec65957d48f8b3a3d46a1dcf688b50f688bdf8738",
+        "grid_digest": "5a3377c902688c634a317ea567744dc18f6a3827558bfc1daf0c2188b7e040a6",
+        "label": "gpt-5.6-luna",
+        "prompt_style": "forced",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+        "slot": "forced",
+        "variance_components": {
+          "between_scenario": 0.1776602805611222,
+          "decoder_share_of_variance": 0.06602871136006017,
+          "icc": 0.7388342064084177,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.019504885570601135,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.02192990107415545,
+              "10": 0.019180212749660638,
+              "2": 0.020447996506314365,
+              "20": 0.01901579767252072,
+              "5": 0.019504885570601135
+            },
+            "infinite_draws": 0.018849948570811657,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.06280000000000001
+        }
+      },
+      "gpt-5.6-luna/naive-rules-above": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2500
+          },
+          "invalid_attempt_rate": 0.0,
+          "invalid_components": {},
+          "rejected_attempts": 0,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "final-2026-09-luna",
+        "condition_fingerprint": "0fcaa2ed99d95253a0bcd2cb2ba92af7ab344e780db2317c33cb89d7509fb0ae",
+        "grid_digest": "d27a2badfe387de889dab985ece516930b1af3a3426d2f4fe52b47666311c17c",
+        "label": "gpt-5.6-luna",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+        "slot": "naive",
+        "variance_components": {
+          "between_scenario": 0.1688727054108217,
+          "decoder_share_of_variance": 0.08396947560657447,
+          "icc": 0.6857142578147887,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.01920170333125797,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.022193364116817518,
+              "10": 0.018794291974470426,
+              "2": 0.020375117443137438,
+              "20": 0.01858723784809468,
+              "5": 0.01920170333125797
+            },
+            "infinite_draws": 0.018377851093684578,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.07740000000000001
+        }
+      },
+      "gpt-oss-120b/encouraged": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2477,
+            "2": 23
+          },
+          "invalid_attempt_rate": 0.009116131589377725,
+          "invalid_components": {
+            "invalid_label": 24
+          },
+          "rejected_attempts": 23,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-open-2026-10",
+        "condition_fingerprint": "ce17d44d8442508348cb73f14c94c79c58e4f767f15b2de7cb3241cccb6ac951",
+        "grid_digest": "453d0227ed8dde7a9de91660b0e947b548545544eedf6eb5b5d8036377d5782c",
+        "label": "gpt-oss-120b",
+        "prompt_style": "encouraged",
+        "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "slot": "encouraged",
+        "variance_components": {
+          "between_scenario": 0.14779254509018033,
+          "decoder_share_of_variance": 0.12170731707317076,
+          "icc": 0.5907152230971128,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.018345165308068515,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.022369288995861283,
+              "10": 0.017778219544722713,
+              "2": 0.019949563658896417,
+              "20": 0.01748785550547467,
+              "5": 0.018345165308068515
+            },
+            "infinite_draws": 0.017192588233897788,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.1024
+        }
+      },
+      "gpt-oss-120b/forced": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2373,
+            "2": 120,
+            "3": 5,
+            "4": 2
+          },
+          "invalid_attempt_rate": 0.051593323216995446,
+          "invalid_components": {
+            "duplicate_rule_ids": 1,
+            "invalid_json": 142,
+            "missing_rule_ids": 2
+          },
+          "rejected_attempts": 136,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "prompt-ablation-v2-open-2026-10",
+        "condition_fingerprint": "3690921017090c41c603e9064ed2f93f3990e121a6c6445bb7680454705beb28",
+        "grid_digest": "63f96b1c8d571aedde1d35f00816e28967a12b73b7dec413402c86a751bbf870",
+        "label": "gpt-oss-120b",
+        "prompt_style": "forced",
+        "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "slot": "forced",
+        "variance_components": {
+          "between_scenario": 0.14316713426853708,
+          "decoder_share_of_variance": 0.1294032887508421,
+          "icc": 0.5736618112322739,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.018135442330891028,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.022341313044158217,
+              "10": 0.01753893578690207,
+              "2": 0.0198175242787053,
+              "20": 0.017232941377985193,
+              "5": 0.018135442330891028
+            },
+            "infinite_draws": 0.016921414495752834,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.10640000000000001
+        }
+      },
+      "gpt-oss-120b/naive-rules-above": {
+        "attempt_statistics": {
+          "attempts_histogram": {
+            "1": 2450,
+            "2": 44,
+            "3": 2,
+            "4": 1,
+            "5": 2,
+            "8": 1
+          },
+          "invalid_attempt_rate": 0.025720966484801246,
+          "invalid_components": {
+            "invalid_label": 78
+          },
+          "rejected_attempts": 66,
+          "transport_failed_attempts": 0
+        },
+        "campaign_id": "final-2026-09",
+        "condition_fingerprint": "b10d123ee4a6295253e829274a85e571966733a61da1f68edfca27922248d475",
+        "grid_digest": "485a26728d7343bb7d5f957b1c3e91a11a4ff37ec3633b31a00ce237ccef313b",
+        "label": "gpt-oss-120b",
+        "prompt_style": "naive-rules-above",
+        "root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+        "slot": "naive",
+        "variance_components": {
+          "between_scenario": 0.1554606012024048,
+          "decoder_share_of_variance": 0.09183283555250862,
+          "icc": 0.664189532128774,
+          "n_decoder_draws": 5,
+          "n_scenarios": 500,
+          "se_analytic": 0.018503005226308766,
+          "se_projection": {
+            "by_draws": {
+              "1": 0.021636108763010264,
+              "10": 0.0180732178209861,
+              "2": 0.019736291505873377,
+              "20": 0.017854444892093667,
+              "5": 0.018503005226308766
+            },
+            "infinite_draws": 0.01763295784617004,
+            "n_scenarios": 500
+          },
+          "within_draw": 0.0786
+        }
+      }
+    },
+    "excluded_conditions": {},
+    "separate_vs_same_call": {
+      "Olmo3-32B": {
+        "ci_high": 0.6828000000000001,
+        "ci_low": 0.6204000000000001,
+        "estimate": 0.6520000000000001,
+        "n_permutations": 100000,
+        "p_value": 9.99990000099999e-06,
+        "rate_a": 0.6564000000000001,
+        "rate_b": 0.0044
+      },
+      "claude-haiku-5-5": {
+        "ci_high": 0.6184,
+        "ci_low": 0.5436,
+        "estimate": 0.5812,
+        "n_permutations": 100000,
+        "p_value": 9.99990000099999e-06,
+        "rate_a": 0.6152000000000001,
+        "rate_b": 0.034
+      },
+      "gemma4-31b": {
+        "ci_high": 0.754,
+        "ci_low": 0.6848,
+        "estimate": 0.7195999999999999,
+        "n_permutations": 100000,
+        "p_value": 9.99990000099999e-06,
+        "rate_a": 0.7195999999999999,
+        "rate_b": 0.0
+      },
+      "gpt-5.6-luna": {
+        "ci_high": 0.4392,
+        "ci_low": 0.3624,
+        "estimate": 0.4004,
+        "n_permutations": 100000,
+        "p_value": 9.99990000099999e-06,
+        "rate_a": 0.4004,
+        "rate_b": 0.0
+      },
+      "gpt-oss-120b": {
+        "ci_high": 0.5068,
+        "ci_low": 0.4364,
+        "estimate": 0.472,
+        "n_permutations": 100000,
+        "p_value": 9.99990000099999e-06,
+        "rate_a": 0.4724,
+        "rate_b": 0.0004
+      },
+      "muse-glimmer-30b": {
+        "ci_high": 0.5392,
+        "ci_low": 0.46440000000000003,
+        "estimate": 0.5016,
+        "n_permutations": 100000,
+        "p_value": 9.99990000099999e-06,
+        "rate_a": 0.5024000000000001,
+        "rate_b": 0.0008
+      }
+    }
+  },
+  "provenance": {
+    "alpha": 0.05,
+    "arm_map": {
+      "name": "prompt_ablation_arms.yaml",
+      "sha256": "31938b3bc18cc6181e89b3dc9abbc152e091a791dc3f79f5e6ed3b7fd9a3ec2a",
+      "variables": {
+        "pop": "pop-a22af097"
+      },
+      "version": 1
+    },
+    "arms": {
+      "Olmo3-32B": {
+        "encouraged": {
+          "campaign_id": "prompt-ablation-v2-open-2026-10",
+          "condition_id": "Olmo-3-32B-Think/encouraged",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "encouraged",
+          "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=9320284de5d2c6e5",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "forced": {
+          "campaign_id": "prompt-ablation-v2-open-2026-10",
+          "condition_id": "Olmo-3-32B-Think/forced",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "forced",
+          "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=9320284de5d2c6e5",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "naive": {
+          "campaign_id": "final-2026-09",
+          "condition_id": "Olmo-3-32B-Think/naive-rules-above",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "naive-rules-above",
+          "root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.19.0 / torch 2.10.0",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.19.0, torch 2.10.0"
+          }
+        }
+      },
+      "claude-haiku-5-5": {
+        "encouraged": {
+          "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+          "condition_id": "claude-haiku-5-5/encouraged",
+          "label_rule": "lenient_last_line",
+          "model_type": "anthropic_batch",
+          "prompt_style": "encouraged",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+          "stack": {
+            "dates": {
+              "first_request_block": "2026-10-28T11:31:35+00:00",
+              "last_request_block": "2026-10-28T15:44:29+00:00"
+            },
+            "description": "provider (anthropic_batch): no inference stack recorded",
+            "kind": "provider",
+            "model_type": "anthropic_batch",
+            "short": "provider"
+          }
+        },
+        "forced": {
+          "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+          "condition_id": "claude-haiku-5-5/forced",
+          "label_rule": "lenient_last_line",
+          "model_type": "anthropic_batch",
+          "prompt_style": "forced",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+          "stack": {
+            "dates": {
+              "first_request_block": "2026-10-28T11:31:40+00:00",
+              "last_request_block": "2026-10-28T15:39:07+00:00"
+            },
+            "description": "provider (anthropic_batch): no inference stack recorded",
+            "kind": "provider",
+            "model_type": "anthropic_batch",
+            "short": "provider"
+          }
+        },
+        "naive": {
+          "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+          "condition_id": "claude-haiku-5-5/naive-rules-above",
+          "label_rule": "lenient_last_line",
+          "model_type": "anthropic_batch",
+          "prompt_style": "naive-rules-above",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+          "stack": {
+            "dates": {
+              "first_request_block": "2026-10-28T11:31:26+00:00",
+              "last_request_block": "2026-10-28T17:12:39+00:00"
+            },
+            "description": "provider (anthropic_batch): no inference stack recorded",
+            "kind": "provider",
+            "model_type": "anthropic_batch",
+            "short": "provider"
+          }
+        }
+      },
+      "gemma4-31b": {
+        "encouraged": {
+          "campaign_id": "prompt-ablation-v2-2026-10",
+          "condition_id": "gemma-4-31B-it/encouraged",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "encouraged",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"TRITON_ATTN\"} / engine_args.max_model_len=null / engine_args=b4de527ca7469bb7",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "forced": {
+          "campaign_id": "prompt-ablation-v2-2026-10",
+          "condition_id": "gemma-4-31B-it/forced",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "forced",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"TRITON_ATTN\"} / engine_args.max_model_len=null / engine_args=b4de527ca7469bb7",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "naive": {
+          "campaign_id": "final-2026-09",
+          "condition_id": "gemma-4-31B-it/naive-rules-above",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "naive-rules-above",
+          "root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.19.0 / torch 2.10.0",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.19.0, torch 2.10.0"
+          }
+        }
+      },
+      "gpt-5.6-luna": {
+        "encouraged": {
+          "campaign_id": "prompt-ablation-v2-2026-10-luna",
+          "condition_id": "gpt-5.6-luna/encouraged",
+          "label_rule": "lenient_last_line",
+          "model_type": "openai_batch",
+          "prompt_style": "encouraged",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "dates": {
+              "first_request_block": "2026-10-07T00:50:57+00:00",
+              "last_request_block": "2026-10-28T02:09:20+00:00"
+            },
+            "description": "provider (openai_batch): no inference stack recorded",
+            "kind": "provider",
+            "model_type": "openai_batch",
+            "short": "provider"
+          }
+        },
+        "forced": {
+          "campaign_id": "prompt-ablation-v2-2026-10-luna",
+          "condition_id": "gpt-5.6-luna/forced",
+          "label_rule": "lenient_last_line",
+          "model_type": "openai_batch",
+          "prompt_style": "forced",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "dates": {
+              "first_request_block": "2026-10-07T00:52:03+00:00",
+              "last_request_block": "2026-10-28T05:43:43+00:00"
+            },
+            "description": "provider (openai_batch): no inference stack recorded",
+            "kind": "provider",
+            "model_type": "openai_batch",
+            "short": "provider"
+          }
+        },
+        "naive": {
+          "campaign_id": "final-2026-09-luna",
+          "condition_id": "gpt-5.6-luna/naive-rules-above",
+          "label_rule": "lenient_last_line",
+          "model_type": "openai_batch",
+          "prompt_style": "naive-rules-above",
+          "root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "dates": {
+              "first_request_block": "2026-09-12T05:05:19+00:00",
+              "last_request_block": "2026-10-28T02:28:11+00:00"
+            },
+            "description": "provider (openai_batch): no inference stack recorded",
+            "kind": "provider",
+            "model_type": "openai_batch",
+            "short": "provider"
+          }
+        }
+      },
+      "gpt-oss-120b": {
+        "encouraged": {
+          "campaign_id": "prompt-ablation-v2-open-2026-10",
+          "condition_id": "gpt-oss-120b/encouraged",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "encouraged",
+          "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=51df8d972a9cbf87",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "forced": {
+          "campaign_id": "prompt-ablation-v2-open-2026-10",
+          "condition_id": "gpt-oss-120b/forced",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "forced",
+          "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=51df8d972a9cbf87",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "naive": {
+          "campaign_id": "final-2026-09",
+          "condition_id": "gpt-oss-120b/naive-rules-above",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "naive-rules-above",
+          "root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+          "stack": {
+            "description": "vllm 0.19.0 / torch 2.10.0",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.19.0, torch 2.10.0"
+          }
+        }
+      },
+      "muse-glimmer-30b": {
+        "encouraged": {
+          "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+          "condition_id": "Muse-Glimmer-30B/encouraged",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "encouraged",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=4fb7b98f0cf575c6",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "forced": {
+          "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+          "condition_id": "Muse-Glimmer-30B/forced",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "forced",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=4fb7b98f0cf575c6",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        },
+        "naive": {
+          "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+          "condition_id": "Muse-Glimmer-30B/naive-rules-above",
+          "label_rule": "lenient_last_line",
+          "model_type": "local",
+          "prompt_style": "naive-rules-above",
+          "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+          "stack": {
+            "description": "vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null / engine_args=4fb7b98f0cf575c6",
+            "kind": "local",
+            "model_type": "local",
+            "short": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+          }
+        }
+      }
+    },
+    "bar_settings": {
+      "bars": [
+        "naive",
+        "encouraged",
+        "forced",
+        "forced-b"
+      ],
+      "bootstrap": {
+        "ci_level": 0.95,
+        "n_resamples": 10000,
+        "seed": 16
+      },
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "n_decoder_draws": 5,
+      "n_scenarios": 500,
+      "population": "per_bar"
+    },
+    "bootstrap": {
+      "ci_level": 0.95,
+      "n_resamples": 10000,
+      "seed": 16
+    },
+    "campaigns": [
+      {
+        "campaign_id": "final-2026-09",
+        "conditions": [
+          "Olmo-3-32B-Think/naive-rules-above",
+          "gemma-4-31B-it/naive-rules-above",
+          "gpt-oss-120b/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:05:01+00:00",
+        "estimates": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+        "estimates_sha256": "e469d5ca0dffac5aef6f43414e6146dedb0ad8c4cead05969d46e1f89379dab2",
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "final-2026-09-luna",
+        "conditions": [
+          "gpt-5.6-luna/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:03:40+00:00",
+        "estimates": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+        "estimates_sha256": "9c5793739ccd2bb8e5c68d394e4a55d0091ce4325c2fe351656b8ea58bd431f7",
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10",
+        "conditions": [
+          "gemma-4-31B-it/encouraged",
+          "gemma-4-31B-it/forced"
+        ],
+        "created_at": "2026-10-29T09:03:35+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+        "estimates_sha256": "89750ce3b41584bf9c7f82147930cd2b28628a8dc5bb46c125677749e27928ed",
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-open-2026-10",
+        "conditions": [
+          "Olmo-3-32B-Think/encouraged",
+          "Olmo-3-32B-Think/forced",
+          "gpt-oss-120b/encouraged",
+          "gpt-oss-120b/forced"
+        ],
+        "created_at": "2026-10-29T10:02:11+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+        "estimates_sha256": "2c5c6e378ce858816331338128534542e368ff6a9278cf61a446681b85508e1a",
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10-luna",
+        "conditions": [
+          "gpt-5.6-luna/encouraged",
+          "gpt-5.6-luna/forced"
+        ],
+        "created_at": "2026-10-29T09:03:09+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line/aggregate/estimates.json",
+        "estimates_sha256": "5816b7933a3863584713943a40e1cdb085a781616c862b4a29cb04c5fc197035",
+        "max_semantic_attempts": 20,
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10-haiku-sum",
+        "conditions": [
+          "claude-haiku-5-5/encouraged",
+          "claude-haiku-5-5/forced",
+          "claude-haiku-5-5/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:01:41+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum/aggregate/estimates.json",
+        "estimates_sha256": "345e4dbeb5a9b9e93f371cbf6b2d8e1855270ec39d7a6d291a73df444e966696",
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+        "state": "complete"
+      },
+      {
+        "campaign_id": "prompt-ablation-v2-2026-10-glimmer",
+        "conditions": [
+          "Muse-Glimmer-30B/encouraged",
+          "Muse-Glimmer-30B/forced",
+          "Muse-Glimmer-30B/naive-rules-above"
+        ],
+        "created_at": "2026-10-29T09:03:16+00:00",
+        "estimates": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097/aggregate/estimates.json",
+        "estimates_sha256": "f4f93185f95cc206cd2f921020a9afba7ec110a52d41bead66a23a41aaa1a304",
+        "max_semantic_attempts": 20,
+        "retry_scope": "component",
+        "root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+        "state": "complete"
+      }
+    ],
+    "complete": true,
+    "cross_stack": {
+      "contrasts": [
+        [
+          "Olmo3-32B",
+          "naive",
+          "encouraged"
+        ],
+        [
+          "Olmo3-32B",
+          "naive",
+          "forced"
+        ],
+        [
+          "gemma4-31b",
+          "naive",
+          "encouraged"
+        ],
+        [
+          "gemma4-31b",
+          "naive",
+          "forced"
+        ],
+        [
+          "gpt-oss-120b",
+          "naive",
+          "encouraged"
+        ],
+        [
+          "gpt-oss-120b",
+          "naive",
+          "forced"
+        ]
+      ],
+      "declared": [
+        "Olmo3-32B",
+        "gemma4-31b",
+        "gpt-oss-120b"
+      ]
+    },
+    "definition": "The prompt-ablation table, built from an arm map: per judge, its naive, encouraged and forced arms, each a condition of a named campaign root; the rows are keyed by the prompt slots (naive, encouraged, forced) and each names the prompt style, condition and root of its two arms. Every arm's flat grid is rebuilt from its draws and matched to its estimates by digest; each contrast is baseline minus treatment, the scenario-cluster bootstrap interval and the scenario-clustered paired randomization p at the campaigns' shared settings (contrast_row, the aggregate's own function), equal to the aggregate's row where both arms share a root that pairs them; Holm (p_holm) and Benjamini-Hochberg (p_bh) over every row of the table. A judge's arms share one condition identity but the prompt style (the label rule included). cross_stack marks a row whose arms ran on different local inference stacks (their packages only, never a serving setting), allowed only for the naive arm against the judge's encouraged or forced arm and only where the arm map declares it (cross_stack_reason); every other contrast is held to one stack and serving setup. A judge's arms' roots share the campaign settings that shape an arm's outcomes (attempts, retry scope, request block, seed base).",
+    "forced_json_requirement": "complete_rule_map",
+    "ignored_conditions": {
+      "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line": [
+        "gpt-5.6-luna/forced-grpo",
+        "gpt-5.6-luna/good"
+      ]
+    },
+    "inference_method": "hierarchical_bootstrap_v2",
+    "label_replay": {
+      "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line": {
+        "code_state_sha256": "47d982a235760d20082dd7a3bc0e177923b053ea053b96e5e4234a991572e77b",
+        "label_rule": "lenient_last_line",
+        "name": "label_replay.json",
+        "sha256": "846c49ab78cf53dfeaa5c00f3e13d34cec98004219858bc6e9b9c4db9c610bf5",
+        "source_label_rule": "lenient",
+        "tool": "smrc.sampling.label_replay"
+      },
+      "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line": {
+        "code_state_sha256": "dd6cf0a97e9b80bcfba0e422ef5759d36e365eb2193cc7aad26e3d9bda867126",
+        "label_rule": "lenient_last_line",
+        "name": "label_replay.json",
+        "sha256": "7e3994047ca15c030e6b7a8cc04e7c8adab65a7b5f2743bd47e81cd9c79445c3",
+        "source_label_rule": "lenient",
+        "tool": "smrc.sampling.label_replay"
+      },
+      "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097": null,
+      "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum": null,
+      "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line": {
+        "code_state_sha256": "47d982a235760d20082dd7a3bc0e177923b053ea053b96e5e4234a991572e77b",
+        "label_rule": "lenient_last_line",
+        "name": "label_replay.json",
+        "sha256": "a440fb9513eac9d56e940e03277ec7388f09e45a8adc375d40b17274a5cbd049",
+        "source_label_rule": "lenient_markup",
+        "tool": "smrc.sampling.label_replay"
+      },
+      "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line": {
+        "code_state_sha256": "dd6cf0a97e9b80bcfba0e422ef5759d36e365eb2193cc7aad26e3d9bda867126",
+        "label_rule": "lenient_last_line",
+        "name": "label_replay.json",
+        "sha256": "5dc8b00c61140e5b43a984fe488a3ff17e437f93d38234405ca36a8fc2bf8888",
+        "source_label_rule": "lenient",
+        "tool": "smrc.sampling.label_replay"
+      },
+      "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line": {
+        "code_state_sha256": "47d982a235760d20082dd7a3bc0e177923b053ea053b96e5e4234a991572e77b",
+        "label_rule": "lenient_last_line",
+        "name": "label_replay.json",
+        "sha256": "d34460a7979b24a0eb73994e499a22712b1614ed9af87c03c0469c624d34db66",
+        "source_label_rule": "lenient_markup",
+        "tool": "smrc.sampling.label_replay"
+      }
+    },
+    "label_rules": {
+      "Olmo3-32B": "lenient_last_line",
+      "claude-haiku-5-5": "lenient_last_line",
+      "gemma4-31b": "lenient_last_line",
+      "gpt-5.6-luna": "lenient_last_line",
+      "gpt-oss-120b": "lenient_last_line",
+      "muse-glimmer-30b": "lenient_last_line"
+    },
+    "metric": "flat",
+    "model_labels": {
+      "Muse-Glimmer-30B": "muse-glimmer-30b",
+      "Olmo-3-32B-Think": "Olmo3-32B",
+      "claude-haiku-5-5": "claude-haiku-5-5",
+      "gemma-4-31B-it": "gemma4-31b",
+      "gpt-5.6-luna": "gpt-5.6-luna",
+      "gpt-oss-120b": "gpt-oss-120b"
+    },
+    "models": [
+      "Olmo3-32B",
+      "gemma4-31b",
+      "gpt-oss-120b",
+      "muse-glimmer-30b",
+      "gpt-5.6-luna",
+      "claude-haiku-5-5"
+    ],
+    "multiplicity": "fdr_bh in p_bh and holm in p_holm, each recomputed over every contrast in this table; the per-root p_holm in the estimates files is a per-campaign family and is not reused; holm_mc_margin marks a Holm decision another permutation seed could flip (a step within 3 Monte Carlo standard errors of alpha)",
+    "n_decoder_draws": 5,
+    "n_scenarios": 500,
+    "pairing": "scenario_id over one frozen manifest shared by every root; a judge's arms joined across roots by the arm map",
+    "randomization_test": {
+      "n_permutations": 100000,
+      "seed": 16
+    },
+    "retry_scopes": {
+      "Olmo3-32B": "scenario_bundle",
+      "claude-haiku-5-5": "component",
+      "gemma4-31b": "scenario_bundle",
+      "gpt-5.6-luna": "scenario_bundle",
+      "gpt-oss-120b": "scenario_bundle",
+      "muse-glimmer-30b": "component"
+    },
+    "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462",
+    "schema_version": 2,
+    "source": "stochastic_campaign",
+    "temperature": 1.0,
+    "truncation": "model_default"
+  },
+  "rates": {
+    "Olmo3-32B": {
+      "n_common": 500,
+      "rates": {
+        "encouraged": 0.7243999999999999,
+        "forced": 0.6564000000000001,
+        "naive": 0.7507999999999999
+      }
+    },
+    "claude-haiku-5-5": {
+      "n_common": 500,
+      "rates": {
+        "encouraged": 0.5844,
+        "forced": 0.6152000000000001,
+        "naive": 0.5856
+      }
+    },
+    "gemma4-31b": {
+      "n_common": 500,
+      "rates": {
+        "encouraged": 0.6632,
+        "forced": 0.7195999999999999,
+        "naive": 0.7203999999999999
+      }
+    },
+    "gpt-5.6-luna": {
+      "n_common": 500,
+      "rates": {
+        "encouraged": 0.4124,
+        "forced": 0.4004,
+        "naive": 0.436
+      }
+    },
+    "gpt-oss-120b": {
+      "n_common": 500,
+      "rates": {
+        "encouraged": 0.512,
+        "forced": 0.4724,
+        "naive": 0.6276
+      }
+    },
+    "muse-glimmer-30b": {
+      "n_common": 500,
+      "rates": {
+        "encouraged": 0.3824,
+        "forced": 0.5024000000000001,
+        "naive": 0.44239999999999996
+      }
+    }
+  },
+  "schema_version": 2,
+  "table": [
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "Olmo-3-32B-Think/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.7507999999999999,
+      "baseline_root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.04600000000000004,
+      "ci_low": 0.006400000000000072,
+      "cross_stack": {
+        "baseline_stack": "vLLM 0.19.0, torch 2.10.0",
+        "conflict": "vllm 0.19.0 / torch 2.10.0 against vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null",
+        "declared": "naive",
+        "fields": [
+          "torch",
+          "vllm"
+        ],
+        "treatment_stack": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+      },
+      "difference": 0.02639999999999998,
+      "grid_digest_a": "7d2cc9fc8bf390b0de8c8b75970332f9687b23e83e5860ab6e1f848a37467e41",
+      "grid_digest_b": "92c4cf7458b5e95174333705c2e18a62b45901d3fee0c623a4a72912c6650439",
+      "holm_mc_margin": true,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "Olmo3-32B",
+      "model_name": "Olmo-3-32B-Think",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.013088440544165986,
+      "p_holm": 0.05089949100508995,
+      "p_value": 0.01017989820101799,
+      "paired_within_root": false,
+      "sd": 0.010053904705814553,
+      "significant": false,
+      "significant_bh": true,
+      "significant_holm": false,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "encouraged",
+      "treatment_condition": "Olmo-3-32B-Think/encouraged",
+      "treatment_label": "encouraged",
+      "treatment_rate": 0.7243999999999999,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "encouraged",
+      "two_stage": {
+        "ci_high": 0.05159999999999998,
+        "ci_low": 0.0011999999999999789,
+        "sd": 0.012824391408562045
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "Olmo-3-32B-Think/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.7507999999999999,
+      "baseline_root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.11640000000000006,
+      "ci_low": 0.07160000000000011,
+      "cross_stack": {
+        "baseline_stack": "vLLM 0.19.0, torch 2.10.0",
+        "conflict": "vllm 0.19.0 / torch 2.10.0 against vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null",
+        "declared": "naive",
+        "fields": [
+          "torch",
+          "vllm"
+        ],
+        "treatment_stack": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+      },
+      "difference": 0.09439999999999982,
+      "grid_digest_a": "7d2cc9fc8bf390b0de8c8b75970332f9687b23e83e5860ab6e1f848a37467e41",
+      "grid_digest_b": "62de66dbb9e18f1b0d81fc4239460bc47eb337e80568d1f1ec36ceebe4196340",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "Olmo3-32B",
+      "model_name": "Olmo-3-32B-Think",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": false,
+      "sd": 0.011383282682671112,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "Olmo-3-32B-Think/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.6564000000000001,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": 0.122,
+        "ci_low": 0.06679999999999997,
+        "sd": 0.014162092967976167
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "encouraged",
+      "baseline_condition": "Olmo-3-32B-Think/encouraged",
+      "baseline_label": "encouraged",
+      "baseline_rate": 0.7243999999999999,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "encouraged",
+      "bootstrap_seed": 16,
+      "ci_high": 0.08840000000000015,
+      "ci_low": 0.047599999999999976,
+      "cross_stack": null,
+      "difference": 0.06799999999999984,
+      "grid_digest_a": "92c4cf7458b5e95174333705c2e18a62b45901d3fee0c623a4a72912c6650439",
+      "grid_digest_b": "62de66dbb9e18f1b0d81fc4239460bc47eb337e80568d1f1ec36ceebe4196340",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "Olmo3-32B",
+      "model_name": "Olmo-3-32B-Think",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": true,
+      "sd": 0.010409499936807723,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "Olmo-3-32B-Think/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.6564000000000001,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": 0.09440000000000004,
+        "ci_low": 0.041999999999999926,
+        "sd": 0.013510463029459798
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "gemma-4-31B-it/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.7203999999999999,
+      "baseline_root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.07480000000000009,
+      "ci_low": 0.03959999999999997,
+      "cross_stack": {
+        "baseline_stack": "vLLM 0.19.0, torch 2.10.0",
+        "conflict": "vllm 0.19.0 / torch 2.10.0 against vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"TRITON_ATTN\"} / engine_args.max_model_len=null",
+        "declared": "naive",
+        "fields": [
+          "torch",
+          "vllm"
+        ],
+        "treatment_stack": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+      },
+      "difference": 0.05719999999999992,
+      "grid_digest_a": "671ce5088633387ba0a0d7bd04db53ca58b642228cff78dd180e7681a9362cf5",
+      "grid_digest_b": "3c4cb6428a3fdf237bc2351cd1caf3032001944b50a9f6985b1b6541b1e4205d",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gemma4-31b",
+      "model_name": "gemma-4-31B-it",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": false,
+      "sd": 0.009086745220066425,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "encouraged",
+      "treatment_condition": "gemma-4-31B-it/encouraged",
+      "treatment_label": "encouraged",
+      "treatment_rate": 0.6632,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "encouraged",
+      "two_stage": {
+        "ci_high": 0.0796,
+        "ci_low": 0.03479999999999994,
+        "sd": 0.011405488727731049
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "gemma-4-31B-it/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.7203999999999999,
+      "baseline_root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.017599999999999838,
+      "ci_low": -0.015999999999999796,
+      "cross_stack": {
+        "baseline_stack": "vLLM 0.19.0, torch 2.10.0",
+        "conflict": "vllm 0.19.0 / torch 2.10.0 against vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"TRITON_ATTN\"} / engine_args.max_model_len=null",
+        "declared": "naive",
+        "fields": [
+          "torch",
+          "vllm"
+        ],
+        "treatment_stack": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+      },
+      "difference": 0.0008000000000000229,
+      "grid_digest_a": "671ce5088633387ba0a0d7bd04db53ca58b642228cff78dd180e7681a9362cf5",
+      "grid_digest_b": "17eec077045dcaeb8d7ce78f72f6bc1765f1bb10685cfc68e1f3b4e4c1ee2b51",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gemma4-31b",
+      "model_name": "gemma-4-31B-it",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.962160378396216,
+      "p_holm": 1.0,
+      "p_value": 0.962160378396216,
+      "paired_within_root": false,
+      "sd": 0.008405206504923006,
+      "significant": false,
+      "significant_bh": false,
+      "significant_holm": false,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "gemma-4-31B-it/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.7195999999999999,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": 0.021199999999999997,
+        "ci_low": -0.01959999999999995,
+        "sd": 0.010332718928065351
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "encouraged",
+      "baseline_condition": "gemma-4-31B-it/encouraged",
+      "baseline_label": "encouraged",
+      "baseline_rate": 0.6632,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "encouraged",
+      "bootstrap_seed": 16,
+      "ci_high": -0.03720000000000001,
+      "ci_low": -0.07561000000000012,
+      "cross_stack": null,
+      "difference": -0.056399999999999895,
+      "grid_digest_a": "3c4cb6428a3fdf237bc2351cd1caf3032001944b50a9f6985b1b6541b1e4205d",
+      "grid_digest_b": "17eec077045dcaeb8d7ce78f72f6bc1765f1bb10685cfc68e1f3b4e4c1ee2b51",
+      "holm_mc_margin": false,
+      "improvement": false,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gemma4-31b",
+      "model_name": "gemma-4-31B-it",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": true,
+      "sd": 0.009721467839786335,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "gemma-4-31B-it/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.7195999999999999,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": -0.03280000000000005,
+        "ci_low": -0.0796,
+        "sd": 0.011955369599372491
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "gpt-oss-120b/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.6276,
+      "baseline_root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.1372000000000001,
+      "ci_low": 0.09399999999999997,
+      "cross_stack": {
+        "baseline_stack": "vLLM 0.19.0, torch 2.10.0",
+        "conflict": "vllm 0.19.0 / torch 2.10.0 against vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null",
+        "declared": "naive",
+        "fields": [
+          "torch",
+          "vllm"
+        ],
+        "treatment_stack": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+      },
+      "difference": 0.11560000000000004,
+      "grid_digest_a": "485a26728d7343bb7d5f957b1c3e91a11a4ff37ec3633b31a00ce237ccef313b",
+      "grid_digest_b": "453d0227ed8dde7a9de91660b0e947b548545544eedf6eb5b5d8036377d5782c",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gpt-oss-120b",
+      "model_name": "gpt-oss-120b",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": false,
+      "sd": 0.011077604835414557,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "encouraged",
+      "treatment_condition": "gpt-oss-120b/encouraged",
+      "treatment_label": "encouraged",
+      "treatment_rate": 0.512,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "encouraged",
+      "two_stage": {
+        "ci_high": 0.14239999999999997,
+        "ci_low": 0.08879999999999999,
+        "sd": 0.013515489151340399
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "gpt-oss-120b/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.6276,
+      "baseline_root": "artifact://sampling/final-2026-09-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.17839999999999995,
+      "ci_low": 0.132,
+      "cross_stack": {
+        "baseline_stack": "vLLM 0.19.0, torch 2.10.0",
+        "conflict": "vllm 0.19.0 / torch 2.10.0 against vllm 0.28.0+cu129 / torch 2.13.0+cu129 / transformers 5.17.0 / tokenizers 0.23.2 / triton 3.7.1 / VLLM_FLOAT32_MATMUL_PRECISION=highest / TRITON_F32_DEFAULT=unset / VLLM_BATCH_INVARIANT=0 / engine_args.dtype=null / engine_args.attention_config={\"backend\":\"FLASH_ATTN\"} / engine_args.max_model_len=null",
+        "declared": "naive",
+        "fields": [
+          "torch",
+          "vllm"
+        ],
+        "treatment_stack": "vLLM 0.28.0+cu129, torch 2.13.0+cu129, transformers 5.17.0"
+      },
+      "difference": 0.15520000000000006,
+      "grid_digest_a": "485a26728d7343bb7d5f957b1c3e91a11a4ff37ec3633b31a00ce237ccef313b",
+      "grid_digest_b": "63f96b1c8d571aedde1d35f00816e28967a12b73b7dec413402c86a751bbf870",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gpt-oss-120b",
+      "model_name": "gpt-oss-120b",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": false,
+      "sd": 0.011844757787240734,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "gpt-oss-120b/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.4724,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": 0.18240000000000006,
+        "ci_low": 0.12680000000000002,
+        "sd": 0.014193077217066072
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "encouraged",
+      "baseline_condition": "gpt-oss-120b/encouraged",
+      "baseline_label": "encouraged",
+      "baseline_rate": 0.512,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "encouraged",
+      "bootstrap_seed": 16,
+      "ci_high": 0.05880000000000002,
+      "ci_low": 0.02040000000000003,
+      "cross_stack": null,
+      "difference": 0.039600000000000024,
+      "grid_digest_a": "453d0227ed8dde7a9de91660b0e947b548545544eedf6eb5b5d8036377d5782c",
+      "grid_digest_b": "63f96b1c8d571aedde1d35f00816e28967a12b73b7dec413402c86a751bbf870",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gpt-oss-120b",
+      "model_name": "gpt-oss-120b",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 7.199928000719993e-05,
+      "p_holm": 0.0003599964000359997,
+      "p_value": 3.999960000399996e-05,
+      "paired_within_root": true,
+      "sd": 0.009788839672279854,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "gpt-oss-120b/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.4724,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-open-2026-10-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": 0.06479999999999997,
+        "ci_low": 0.014799999999999978,
+        "sd": 0.012742650510784638
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "Muse-Glimmer-30B/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.44239999999999996,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.08039999999999997,
+      "ci_low": 0.03920000000000001,
+      "cross_stack": null,
+      "difference": 0.05999999999999994,
+      "grid_digest_a": "73332927c93a3a3d076f5ba43dd11c85604ec9614743f2ae2e0a49793a22bcb0",
+      "grid_digest_b": "46d00b8bf0079f35d4cabb5e264ad8db17d8b809d9f37b5f0fad0a2f83b3ac9b",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "muse-glimmer-30b",
+      "model_name": "Muse-Glimmer-30B",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": true,
+      "sd": 0.010468629519932396,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "encouraged",
+      "treatment_condition": "Muse-Glimmer-30B/encouraged",
+      "treatment_label": "encouraged",
+      "treatment_rate": 0.3824,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+      "treatment_style": "encouraged",
+      "two_stage": {
+        "ci_high": 0.08600000000000002,
+        "ci_low": 0.03360000000000002,
+        "sd": 0.01340345524258577
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "Muse-Glimmer-30B/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.44239999999999996,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": -0.03759999999999991,
+      "ci_low": -0.0835999999999999,
+      "cross_stack": null,
+      "difference": -0.06000000000000011,
+      "grid_digest_a": "73332927c93a3a3d076f5ba43dd11c85604ec9614743f2ae2e0a49793a22bcb0",
+      "grid_digest_b": "affcca554fbaee8b5d92df8272ac07164594c9477b0b8295f8d2f929fde7ee63",
+      "holm_mc_margin": false,
+      "improvement": false,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "muse-glimmer-30b",
+      "model_name": "Muse-Glimmer-30B",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": true,
+      "sd": 0.0118443808943144,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "Muse-Glimmer-30B/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.5024000000000001,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": -0.03240000000000004,
+        "ci_low": -0.08839999999999998,
+        "sd": 0.014245272437352682
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "encouraged",
+      "baseline_condition": "Muse-Glimmer-30B/encouraged",
+      "baseline_label": "encouraged",
+      "baseline_rate": 0.3824,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+      "baseline_style": "encouraged",
+      "bootstrap_seed": 16,
+      "ci_high": -0.0988,
+      "ci_low": -0.14159999999999984,
+      "cross_stack": null,
+      "difference": -0.12000000000000005,
+      "grid_digest_a": "46d00b8bf0079f35d4cabb5e264ad8db17d8b809d9f37b5f0fad0a2f83b3ac9b",
+      "grid_digest_b": "affcca554fbaee8b5d92df8272ac07164594c9477b0b8295f8d2f929fde7ee63",
+      "holm_mc_margin": false,
+      "improvement": false,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "muse-glimmer-30b",
+      "model_name": "Muse-Glimmer-30B",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 1.999980000199998e-05,
+      "p_holm": 0.00017999820001799984,
+      "p_value": 9.99990000099999e-06,
+      "paired_within_root": true,
+      "sd": 0.010855301872836148,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "Muse-Glimmer-30B/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.5024000000000001,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-glimmer-pop-a22af097",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": -0.09400000000000003,
+        "ci_low": -0.14639999999999997,
+        "sd": 0.013371756539273366
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "gpt-5.6-luna/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.436,
+      "baseline_root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.045999999999999985,
+      "ci_low": 0.0023999999999999564,
+      "cross_stack": null,
+      "difference": 0.02360000000000001,
+      "grid_digest_a": "d27a2badfe387de889dab985ece516930b1af3a3426d2f4fe52b47666311c17c",
+      "grid_digest_b": "13405838e0ceef9a05970a1e7d585ea9477ab885ab2d1162b13860dc0fb9ba16",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gpt-5.6-luna",
+      "model_name": "gpt-5.6-luna",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.04508354916450835,
+      "p_holm": 0.15027849721502784,
+      "p_value": 0.03756962430375696,
+      "paired_within_root": false,
+      "sd": 0.011166837756070426,
+      "significant": false,
+      "significant_bh": true,
+      "significant_holm": false,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "encouraged",
+      "treatment_condition": "gpt-5.6-luna/encouraged",
+      "treatment_label": "encouraged",
+      "treatment_rate": 0.4124,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "encouraged",
+      "two_stage": {
+        "ci_high": 0.04920000000000002,
+        "ci_low": -0.0020000000000000018,
+        "sd": 0.013106936256867964
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "gpt-5.6-luna/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.436,
+      "baseline_root": "artifact://sampling/final-2026-09-luna-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.060400000000000065,
+      "ci_low": 0.0116,
+      "cross_stack": null,
+      "difference": 0.03560000000000002,
+      "grid_digest_a": "d27a2badfe387de889dab985ece516930b1af3a3426d2f4fe52b47666311c17c",
+      "grid_digest_b": "5a3377c902688c634a317ea567744dc18f6a3827558bfc1daf0c2188b7e040a6",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gpt-5.6-luna",
+      "model_name": "gpt-5.6-luna",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.0068814696468419935,
+      "p_holm": 0.02981970180298197,
+      "p_value": 0.004969950300496995,
+      "paired_within_root": false,
+      "sd": 0.012439198242909387,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "gpt-5.6-luna/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.4004,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": 0.064,
+        "ci_low": 0.008400000000000019,
+        "sd": 0.014136742177687192
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "encouraged",
+      "baseline_condition": "gpt-5.6-luna/encouraged",
+      "baseline_label": "encouraged",
+      "baseline_rate": 0.4124,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+      "baseline_style": "encouraged",
+      "bootstrap_seed": 16,
+      "ci_high": 0.028799999999999937,
+      "ci_low": -0.004799999999999971,
+      "cross_stack": null,
+      "difference": 0.01200000000000001,
+      "grid_digest_a": "13405838e0ceef9a05970a1e7d585ea9477ab885ab2d1162b13860dc0fb9ba16",
+      "grid_digest_b": "5a3377c902688c634a317ea567744dc18f6a3827558bfc1daf0c2188b7e040a6",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "gpt-5.6-luna",
+      "model_name": "gpt-5.6-luna",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.19455555444445558,
+      "p_holm": 0.5188148118518815,
+      "p_value": 0.17293827061729383,
+      "paired_within_root": true,
+      "sd": 0.008482091666187061,
+      "significant": false,
+      "significant_bh": false,
+      "significant_holm": false,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "gpt-5.6-luna/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.4004,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-luna-pop-a22af097-rescored-lenient_last_line",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": 0.032799999999999996,
+        "ci_low": -0.008400000000000019,
+        "sd": 0.01050193735696419
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "claude-haiku-5-5/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.5856,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": 0.018799999999999928,
+      "ci_low": -0.016000000000000014,
+      "cross_stack": null,
+      "difference": 0.0011999999999999789,
+      "grid_digest_a": "f0dadf17ac4f10dbb449fdcae4ccee56f75c28594caef8e518d389541e891e95",
+      "grid_digest_b": "0f4488684899741418cf35980c9f5df6a2b99ad39a51d3684d9a6616d36e7d25",
+      "holm_mc_margin": false,
+      "improvement": true,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "claude-haiku-5-5",
+      "model_name": "claude-haiku-5-5",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.962160378396216,
+      "p_holm": 1.0,
+      "p_value": 0.9287107128928711,
+      "paired_within_root": true,
+      "sd": 0.008848045088402296,
+      "significant": false,
+      "significant_bh": false,
+      "significant_holm": false,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "encouraged",
+      "treatment_condition": "claude-haiku-5-5/encouraged",
+      "treatment_label": "encouraged",
+      "treatment_rate": 0.5844,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+      "treatment_style": "encouraged",
+      "two_stage": {
+        "ci_high": 0.022399999999999975,
+        "ci_low": -0.019600000000000062,
+        "sd": 0.01081060151007334
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "naive",
+      "baseline_condition": "claude-haiku-5-5/naive-rules-above",
+      "baseline_label": "naive",
+      "baseline_rate": 0.5856,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+      "baseline_style": "naive-rules-above",
+      "bootstrap_seed": 16,
+      "ci_high": -0.012400000000000078,
+      "ci_low": -0.04679999999999995,
+      "cross_stack": null,
+      "difference": -0.02960000000000007,
+      "grid_digest_a": "f0dadf17ac4f10dbb449fdcae4ccee56f75c28594caef8e518d389541e891e95",
+      "grid_digest_b": "4e8e583e75a82e3356cf61cc976c13fa3e99ca32264f34dabaf0b1f23b2df0bf",
+      "holm_mc_margin": false,
+      "improvement": false,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "claude-haiku-5-5",
+      "model_name": "claude-haiku-5-5",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.0013949860501394986,
+      "p_holm": 0.006509934900650993,
+      "p_value": 0.0009299907000929991,
+      "paired_within_root": true,
+      "sd": 0.008728629461353025,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "claude-haiku-5-5/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.6152000000000001,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": -0.00880000000000003,
+        "ci_low": -0.05120000000000002,
+        "sd": 0.010730579078428153
+      }
+    },
+    {
+      "adjustment_family": "all_table_style_contrasts",
+      "adjustment_family_n": 18,
+      "adjustment_method": "holm",
+      "baseline": "encouraged",
+      "baseline_condition": "claude-haiku-5-5/encouraged",
+      "baseline_label": "encouraged",
+      "baseline_rate": 0.5844,
+      "baseline_root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+      "baseline_style": "encouraged",
+      "bootstrap_seed": 16,
+      "ci_high": -0.014799999999999924,
+      "ci_low": -0.047599999999999976,
+      "cross_stack": null,
+      "difference": -0.03080000000000005,
+      "grid_digest_a": "0f4488684899741418cf35980c9f5df6a2b99ad39a51d3684d9a6616d36e7d25",
+      "grid_digest_b": "4e8e583e75a82e3356cf61cc976c13fa3e99ca32264f34dabaf0b1f23b2df0bf",
+      "holm_mc_margin": false,
+      "improvement": false,
+      "inference_method": "hierarchical_bootstrap_v2",
+      "interval_basis": "scenario_cluster_bootstrap",
+      "label": "claude-haiku-5-5",
+      "model_name": "claude-haiku-5-5",
+      "n_decoder_draws": 5,
+      "n_permutations": 100000,
+      "n_scenarios": 500,
+      "p_bh": 0.0004909041818672722,
+      "p_holm": 0.0023999760002399975,
+      "p_value": 0.0002999970000299997,
+      "paired_within_root": true,
+      "sd": 0.008311135098793667,
+      "significant": true,
+      "significant_bh": true,
+      "significant_holm": true,
+      "test_method": "scenario_clustered_paired_randomization_v1",
+      "treatment": "forced",
+      "treatment_condition": "claude-haiku-5-5/forced",
+      "treatment_label": "forced",
+      "treatment_rate": 0.6152000000000001,
+      "treatment_root": "artifact://sampling/prompt-ablation-v2-2026-10-haiku-sum",
+      "treatment_style": "forced",
+      "two_stage": {
+        "ci_high": -0.01079999999999992,
+        "ci_low": -0.05159999999999998,
+        "sd": 0.010452074510564876
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Qwen3-8B judge on the bf16 engine, the base model GRPO training starts from; checkpoints are evaluated on
+# qwen3-8b-fp32.yaml.
+model_name: "Qwen3-8B"
+model_type: "local"
+model_path: "${oc.env:RULEFORGE_MODEL_ROOT}/Qwen3-8B"
+tp_size: 1
+num_tries: 5
+strip_thinking_model: "qwen3"
+reasoning_parser: "qwen3"
+# Output tokens, of the model's 40960-position window.
+max_new_tokens: 32768
+seed: 16
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: true
+attention_backend: "FLASH_ATTN"

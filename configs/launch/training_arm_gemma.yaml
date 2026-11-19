@@ -1,0 +1,7 @@
+# Gemma 4 31B-it's training evaluation on SLURM GPUs: the base model and one merged GRPO checkpoint in one campaign
+# root.
+preset: training_arms
+vars:
+  serving: gemma_merged_fp32
+  gpus: "2"
+  mem_gb: "160"  # GiB

@@ -1,0 +1,15 @@
+defaults:
+  - model@judge_model: gemma4-31b-tp-2
+  - model@agent_model: gemma4-31b-tp-2
+  - eval_rule_set@eval_cfg: default
+  - wandb: default
+  - hydra/run: default
+  - hydra/sweep: default
+  - task: modelspec/openai
+  - override hydra/job_logging: custom
+
+run_name: default
+
+eval_cfg:
+  panel_num_tries: 30
+  panel_max_retry_seconds: 3600

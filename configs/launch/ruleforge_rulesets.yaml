@@ -1,0 +1,22 @@
+# The RuleForge evaluation under repeated stochastic decoding: one judge over the paper's population under three
+# rulesets.
+backend: slurm
+gpu-count: 1
+cpus: 4
+timeout-min: 8640
+qos: normal
+resumable: true
+campaign-id: "{campaign_id}"
+axis: ["ruleforge.ruleset={rulesets}"]
+vars:
+  campaign_id: null
+  model: gemma4-31b-tp-2
+  rulesets: initial,seed5_winner,seed9_runner_up
+  prompt: naive
+args:
+  - --config-name
+  - sampling_ruleforge
+  - judge_model.tp_size=1
+  - model@judge_model={model}
+  - model@agent_model={model}
+  - eval_cfg.reasoning_prompt_style={prompt}

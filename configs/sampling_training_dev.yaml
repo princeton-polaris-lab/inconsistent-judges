@@ -1,0 +1,32 @@
+# The dev campaigns `ruleforge grpo report` reads: the base's references and every save's stage 1 and probe, one root each.
+defaults:
+  - sampling_training
+  - _self_
+
+run_name: sampling_training_dev
+
+grpo_dev:
+  stage: ???
+  campaign_prefix: ???
+  stages:
+    references_bank: {evaluation_mode: individual_bank, draws: 4, campaign_mode: pilot}
+    references_full: {evaluation_mode: full, draws: 8, campaign_mode: pilot}
+    stage1: {evaluation_mode: full, draws: 2, campaign_mode: pilot}
+    probe: {evaluation_mode: individual_bank, draws: 1, campaign_mode: screening}
+
+campaign_id: ${grpo_dev.campaign_prefix}-${grpo_dev.stage}
+condition_id: ${judge_model.model_name}/grpo-v2-dev/${grpo_dev.stage}/${training.policy}
+condition_extra:
+  figure: grpo_v2_dev
+  stage: ${grpo_dev.stage}
+  policy: ${training.policy}
+  policy_family: null
+  policy_reference: null
+evaluation_mode: ${grpo_dev.stages.${grpo_dev.stage}.evaluation_mode}
+
+scenario_set_path: ???
+approved_scenario_sha256: ???
+
+sampling:
+  campaign_mode: ${grpo_dev.stages.${grpo_dev.stage}.campaign_mode}
+  num_decoder_draws: ${grpo_dev.stages.${grpo_dev.stage}.draws}

@@ -1,0 +1,54 @@
+# GRPO's train-side anchor campaigns: the per-rule bank, its top-up, the full-set draws and the screening.
+defaults:
+  - sampling_training
+  - override model@judge_model: qwen3-8b
+  - override model@agent_model: qwen3-8b
+  - _self_
+
+run_name: sampling_training_anchors
+
+grpo_anchors:
+  stage: ???
+  campaign_prefix: ???
+  campaign_root: ???
+  stages:
+    bank: {evaluation_mode: individual_bank, campaign_mode: pilot, draws: 2, generation_seed_base: 16,
+           request_block: 125}
+    top_up: {evaluation_mode: individual_bank, campaign_mode: pilot, draws: 4, generation_seed_base: 17,
+             request_block: 125}
+    full: {evaluation_mode: full, campaign_mode: pilot, draws: 2, generation_seed_base: 16, request_block: null}
+    screen: {evaluation_mode: individual_bank, campaign_mode: screening, draws: 1, generation_seed_base: 18,
+             request_block: 125}
+    screen_rules: {evaluation_mode: individual_bank, campaign_mode: screening, draws: 1, generation_seed_base: 19,
+                   request_block: 125}
+    confirm: {evaluation_mode: individual_bank, campaign_mode: pilot, draws: 4, generation_seed_base: 17,
+              request_block: 125}
+    yes_side: {evaluation_mode: individual_bank, campaign_mode: pilot, draws: 2, generation_seed_base: 16,
+               request_block: 125}
+    mixscreen: {evaluation_mode: full, campaign_mode: pilot, draws: 8, generation_seed_base: 20, request_block: null}
+    policyscreen: {evaluation_mode: full, campaign_mode: pilot, draws: 8, generation_seed_base: 21, request_block: null}
+
+campaign_id: ${grpo_anchors.campaign_prefix}-${grpo_anchors.stage}
+campaign_root: ${grpo_anchors.campaign_root}
+condition_id: ${judge_model.model_name}/grpo-v2-anchors/${grpo_anchors.stage}
+condition_extra:
+  figure: grpo_v2_anchors
+  policy: base
+  policy_family: null
+  policy_reference: null
+evaluation_mode: ${grpo_anchors.stages.${grpo_anchors.stage}.evaluation_mode}
+
+judge_model:
+  dtype: bfloat16
+  model_path: ${oc.env:RULEFORGE_MODEL_ROOT}/Qwen3-8B
+approved_model_weights_sha256: null
+approved_adapter_sha256: null
+
+scenario_set_path: ???
+approved_scenario_sha256: ???
+
+sampling:
+  campaign_mode: ${grpo_anchors.stages.${grpo_anchors.stage}.campaign_mode}
+  num_decoder_draws: ${grpo_anchors.stages.${grpo_anchors.stage}.draws}
+  generation_seed_base: ${grpo_anchors.stages.${grpo_anchors.stage}.generation_seed_base}
+  scenarios_per_request_block: ${grpo_anchors.stages.${grpo_anchors.stage}.request_block}

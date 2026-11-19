@@ -1,0 +1,55 @@
+# `ruleforge evaluate`: one condition of a toolkit campaign over one population, judged `draws` times per scenario at
+# temperature 1.
+defaults:
+  # The judge: --judge NAME, --judge FILE.yaml, --judge fake[:SEED], --judge PROVIDER:MODEL (openai, anthropic,
+  # local) or --judge openai_compatible:MODEL@URL (`ruleforge judges list`).
+  - model@judge_model: ???
+  - _self_
+
+task_spec: modelspec                 # a built-in task, an installed one's name, or pkg.module:Class
+campaign_id: null                    # null: eval-<a digest of the population and the sampling settings>
+campaign_root: null  # null: <artifact root>/sampling/<campaign id>; with no artifact root set, ./ruleforge-runs/<id>
+condition_id: null                   # null: <model>/<style>[/mode.<mode>]-<the condition's fingerprint[:8]>
+condition_extra: {}                  # free identity axes of the condition (a ruleset label, a design name)
+
+scenario_set_path: ???
+approved_scenario_sha256: null       # the population file's SHA-256, when pinned
+rule_set_path: ???
+approved_rule_set_sha256: null
+rule_levels_path: null               # each rule's level: a `superiors` rule context's
+approved_rule_levels_sha256: null
+approved_adapter_sha256: null        # a local judge's adapter weights, when pinned
+approved_model_weights_sha256: null  # a merged checkpoint's weights, when pinned
+
+evaluation_mode: both                # both | full | individual_bank
+interpretation: No_Interpretation   # the interpretation the judge is told to take
+max_transport_retries: 3             # transport failures one process retries per scenario
+confirm_spend: false                 # --yes-spend: a judge that bills its calls may run
+relocate_batch_root: false           # --relocate-batch-root: record a batch judge's paid state's new place
+
+eval_cfg:
+  individual_rule_context: isolated  # isolated | implicated | superiors
+  reasoning_prompt_style: null       # a style of the task (e.g. naive, encouraged, forced); null: the task's default
+
+sampling:
+  campaign_mode: pilot               # pilot: any number of scenarios; final: approved_scenario_count of them
+  approved_scenario_count: null      # null: a final campaign's 500
+  num_decoder_draws: 5
+  max_semantic_attempts: 30
+  retry_scope: component             # component | scenario_bundle
+  generation_seed_base: 16
+  scenarios_per_request_block: null  # null: one request block per pass
+  forced_json_requirement: complete_rule_map
+  truncation: model_default
+  strict_think: false
+  bootstrap:
+    n_resamples: 10000
+    ci_level: 0.95
+    seed: 16
+
+# How the run schedules generation: never what it generates.
+execution:
+  pack_draws: false
+  pack_max_prompts: 4096
+  pack_max_draws: null
+  allow_stack_change: false

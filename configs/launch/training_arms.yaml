@@ -1,0 +1,29 @@
+# A GRPO checkpoint's evaluation on SLURM GPUs, for any model: the base model and one merged checkpoint, five
+# temperature-1 draws each.
+backend: slurm
+gpu-count: "{gpus}"
+mem-gb: "{mem_gb}"
+timeout-min: 360
+qos: normal
+resumable: true
+campaign-id: "{campaign_id}"
+population: populations/frozen_500_r3.jsonl
+expect-population-sha256: c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4
+shards: 25
+pack-draws: true
+axis:
+  - "training.policy={policy},base"
+vars:
+  serving: null  # a config name under configs/training_serving/
+  gpus: null
+  mem_gb: null              # GiB
+  campaign_id: null
+  policy: grpo
+  checkpoint: null          # the merged weights directory, an artifact path
+  checkpoint_sha256: null   # merge_manifest.json's result.weights_sha256
+args:
+  - --config-name
+  - sampling_training
+  - training_serving={serving}
+  - training.family=base+{policy}
+  - "+training.policies.{policy}={model_path: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/{checkpoint}, weights_sha256: '{checkpoint_sha256}'}"

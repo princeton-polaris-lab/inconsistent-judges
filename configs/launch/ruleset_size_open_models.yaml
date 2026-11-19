@@ -1,0 +1,26 @@
+# The ruleset-size experiment under repeated stochastic decoding on the open judges, on SLURM GPUs.
+backend: slurm
+gpu-count: "{gpus}"
+cpus: 4
+timeout-min: 10000
+qos: normal
+resumable: true
+axis:
+  - "model@judge_model+model@agent_model={models}"
+vars:
+  campaign_id: null
+  models: gemma4-31b-tp-2,gpt-oss-tp-2,olmo3-32b-tp-2
+  seeds: null       # a list of subset seeds
+  gpus: 1
+args:
+  - python
+  - -m
+  - ruleforge
+  - bank
+  - run
+  - --config
+  - configs/sampling_ruleset_size.yaml
+  - --
+  - campaign_id={campaign_id}
+  - judge_model.tp_size={gpus}
+  - ruleset_size.jobs_seeds={seeds}

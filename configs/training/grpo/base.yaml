@@ -1,0 +1,119 @@
+# @package _global_
+# GRPO training: the settings every run shares; a model's config adds its weights. Run from the checkout's top.
+
+run_name: ???
+output_root: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/training
+output_dir: ${output_root}/${run_name}
+# null: a fresh run; latest: the newest complete checkpoint, else a fresh start; or a checkpoint directory.
+resume_from_checkpoint: null
+preflight_only: false
+
+model:
+  path: ???
+  attn_implementation: sdpa  # or FA2 through `kernels`
+  # null: a cold start; or a checkpoint directory whose adapter the run starts from.
+  init_adapter: null
+
+data:
+  train: ???                        # GRPO rows (JSONL), each [system: P, user: ""] plus the reward columns
+  replay: ???  # KL-anchor replay rows (JSONL): input_ids, labels, weight
+  rules: data/rules/modelspec/openai_rules_all.jsonl
+  rules_sha256: a99062f00a9ff616cba4d548e9cd59460dc4ee52fc46e3de4a4eb2579a260228
+  # condition.json of the train anchor bank: its sampling_truncation and temperature are the rollouts'.
+  anchor_condition: ???
+  prompt_token_cap: 5000  # tokens, chat template included; at most vllm_length_margin
+  # true: also train on rows no near-copy screen ran over.
+  allow_unscreened_rows: false
+
+reward:
+  truncated: ???  # zero | none
+  lambda_int: 0.3
+  lambda_comp: 0.1
+
+anchor:
+  enabled: true
+  loss_weight: 1.0
+  kind: kl                          # forward KL(base || policy) per token, untruncated at T 1
+  temperature: 1.0
+  mix_every_n_steps: 1
+  per_device_batch_size: 1
+  anchor_accum: 4                   # replay rows per rank per step
+
+sync_probe:
+  # null: the first layer's k_proj, the middle layer's up_proj and the last's down_proj; or HF module paths.
+  modules: null
+  # HF module paths no adapter wraps, compared exactly
+  plain_modules: [model.norm]
+  max_rows: 512                     # rows per probed module
+
+retention_alarm:
+  step: 100
+  threshold: 0.5
+
+vllm_length_margin: 5120            # tokens added to max_completion_length; above prompt_token_cap
+
+wandb:
+  project: ruleforge
+  entity: ${oc.env:WANDB_ENTITY,null}   # null: the W&B key's default entity
+  group: grpo
+  log_completions_table: false
+
+grpo:
+  learning_rate: 2.0e-5
+  lr_scheduler_type: constant_with_warmup
+  warmup_steps: 10
+  optim: adamw_torch_fused
+  weight_decay: 0.0
+  max_grad_norm: 0.2
+  max_steps: 600
+  seed: 0
+  beta: 0.0
+  loss_type: dapo
+  scale_rewards: batch
+  multi_objective_aggregation: sum_then_normalize
+  epsilon: 0.2
+  epsilon_high: null                # null: epsilon, a symmetric clip
+  delta: null                       # no two-sided clip
+  num_iterations: 1
+  importance_sampling_level: token
+  top_entropy_quantile: 1.0
+  off_policy_mask_threshold: null
+  use_bias_correction_kl: false
+  mask_truncated_completions: true
+  num_generations: 8
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8
+  steps_per_generation: ${.gradient_accumulation_steps}
+  shuffle_dataset: true
+  remove_unused_columns: false      # must be false: the reward reads the anchor columns
+  chat_template_kwargs:
+    enable_thinking: true
+  # tokens
+  max_completion_length: 6144
+  use_vllm: true
+  vllm_mode: colocate
+  vllm_tensor_parallel_size: 1
+  vllm_gpu_memory_utilization: 0.30
+  vllm_enable_sleep_mode: true
+  vllm_importance_sampling_correction: true
+  vllm_importance_sampling_mode: token_truncate
+  vllm_importance_sampling_clip_min: null   # truncate: clamped above only
+  vllm_importance_sampling_clip_max: 2.0
+  bf16: true
+  gradient_checkpointing: true
+  gradient_checkpointing_kwargs:
+    use_reentrant: false
+  save_strategy: steps
+  save_steps: 100
+  save_total_limit: null
+  logging_steps: 1
+  log_completions: true
+  num_completions_to_print: 0
+  report_to: [wandb]
+
+hydra:
+  run:
+    dir: ${output_dir}/hydra/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ${output_dir}/hydra
+    subdir: ${now:%Y-%m-%d_%H-%M-%S}

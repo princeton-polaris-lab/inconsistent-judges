@@ -1,0 +1,23 @@
+# Gemma 4 31B-it's references for the checkpoint report on SLURM GPUs: the base policy's dev campaigns, one root per stage.
+backend: slurm
+gpu-count: 2
+mem-gb: 160
+timeout-min: "{timeout_min}"
+qos: normal
+resumable: true
+population: "{population}"
+expect-population-sha256: "{population_sha256}"
+pack-draws: true
+vars:
+  stage: null               # references_bank | references_full
+  campaign_prefix: null
+  population: null          # an artifact path
+  population_sha256: null
+  timeout_min: 480          # minutes
+args:
+  - --config-name
+  - sampling_training_dev
+  - training_serving=gemma_merged_fp32
+  - training.policy=base
+  - grpo_dev.stage={stage}
+  - grpo_dev.campaign_prefix={campaign_prefix}

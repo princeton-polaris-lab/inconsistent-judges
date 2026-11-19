@@ -1,0 +1,16 @@
+model_name: "gpt-oss-120b"
+model_type: "local"
+model_path: "${rf.env:MODEL_ROOT}/gpt-oss-120b"
+tp_size: 2
+num_tries: 5
+strip_thinking_model: "openai_gptoss"
+reasoning_parser: "openai_gptoss"
+max_new_tokens: 65536
+seed: 16
+gpt_oss_reasoning_level: "high"
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: true
+attention_backend: "FLASH_ATTN"
+max_num_seqs: 512

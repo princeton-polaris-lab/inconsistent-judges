@@ -1,0 +1,532 @@
+{
+ "commit": "99f38c480826e8f29f4f65f4573830fdb49ee80c",
+ "switched": {
+  "population": "training_arm_gemma's population and expect_population_sha256 are those of P''' (populations/frozen_500_r3.jsonl), training_arms' default since; at the commit above, and in the 2026-10-08/09 launches named, they were frozen_500's (populations/frozen_500.jsonl, fa9bdc5e...), the launches' own records keeping them; the resumes named beside them ran on the rebased roots (2026-10-12, ledger D136: <root>-pop-8f74b719 over P', populations/frozen_500_r1.jsonl; 2026-10-15, ledger SECOND_REBASE_COMMIT: <root>-pop-6f528dcb over P''), each job's recorded command holding the root and population it read"
+ },
+ "specs": {
+  "training_arm_gemma": {
+   "renders": [
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training",
+      "training_serving=gemma_merged_fp32",
+      "figure5.family=base+grpo",
+      "+figure5.policies.grpo={model_path: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/selection/gemma-grpo-mix-2026-10-04/modal_root/finetuning/gemma-grpo-mix-2026-10-04/merged/checkpoint-200, weights_sha256: '5f161da83561d405d917aab198b6f79433413669f786a1f2a982c389677b704e'}"
+     ],
+     "launches": [
+      "20261008T005153Z-2393b36a-d26a",
+      "20261012T182434Z-88493026-e693",
+      "20261015T190512Z-87a6ba4f-7a23"
+     ],
+     "values": {
+      "axis": [
+       "figure5.policy=grpo,base"
+      ],
+      "backend": "slurm",
+      "campaign_id": "fig5-gemma-2026-10-07",
+      "expect_population_sha256": "c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4",
+      "gpu_count": 2,
+      "mem_gb": 160,
+      "pack_draws": true,
+      "population": "populations/frozen_500_r3.jsonl",
+      "qos": "normal",
+      "resumable": true,
+      "shards": 25,
+      "timeout_min": 360
+     },
+     "vars": {
+      "campaign_id": "fig5-gemma-2026-10-07",
+      "checkpoint": "selection/gemma-grpo-mix-2026-10-04/modal_root/finetuning/gemma-grpo-mix-2026-10-04/merged/checkpoint-200",
+      "checkpoint_sha256": "5f161da83561d405d917aab198b6f79433413669f786a1f2a982c389677b704e",
+      "policy": "grpo"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training",
+      "training_serving=gemma_merged_fp32",
+      "figure5.family=base+final",
+      "+figure5.policies.final={model_path: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/selection/gemma-grpo-mix-2026-10-04/modal_root/finetuning/gemma-grpo-mix-2026-10-04/merged/checkpoint-600, weights_sha256: '03a8b16f1032b403a6f47cb8085fe294e838729ce06a84f73509c46914395be3'}"
+     ],
+     "launches": [
+      "20261009T005515Z-2393b36a-fbc6",
+      "20261009T152040Z-2393b36a-fc7a",
+      "20261012T182715Z-88493026-827f",
+      "20261015T174846Z-87a6ba4f-bee2"
+     ],
+     "values": {
+      "axis": [
+       "figure5.policy=final,base"
+      ],
+      "backend": "slurm",
+      "campaign_id": "fig5-gemma-ckpt600-2026-10-09",
+      "expect_population_sha256": "c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4",
+      "gpu_count": 2,
+      "mem_gb": 160,
+      "pack_draws": true,
+      "population": "populations/frozen_500_r3.jsonl",
+      "qos": "normal",
+      "resumable": true,
+      "shards": 25,
+      "timeout_min": 360
+     },
+     "vars": {
+      "campaign_id": "fig5-gemma-ckpt600-2026-10-09",
+      "checkpoint": "selection/gemma-grpo-mix-2026-10-04/modal_root/finetuning/gemma-grpo-mix-2026-10-04/merged/checkpoint-600",
+      "checkpoint_sha256": "03a8b16f1032b403a6f47cb8085fe294e838729ce06a84f73509c46914395be3",
+      "policy": "final"
+     }
+    }
+   ],
+   "sha256": "6cc4cc2f477edf5e6fb58f6c3538eeb65fae0135f42fcd5ad86f3d8a3e6b05b2",
+   "verb": "campaign"
+  },
+  "gemma_anchors": {
+   "renders": [
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=bank",
+      "grpo_anchors.campaign_prefix=gemma-anchors-2026-09-30",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.bank.request_block=50"
+     ],
+     "launches": [
+      "20260930T211925Z-41c21232-a88d"
+     ],
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-anchors-2026-09-30-bank/{block}",
+      "timeout_min": 360
+     },
+     "vars": {
+      "campaign_prefix": "gemma-anchors-2026-09-30",
+      "request_block": "50",
+      "stage": "bank",
+      "timeout_min": "360"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=confirm",
+      "grpo_anchors.campaign_prefix=gemma-screen-2026-10-01",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.confirm.request_block=50"
+     ],
+     "launches": [
+      "20261001T045707Z-c7bbdd71-9a9a"
+     ],
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-screen-2026-10-01-confirm/{block}",
+      "timeout_min": 360
+     },
+     "vars": {
+      "campaign_prefix": "gemma-screen-2026-10-01",
+      "request_block": "50",
+      "stage": "confirm",
+      "timeout_min": "360"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=yes_side",
+      "grpo_anchors.campaign_prefix=gemma-screen-2026-10-01",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.yes_side.request_block=50"
+     ],
+     "launches": [
+      "20261001T045731Z-c7bbdd71-867a"
+     ],
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-screen-2026-10-01-yes_side/{block}",
+      "timeout_min": 360
+     },
+     "vars": {
+      "campaign_prefix": "gemma-screen-2026-10-01",
+      "request_block": "50",
+      "stage": "yes_side",
+      "timeout_min": "360"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=full",
+      "grpo_anchors.campaign_prefix=gemma-screen-2026-10-01",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.full.request_block=250"
+     ],
+     "launches": [
+      "20261001T045745Z-c7bbdd71-47c9"
+     ],
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-screen-2026-10-01-full/{block}",
+      "timeout_min": 180
+     },
+     "vars": {
+      "campaign_prefix": "gemma-screen-2026-10-01",
+      "request_block": "250",
+      "stage": "full",
+      "timeout_min": "180"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=mixscreen",
+      "grpo_anchors.campaign_prefix=gemma-screen-2026-10-01",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.mixscreen.request_block=250"
+     ],
+     "launches": [
+      "20261003T192416Z-a444b4e8-d6aa"
+     ],
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-screen-2026-10-01-mixscreen/{block}",
+      "timeout_min": 180
+     },
+     "vars": {
+      "campaign_prefix": "gemma-screen-2026-10-01",
+      "request_block": "250",
+      "stage": "mixscreen",
+      "timeout_min": "180"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=mixscreen",
+      "grpo_anchors.campaign_prefix=gemma-mix2-2026-10-03",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.mixscreen.request_block=250"
+     ],
+     "launches": [
+      "20261003T223513Z-9260bbb1-e7a9"
+     ],
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-mix2-2026-10-03-mixscreen/{block}",
+      "timeout_min": 180
+     },
+     "vars": {
+      "campaign_prefix": "gemma-mix2-2026-10-03",
+      "request_block": "250",
+      "stage": "mixscreen",
+      "timeout_min": "180"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=confirm",
+      "grpo_anchors.campaign_prefix=gemma-mix2-2026-10-03",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.confirm.request_block=50"
+     ],
+     "launches": [
+      "20261004T034507Z-9260bbb1-ffa1"
+     ],
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-mix2-2026-10-03-confirm/{block}",
+      "timeout_min": 360
+     },
+     "vars": {
+      "campaign_prefix": "gemma-mix2-2026-10-03",
+      "request_block": "50",
+      "stage": "confirm",
+      "timeout_min": "360"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "sampling_training_anchors",
+      "grpo_anchors.stage=top_up",
+      "grpo_anchors.campaign_prefix=gemma-x",
+      "model@judge_model=gemma4-31b-tp-2",
+      "model@agent_model=gemma4-31b-tp-2",
+      "judge_model.model_path=${oc.env:RULEFORGE_MODEL_ROOT}/gemma-4-31B-it",
+      "judge_model.tp_size=1",
+      "sampling.strict_think=false",
+      "grpo_anchors.stages.top_up.request_block=50"
+     ],
+     "launches": [],
+     "synthetic": "no launch: the spec's defaults for the top_up stage, which no Gemma campaign ran",
+     "values": {
+      "backend": "slurm",
+      "cpus": 4,
+      "gpu_count": 1,
+      "qos": "normal",
+      "resumable": true,
+      "root_template": "sampling/gemma-x-top_up/{block}",
+      "timeout_min": 360
+     },
+     "vars": {
+      "campaign_prefix": "gemma-x",
+      "stage": "top_up"
+     }
+    }
+   ],
+   "sha256": "4f76a1ac55cbd8538a643b7a5b34a6ef0e2f7b15435f4aff3e894af64f6463ad",
+   "verb": "campaign"
+  },
+  "grpo_train_gemma_run": {
+   "renders": [
+    {
+     "arguments": [
+      "--config-name",
+      "training/grpo/gemma4_31b",
+      "data.train=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-screen-2026-10-01-train/grpo_rows.jsonl",
+      "data.replay=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-screen-2026-10-01-train/replay_rows.jsonl",
+      "data.anchor_condition=${oc.env:RULEFORGE_ARTIFACT_ROOT}/sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "reward.truncated=zero",
+      "prereg.path=${oc.env:RULEFORGE_ARTIFACT_ROOT}/selection/gemma-grpo-2026-10-01/prereg/prereg.json",
+      "prereg.sha256='a5ca6e801f1e17feb05ed84466c86219058f2cdd79aa0e463ab92df79e81544b'"
+     ],
+     "launches": [
+      "20261001T183746Z-35a23e81-a96d"
+     ],
+     "values": {
+      "backend": "slurm",
+      "completions_per_step": 32,
+      "env": [
+       "HF_HUB_OFFLINE=1",
+       "TRANSFORMERS_OFFLINE=1",
+       "MAX_JOBS=8",
+       "PYTHONUNBUFFERED=1"
+      ],
+      "gpu_count": 4,
+      "mem_gb": 320,
+      "qos": "normal",
+      "replay_rows_per_step": 8,
+      "timeout_min": 2880
+     },
+     "vars": {
+      "condition": "sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "prereg": "selection/gemma-grpo-2026-10-01/prereg/prereg.json",
+      "prereg_sha256": "a5ca6e801f1e17feb05ed84466c86219058f2cdd79aa0e463ab92df79e81544b",
+      "rows": "grpo_data/gemma-screen-2026-10-01-train"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "training/grpo/gemma4_31b",
+      "data.train=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-pilot-2026-10-02-train/grpo_rows.jsonl",
+      "data.replay=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-pilot-2026-10-02-train/replay_rows.jsonl",
+      "data.anchor_condition=${oc.env:RULEFORGE_ARTIFACT_ROOT}/sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "reward.truncated=zero",
+      "prereg.path=${oc.env:RULEFORGE_ARTIFACT_ROOT}/selection/gemma-grpo-pilot-2026-10-02/prereg/prereg.json",
+      "prereg.sha256='4e133fe59627bd1ac934a404e5d5a85f12811b270f38dcb641a0e9760aac1949'"
+     ],
+     "launches": [
+      "20261002T234135Z-f36d1278-9208"
+     ],
+     "values": {
+      "backend": "slurm",
+      "completions_per_step": 32,
+      "env": [
+       "HF_HUB_OFFLINE=1",
+       "TRANSFORMERS_OFFLINE=1",
+       "MAX_JOBS=8",
+       "PYTHONUNBUFFERED=1"
+      ],
+      "gpu_count": 4,
+      "mem_gb": 320,
+      "qos": "normal",
+      "replay_rows_per_step": 8,
+      "timeout_min": 2880
+     },
+     "vars": {
+      "condition": "sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "prereg": "selection/gemma-grpo-pilot-2026-10-02/prereg/prereg.json",
+      "prereg_sha256": "4e133fe59627bd1ac934a404e5d5a85f12811b270f38dcb641a0e9760aac1949",
+      "rows": "grpo_data/gemma-pilot-2026-10-02-train"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "training/grpo/gemma4_31b",
+      "data.train=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-mix2-2026-10-03-train/grpo_rows.jsonl",
+      "data.replay=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-mix2-2026-10-03-train/replay_rows.jsonl",
+      "data.anchor_condition=${oc.env:RULEFORGE_ARTIFACT_ROOT}/sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "reward.truncated=zero",
+      "prereg.path=${oc.env:RULEFORGE_ARTIFACT_ROOT}/selection/gemma-grpo-mix-2026-10-04/prereg/prereg.json",
+      "prereg.sha256='63923bc80ce1b1f237facd44b9c0c37d83c843728228ebdabd3cb5af8224bc0d'"
+     ],
+     "launches": [
+      "20261004T073403Z-9260bbb1-a10a"
+     ],
+     "values": {
+      "backend": "slurm",
+      "completions_per_step": 32,
+      "env": [
+       "HF_HUB_OFFLINE=1",
+       "TRANSFORMERS_OFFLINE=1",
+       "MAX_JOBS=8",
+       "PYTHONUNBUFFERED=1"
+      ],
+      "gpu_count": 4,
+      "mem_gb": 320,
+      "qos": "normal",
+      "replay_rows_per_step": 8,
+      "timeout_min": 2880
+     },
+     "vars": {
+      "condition": "sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "prereg": "selection/gemma-grpo-mix-2026-10-04/prereg/prereg.json",
+      "prereg_sha256": "63923bc80ce1b1f237facd44b9c0c37d83c843728228ebdabd3cb5af8224bc0d",
+      "rows": "grpo_data/gemma-mix2-2026-10-03-train"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "training/grpo/gemma4_31b",
+      "data.train=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-grpo-mix-r2-2026-10-06/grpo_rows.jsonl",
+      "data.replay=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-grpo-mix-r2-2026-10-06/replay_rows.jsonl",
+      "data.anchor_condition=${oc.env:RULEFORGE_ARTIFACT_ROOT}/sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "reward.truncated=zero",
+      "prereg.path=${oc.env:RULEFORGE_ARTIFACT_ROOT}/selection/gemma-grpo-mix-r2-2026-10-06/prereg/prereg.json",
+      "prereg.sha256='5663dc7476dc1a7d7caf2a8debb56f973136b20f1e31fa8a4aa96d66d358a7c7'"
+     ],
+     "launches": [
+      "20261006T102737Z-5e301601-97a5"
+     ],
+     "values": {
+      "backend": "slurm",
+      "completions_per_step": 32,
+      "env": [
+       "HF_HUB_OFFLINE=1",
+       "TRANSFORMERS_OFFLINE=1",
+       "MAX_JOBS=8",
+       "PYTHONUNBUFFERED=1"
+      ],
+      "gpu_count": 4,
+      "mem_gb": 320,
+      "qos": "normal",
+      "replay_rows_per_step": 8,
+      "timeout_min": 2880
+     },
+     "vars": {
+      "condition": "sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "prereg": "selection/gemma-grpo-mix-r2-2026-10-06/prereg/prereg.json",
+      "prereg_sha256": "5663dc7476dc1a7d7caf2a8debb56f973136b20f1e31fa8a4aa96d66d358a7c7",
+      "rows": "grpo_data/gemma-grpo-mix-r2-2026-10-06"
+     }
+    },
+    {
+     "arguments": [
+      "--config-name",
+      "training/grpo/gemma4_31b",
+      "data.train=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-grpo-mix-r2j-2026-10-06/grpo_rows.jsonl",
+      "data.replay=${oc.env:RULEFORGE_ARTIFACT_ROOT}/grpo_data/gemma-grpo-mix-r2j-2026-10-06/replay_rows.jsonl",
+      "data.anchor_condition=${oc.env:RULEFORGE_ARTIFACT_ROOT}/sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "reward.truncated=zero",
+      "prereg.path=${oc.env:RULEFORGE_ARTIFACT_ROOT}/selection/gemma-grpo-mix-r2j-2026-10-06/prereg/prereg.json",
+      "prereg.sha256='26071b100a2d425192fb328fd91128af70eed4b783e9d6405403105192dab9f8'"
+     ],
+     "launches": [
+      "20261006T212523Z-83508ff2-69f4"
+     ],
+     "values": {
+      "backend": "slurm",
+      "completions_per_step": 32,
+      "env": [
+       "HF_HUB_OFFLINE=1",
+       "TRANSFORMERS_OFFLINE=1",
+       "MAX_JOBS=8",
+       "PYTHONUNBUFFERED=1"
+      ],
+      "gpu_count": 4,
+      "mem_gb": 320,
+      "qos": "normal",
+      "replay_rows_per_step": 8,
+      "timeout_min": 2880
+     },
+     "vars": {
+      "condition": "sampling/gemma-screen-2026-10-01-confirm/gemma_pool_c.confirm.block-000/gemma-4-31B-it/grpo-v2-anchors/confirm/condition.json",
+      "prereg": "selection/gemma-grpo-mix-r2j-2026-10-06/prereg/prereg.json",
+      "prereg_sha256": "26071b100a2d425192fb328fd91128af70eed4b783e9d6405403105192dab9f8",
+      "rows": "grpo_data/gemma-grpo-mix-r2j-2026-10-06"
+     }
+    }
+   ],
+   "sha256": "65c64407c660524615745d9bde4d015e7adaa269b6d153697b60b1a569799b4b",
+   "verb": "train"
+  }
+ }
+}

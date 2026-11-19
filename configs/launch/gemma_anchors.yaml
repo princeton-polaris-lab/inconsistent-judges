@@ -1,0 +1,8 @@
+# Gemma 4 31B-it's GRPO train-side anchors on SLURM GPUs: the per-rule bank, its top-up and the full-set draws.
+preset: grpo_anchors
+vars:
+  judge: gemma4-31b-tp-2
+  weights: gemma-4-31B-it
+  strict_think: "false"
+  request_block: "50"       # scenarios per request block
+  timeout_min: "360"        # minutes

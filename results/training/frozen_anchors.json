@@ -1,0 +1,1042 @@
+{
+  "definition": "Each family pairs its base arm (the reference) with its trained arm over the same scenarios and decoder draws, from each arm's accepted bundle outcomes. A bundle holds one full-ruleset judgment F and one separate-call judgment R_k per rule; its aggregate A is the largest R_k under no < unsure < yes. Every label is yes, unsure or no, and a bundle whose stored max_rule_phi or contradiction is not its labels' is refused. Each number is a mean over scenarios of a per-scenario value, or (by_anchor) a ratio of two such means. A rate between two sets of labels averages, per scenario, over all D x D pairs of a draw of one with a draw of the other; a rate within one arm's labels, over the D(D-1) ordered pairs of two different draws of it: exact averages over the draws at hand, each estimating the rate between independent temperature-1 draws (an arm's F against its own A counts the pairs within one bundle too, which estimate the same rate because each call of a bundle is sampled on a seed of its own). Inconsistency rates, the share of pairs in which F differs from A: base, the base arm's F against its own A, which are the frozen anchors; trained_updated, the trained arm's F against its own A; trained_frozen, the trained arm's F against the base arm's A. differences: base minus trained_frozen (the reduction left when evaluation keeps the frozen anchors), base minus trained_updated, trained_frozen minus trained_updated, and trained_frozen minus always_yes, an always-yes judge's rate against the frozen anchors (the base arm's always_yes), which trained_frozen compares with directly. by_anchor: base and trained_frozen again over only the pairs whose frozen anchor is yes, or is not yes: the share of those pairs in which F differs from A (undefined in a resample that holds none), with share, those pairs' share of all pairs, and base minus trained_frozen. same_draw: each arm's F against its own A at the same draw, averaged over draws, which is its root's own flat rate (its interval is this golden's bootstrap's, not the root's). Change rates, the share of pairs whose labels differ, for the individual-rule judgments (R_k paired by rule, averaged over the rules), the aggregate A and the full-ruleset judgment F: base_to_trained, the base arm's labels against the trained arm's; draw_to_draw, each arm's labels against its own at a different draw; resampling, the mean of the two arms' draw_to_draw; excess, base_to_trained minus resampling, whose expectation for one scenario is half the squared distance between the two arms' label distributions: the part of the change that is a shift in the judgment's distribution, not resampling (a per-scenario value may be negative). label_shares: the share of each arm's bundles whose F, or whose A, is each label. always_yes: an always-yes judge's inconsistency rate against each arm's aggregate, the share of its bundles whose A is not yes. Intervals: one scenario-cluster bootstrap per family over all its per-scenario values, at the reference root's bootstrap settings (bootstrap), so that every difference's interval is paired; percentile intervals, no tests.",
+  "families": {
+    "gemma": {
+      "always_yes": {
+        "base": {
+          "ci_high": 0.09079999999999998,
+          "ci_low": 0.0556,
+          "estimate": 0.0724,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.00899456570077733,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "final": {
+          "ci_high": 0.0824,
+          "ci_low": 0.0508,
+          "estimate": 0.06599999999999995,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.008088088446994133,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "bootstrap": {
+        "ci_level": 0.95,
+        "n_resamples": 10000,
+        "root": "artifact://sampling/fig5-gemma-2026-10-07-pop-a22af097",
+        "seed": 16
+      },
+      "changes": {
+        "aggregate": {
+          "base_to_trained": {
+            "ci_high": 0.08216,
+            "ci_low": 0.05527800000000002,
+            "estimate": 0.06831999999999999,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.006830768572669989,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "draw_to_draw": {
+            "base": {
+              "ci_high": 0.07959999999999999,
+              "ci_low": 0.05039999999999999,
+              "estimate": 0.06439999999999997,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00752598057664249,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "final": {
+              "ci_high": 0.0876,
+              "ci_low": 0.0556,
+              "estimate": 0.0712,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.008078003919682141,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "excess": {
+            "ci_high": 0.004599999999999965,
+            "ci_low": -0.003159999999999996,
+            "estimate": 0.0005200000000000066,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0019824446787378457,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "label": "Aggregated rule judgments",
+          "resampling": {
+            "ci_high": 0.0818,
+            "ci_low": 0.05440000000000001,
+            "estimate": 0.06779999999999999,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.006887256203278633,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "full_set": {
+          "base_to_trained": {
+            "ci_high": 0.39959999999999996,
+            "ci_low": 0.32927799999999996,
+            "estimate": 0.3647200000000001,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.01777474416674806,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "draw_to_draw": {
+            "base": {
+              "ci_high": 0.0664,
+              "ci_low": 0.04000000000000001,
+              "estimate": 0.052799999999999986,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.006710851436293312,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "final": {
+              "ci_high": 0.15359999999999993,
+              "ci_low": 0.11480000000000001,
+              "estimate": 0.13399999999999992,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.009910167371825762,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "excess": {
+            "ci_high": 0.30496099999999987,
+            "ci_low": 0.237879,
+            "estimate": 0.2713200000000001,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.01714409394469781,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "label": "Full-ruleset judgments",
+          "resampling": {
+            "ci_high": 0.10439999999999999,
+            "ci_low": 0.0824,
+            "estimate": 0.09339999999999996,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.005595019167473869,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "per_rule": {
+          "base_to_trained": {
+            "ci_high": 0.0380141403508772,
+            "ci_low": 0.03414589473684209,
+            "estimate": 0.03603508771929824,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0009796502562253134,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "draw_to_draw": {
+            "base": {
+              "ci_high": 0.038165087719298246,
+              "ci_low": 0.034168421052631584,
+              "estimate": 0.03616491228070171,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0010153294609920387,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "final": {
+              "ci_high": 0.037712280701754364,
+              "ci_low": 0.03360342105263157,
+              "estimate": 0.035607017543859636,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.001041550181558401,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "excess": {
+            "ci_high": 0.0005512368421052669,
+            "ci_low": -0.00023724561403509504,
+            "estimate": 0.00014912280701756542,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.000199415731352318,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "label": "Individual-rule judgments",
+          "resampling": {
+            "ci_high": 0.03786491228070174,
+            "ci_low": 0.03401052631578947,
+            "estimate": 0.035885964912280674,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0009749222716209337,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        }
+      },
+      "inconsistency": {
+        "base": {
+          "ci_high": 0.7438399999999998,
+          "ci_low": 0.6738379999999998,
+          "estimate": 0.7092800000000002,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.01781576522521556,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "by_anchor": {
+          "not_yes": {
+            "base": {
+              "ci_high": 0.02000251256281404,
+              "ci_low": 0.0009900990099009903,
+              "estimate": 0.008839779005524863,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0049987488370277795,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "base_minus_trained_frozen": {
+              "ci_high": -0.06785562953995158,
+              "ci_low": -0.19591888532062576,
+              "estimate": -0.12596685082872933,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.032846476531100254,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "share": {
+              "ci_high": 0.09079999999999998,
+              "ci_low": 0.0556,
+              "estimate": 0.0724,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00899456570077733,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "trained_frozen": {
+              "ci_high": 0.20638469457789985,
+              "ci_low": 0.07425705070507052,
+              "estimate": 0.13480662983425418,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.03394525407227304,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "yes": {
+            "base": {
+              "ci_high": 0.7994793340295632,
+              "ci_low": 0.727857314839811,
+              "estimate": 0.7639499784389822,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.018286203498229448,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "base_minus_trained_frozen": {
+              "ci_high": 0.41730652173913035,
+              "ci_low": 0.3445481025873542,
+              "estimate": 0.3812850366537299,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.018440829669256514,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "share": {
+              "ci_high": 0.9444000000000001,
+              "ci_low": 0.9092,
+              "estimate": 0.9276000000000002,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00899456570077733,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "trained_frozen": {
+              "ci_high": 0.42002688494227913,
+              "ci_low": 0.34545955597910544,
+              "estimate": 0.38266494178525223,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.019185038687991672,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          }
+        },
+        "differences": {
+          "base_minus_trained_frozen": {
+            "ci_high": 0.37983999999999984,
+            "ci_low": 0.309118,
+            "estimate": 0.34456000000000014,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.01794855566596934,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "base_minus_trained_updated": {
+            "ci_high": 0.3747199999999997,
+            "ci_low": 0.30039799999999983,
+            "estimate": 0.33768000000000026,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.018781297439682487,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "trained_frozen_minus_always_yes": {
+            "ci_high": 0.33064000000000004,
+            "ci_low": 0.25368000000000007,
+            "estimate": 0.2923200000000001,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.01977934150912006,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "trained_frozen_minus_trained_updated": {
+            "ci_high": 0.0022400000000000198,
+            "ci_low": -0.016639999999999988,
+            "estimate": -0.006879999999999886,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.00489719912969689,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "same_draw": {
+          "base": {
+            "ci_high": 0.7432000000000001,
+            "ci_low": 0.6732,
+            "estimate": 0.7088000000000002,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.017830017906889494,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "final": {
+            "ci_high": 0.4092099999999999,
+            "ci_low": 0.3404,
+            "estimate": 0.37479999999999997,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.017761972437496908,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "trained_frozen": {
+          "ci_high": 0.3989599999999999,
+          "ci_low": 0.33047999999999994,
+          "estimate": 0.3647200000000001,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.01761659929039654,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "trained_updated": {
+          "ci_high": 0.40591999999999995,
+          "ci_low": 0.33736,
+          "estimate": 0.3716,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.017579543419993134,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "label_shares": {
+        "base": {
+          "aggregate": {
+            "no": {
+              "ci_high": 0.09079999999999998,
+              "ci_low": 0.0556,
+              "estimate": 0.0724,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00899456570077733,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "estimate": 0.0,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.9444000000000001,
+              "ci_low": 0.9092,
+              "estimate": 0.9276000000000002,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00899456570077733,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "full_set": {
+            "no": {
+              "ci_high": 0.814,
+              "ci_low": 0.746,
+              "estimate": 0.7804000000000001,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.01725219330469028,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "estimate": 0.0,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.25399999999999995,
+              "ci_low": 0.186,
+              "estimate": 0.2196,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.01725219330469028,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          }
+        },
+        "final": {
+          "aggregate": {
+            "no": {
+              "ci_high": 0.0824,
+              "ci_low": 0.0508,
+              "estimate": 0.06599999999999995,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.008088088446994133,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "estimate": 0.0,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.9492,
+              "ci_low": 0.9175999999999999,
+              "estimate": 0.9340000000000007,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.008088088446994136,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "full_set": {
+            "no": {
+              "ci_high": 0.45519999999999994,
+              "ci_low": 0.3808000000000001,
+              "estimate": 0.4176,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.019295692475824744,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "estimate": 0.0,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.6192000000000001,
+              "ci_low": 0.5448000000000001,
+              "estimate": 0.5823999999999997,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.01929569247582477,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          }
+        }
+      },
+      "labels": {
+        "base": "Gemma 4 31B-it",
+        "final": "GRPO (checkpoint-600)"
+      },
+      "member": "final",
+      "n_rules": 57,
+      "n_scenarios": 500,
+      "provenance": {
+        "arms": {
+          "base": {
+            "campaign_id": "fig5-gemma-2026-10-07",
+            "condition_fingerprint": "13fdb00c28c33299367d7fc0efcceff59c7a68b46e405660e01f9053c4d34903",
+            "condition_id": "gemma-4-31B-it/figure5/base",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-gemma-2026-10-07-pop-a22af097"
+          },
+          "final": {
+            "campaign_id": "fig5-gemma-ckpt600-2026-10-09",
+            "condition_fingerprint": "aba0c327ad7864721bc13904beb62f8b457c76f5845880472554f292e83f03e6",
+            "condition_id": "gemma-4-31B-it/figure5/final",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-gemma-ckpt600-2026-10-09-pop-a22af097"
+          }
+        },
+        "campaigns": [
+          {
+            "campaign_id": "fig5-gemma-2026-10-07",
+            "created_at": "2026-10-29T09:02:10+00:00",
+            "estimates": "artifact://sampling/fig5-gemma-2026-10-07-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "61729f6e8671ee5804b904c23b59da3112e4e1f84c4c7b5b22b4592950fa973c",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-gemma-2026-10-07-pop-a22af097",
+            "state": "complete"
+          },
+          {
+            "campaign_id": "fig5-gemma-ckpt600-2026-10-09",
+            "created_at": "2026-10-29T09:01:35+00:00",
+            "estimates": "artifact://sampling/fig5-gemma-ckpt600-2026-10-09-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "63fd5434d7a16f2d1fb1d5cb96f405f9420fb2726274cd92d5bb5fc6532c1952",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-gemma-ckpt600-2026-10-09-pop-a22af097",
+            "state": "complete"
+          }
+        ],
+        "n_decoder_draws": 5,
+        "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462"
+      },
+      "reference": "base"
+    },
+    "qwen": {
+      "always_yes": {
+        "base": {
+          "ci_high": 0.07039999999999999,
+          "ci_low": 0.048,
+          "estimate": 0.05919999999999992,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.005729506135924803,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "pick": {
+          "ci_high": 0.06719999999999998,
+          "ci_low": 0.04359999999999999,
+          "estimate": 0.054799999999999946,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.006025693037518587,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "bootstrap": {
+        "ci_level": 0.95,
+        "n_resamples": 10000,
+        "root": "artifact://sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097",
+        "seed": 16
+      },
+      "changes": {
+        "aggregate": {
+          "base_to_trained": {
+            "ci_high": 0.10919999999999998,
+            "ci_low": 0.07959999999999998,
+            "estimate": 0.09392000000000006,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.007498185244418542,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "draw_to_draw": {
+            "base": {
+              "ci_high": 0.11879999999999999,
+              "ci_low": 0.08319999999999998,
+              "estimate": 0.10079999999999989,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.009073918448806994,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "pick": {
+              "ci_high": 0.10479999999999995,
+              "ci_low": 0.07080000000000002,
+              "estimate": 0.08739999999999988,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.008617353050096062,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "excess": {
+            "ci_high": 0.002619999999999984,
+            "ci_low": -0.0029199999999999786,
+            "estimate": -0.0001799999999998192,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0014102653857256786,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "label": "Aggregated rule judgments",
+          "resampling": {
+            "ci_high": 0.10929999999999998,
+            "ci_low": 0.0797,
+            "estimate": 0.09409999999999988,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.007517162479978729,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "full_set": {
+          "base_to_trained": {
+            "ci_high": 0.8576800000000003,
+            "ci_low": 0.81448,
+            "estimate": 0.8366400000000014,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.011069919587133418,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "draw_to_draw": {
+            "base": {
+              "ci_high": 0.21419999999999992,
+              "ci_low": 0.17179999999999992,
+              "estimate": 0.1928000000000002,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.010859275661276858,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "pick": {
+              "ci_high": 0.026400000000000003,
+              "ci_low": 0.011200000000000003,
+              "estimate": 0.018400000000000007,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0037640622745114096,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "excess": {
+            "ci_high": 0.7598205000000002,
+            "ci_low": 0.7013585,
+            "estimate": 0.7310400000000012,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.014935365766525445,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "label": "Full-ruleset judgments",
+          "resampling": {
+            "ci_high": 0.11649999999999999,
+            "ci_low": 0.0948,
+            "estimate": 0.1056000000000001,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0055375323135039125,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "per_rule": {
+          "base_to_trained": {
+            "ci_high": 0.10572498245614037,
+            "ci_low": 0.09791849122807017,
+            "estimate": 0.10179368421052641,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0019786870158995423,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "draw_to_draw": {
+            "base": {
+              "ci_high": 0.10370877192982454,
+              "ci_low": 0.09572254385964915,
+              "estimate": 0.09965964912280703,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0020264323028695696,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "pick": {
+              "ci_high": 0.10784561403508772,
+              "ci_low": 0.09964201754385965,
+              "estimate": 0.10375087719298245,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0020830040135355415,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "excess": {
+            "ci_high": 0.0006905350877193134,
+            "ci_low": -0.0004975526315789832,
+            "estimate": 8.84210526316681e-05,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0003030041678595485,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "label": "Individual-rule judgments",
+          "resampling": {
+            "ci_high": 0.1056756140350877,
+            "ci_low": 0.09777017543859653,
+            "estimate": 0.10170526315789474,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.001993663304385315,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        }
+      },
+      "inconsistency": {
+        "base": {
+          "ci_high": 0.8532000000000001,
+          "ci_low": 0.8099200000000001,
+          "estimate": 0.8319200000000011,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.011021100699007523,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "by_anchor": {
+          "not_yes": {
+            "base": {
+              "ci_high": 0.7961574074074076,
+              "ci_low": 0.6351132645979977,
+              "estimate": 0.7148648648648646,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.04137113342258843,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "base_minus_trained_frozen": {
+              "ci_high": -0.1911755398361875,
+              "ci_low": -0.34640969431250745,
+              "estimate": -0.26891891891891917,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.03964414499612402,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "share": {
+              "ci_high": 0.07039999999999999,
+              "ci_low": 0.048,
+              "estimate": 0.05919999999999992,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.005729506135924803,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "trained_frozen": {
+              "ci_high": 0.9935483870967743,
+              "ci_low": 0.9722884970539091,
+              "estimate": 0.9837837837837837,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.005441854363271664,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "yes": {
+            "base": {
+              "ci_high": 0.8615322063025384,
+              "ci_low": 0.8164169885216845,
+              "estimate": 0.8392857142857145,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.011560641553338044,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "base_minus_trained_frozen": {
+              "ci_high": 0.8524605916917566,
+              "ci_low": 0.807213573151082,
+              "estimate": 0.8303571428571431,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.011606518611116268,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "share": {
+              "ci_high": 0.9520000000000001,
+              "ci_low": 0.9296,
+              "estimate": 0.9408000000000013,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0057295061359248075,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "trained_frozen": {
+              "ci_high": 0.01410861976206046,
+              "ci_low": 0.005065375018033568,
+              "estimate": 0.00892857142857142,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0023247952796278558,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          }
+        },
+        "differences": {
+          "base_minus_trained_frozen": {
+            "ci_high": 0.7890420000000004,
+            "ci_low": 0.7413580000000001,
+            "estimate": 0.7652800000000012,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.012290928220892679,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "base_minus_trained_updated": {
+            "ci_high": 0.79312,
+            "ci_low": 0.7450400000000001,
+            "estimate": 0.7693600000000012,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.012247651361371131,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "trained_frozen_minus_always_yes": {
+            "ci_high": 0.012160000000000011,
+            "ci_low": 0.003920000000000007,
+            "estimate": 0.007440000000000016,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.0021062377525208303,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "trained_frozen_minus_trained_updated": {
+            "ci_high": 0.014960000000000001,
+            "ci_low": -0.007039999999999998,
+            "estimate": 0.00408,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.005654688028742167,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "same_draw": {
+          "base": {
+            "ci_high": 0.8532000000000003,
+            "ci_low": 0.81,
+            "estimate": 0.8320000000000013,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.011091373772369236,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          },
+          "pick": {
+            "ci_high": 0.0764,
+            "ci_low": 0.050800000000000005,
+            "estimate": 0.06319999999999994,
+            "interval_basis": "scenario_cluster_bootstrap",
+            "n_undefined_replicates": 0,
+            "sd": 0.006573853174508841,
+            "statistic_resampling": "recomputed_on_every_replicate"
+          }
+        },
+        "trained_frozen": {
+          "ci_high": 0.07896199999999998,
+          "ci_low": 0.05448,
+          "estimate": 0.06663999999999994,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.006241944520796702,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        },
+        "trained_updated": {
+          "ci_high": 0.0756,
+          "ci_low": 0.050480000000000004,
+          "estimate": 0.06255999999999994,
+          "interval_basis": "scenario_cluster_bootstrap",
+          "n_undefined_replicates": 0,
+          "sd": 0.006441683077611314,
+          "statistic_resampling": "recomputed_on_every_replicate"
+        }
+      },
+      "label_shares": {
+        "base": {
+          "aggregate": {
+            "no": {
+              "ci_high": 0.023600000000000003,
+              "ci_low": 0.011200000000000002,
+              "estimate": 0.017200000000000007,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0031652595700194957,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.05119999999999999,
+              "ci_low": 0.0332,
+              "estimate": 0.041999999999999926,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00457758432363621,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.9520000000000001,
+              "ci_low": 0.9296,
+              "estimate": 0.9408000000000013,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0057295061359248075,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "full_set": {
+            "no": {
+              "ci_high": 0.8536000000000004,
+              "ci_low": 0.8088000000000002,
+              "estimate": 0.8316000000000011,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.011412125787950296,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.019600000000000006,
+              "ci_low": 0.009600000000000001,
+              "estimate": 0.014400000000000007,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0025654020425656485,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.176,
+              "ci_low": 0.13279999999999995,
+              "estimate": 0.15400000000000014,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.01108265689444549,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          }
+        },
+        "pick": {
+          "aggregate": {
+            "no": {
+              "ci_high": 0.018000000000000002,
+              "ci_low": 0.0068000000000000005,
+              "estimate": 0.012000000000000005,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00287558878144981,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.0528,
+              "ci_low": 0.03360000000000001,
+              "estimate": 0.04279999999999994,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.004869903246513218,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.9564000000000002,
+              "ci_low": 0.9328000000000002,
+              "estimate": 0.9452000000000008,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.006025693037518591,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          },
+          "full_set": {
+            "no": {
+              "ci_high": 0.015200000000000003,
+              "ci_low": 0.006,
+              "estimate": 0.010000000000000002,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.0024051546774376074,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "unsure": {
+              "ci_high": 0.0012000000000000001,
+              "ci_low": 0.0,
+              "estimate": 0.0004,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00039885562500734524,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            },
+            "yes": {
+              "ci_high": 0.994,
+              "ci_low": 0.9844,
+              "estimate": 0.9896000000000004,
+              "interval_basis": "scenario_cluster_bootstrap",
+              "n_undefined_replicates": 0,
+              "sd": 0.00243934117794129,
+              "statistic_resampling": "recomputed_on_every_replicate"
+            }
+          }
+        }
+      },
+      "labels": {
+        "base": "Qwen3-8B",
+        "pick": "GRPO (checkpoint-300)"
+      },
+      "member": "pick",
+      "n_rules": 57,
+      "n_scenarios": 500,
+      "provenance": {
+        "arms": {
+          "base": {
+            "campaign_id": "fig5-grpo-v2-fp32-2026-09-26",
+            "condition_fingerprint": "579c9b916068568b4ea1aa4356bf69095913317b4baa34675b2d37ce1f52b061",
+            "condition_id": "Qwen3-8B/figure5/base",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097"
+          },
+          "pick": {
+            "campaign_id": "fig5-qwen-mix-2026-10-11-checkpoint-300",
+            "condition_fingerprint": "f29ee24b57c366536a1550e237d6e15dcdbde35cde7a0f0a26a466538fc017f0",
+            "condition_id": "Qwen3-8B/figure5/pick",
+            "prompt_style": "forced-grpo",
+            "root": "artifact://sampling/fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097"
+          }
+        },
+        "campaigns": [
+          {
+            "campaign_id": "fig5-grpo-v2-fp32-2026-09-26",
+            "created_at": "2026-10-29T09:02:09+00:00",
+            "estimates": "artifact://sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "48407fa7bf5844c0ff3f16d1073eae572700374675ac722f3f237671d1f1b55a",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-grpo-v2-fp32-2026-09-26-checkpoint-200-pop-a22af097",
+            "state": "complete"
+          },
+          {
+            "campaign_id": "fig5-qwen-mix-2026-10-11-checkpoint-300",
+            "created_at": "2026-10-29T09:02:04+00:00",
+            "estimates": "artifact://sampling/fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097/aggregate/estimates.json",
+            "estimates_sha256": "35b7ea36190fd4f069a3cfbc68e84841d38e02669fbcddeaee7668b071cd122f",
+            "max_semantic_attempts": 20,
+            "retry_scope": "component",
+            "root": "artifact://sampling/fig5-qwen-mix-2026-10-11-checkpoint-300-pop-a22af097",
+            "state": "complete"
+          }
+        ],
+        "n_decoder_draws": 5,
+        "scenario_manifest_sha256": "a22af097639cfdaa15b4508c66631af1cb6d45780d8ada93a9fb1d5a29390462"
+      },
+      "reference": "base"
+    }
+  },
+  "population": "pop-a22af097",
+  "schema_version": 1,
+  "source": "frozen_anchors"
+}

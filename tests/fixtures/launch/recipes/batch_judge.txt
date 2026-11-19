@@ -1,0 +1,30 @@
+launch campaign --spec batch_judge --var campaign_id=<id> --var model=<a *-batch model config> $P --preflight-only
+launch campaign --spec batch_judge --var campaign_id=pilot-haiku-v2-2026-10 \
+--var model=claude-haiku-5-5-batch --var population=sampling/subsets/frozen_500_r1_12_seed16_by_source.jsonl \
+--var population_sha256=3be28ab38b0ec0261e8c5f4235db15524284d9931d51283fa13f496883799c8c \
+--var request_block=12 --var mode=screening --var draws=1 --var styles=naive-rules-above,encouraged,forced
+launch campaign --spec batch_judge --var campaign_id=pilot-haiku-forced-v2-2026-10 \
+--var model=claude-haiku-5-5-batch --var population=sampling/subsets/frozen_500_r1_12_seed16_by_source.jsonl \
+--var population_sha256=3be28ab38b0ec0261e8c5f4235db15524284d9931d51283fa13f496883799c8c \
+--var request_block=12 --var mode=screening --var draws=1 --var styles=forced \
+--var retry_scope=component
+launch campaign --spec batch_judge --var campaign_id=prompt-ablation-v2-2026-10-haiku-sum \
+--var model=claude-haiku-5-5-batch --var population=populations/frozen_500_r3.jsonl \
+--var population_sha256=c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4 \
+--var styles=naive-rules-above,encouraged,forced --var retry_scope=component
+launch campaign --spec batch_judge --var campaign_id=prompt-ablation-v2-2026-10-luna \
+--var model=gpt-5.6-luna-batch --var population=populations/frozen_500.jsonl \
+--var population_sha256=fa9bdc5eb6b9bac8e7b42a27f4ab9f6b60bd5a0e4ac4ae3a63190eb00e487411 \
+--var styles=encouraged
+launch campaign --spec batch_judge --var campaign_id=prompt-ablation-v2-2026-10-luna \
+--var model=gpt-5.6-luna-batch --var population=populations/frozen_500.jsonl \
+--var population_sha256=fa9bdc5eb6b9bac8e7b42a27f4ab9f6b60bd5a0e4ac4ae3a63190eb00e487411 \
+--var styles=forced
+launch campaign --spec batch_judge --var campaign_id=hierarchy-aware-2026-10-haiku-sum \
+--var model=claude-haiku-5-5-batch --var population=populations/frozen_500_r3.jsonl \
+--var population_sha256=c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4 \
+--var styles=naive-hierarchy --var retry_scope=component -- +hierarchy=model_spec
+launch campaign --spec batch_judge --var campaign_id=hierarchy-aware-2026-10-luna-sum \
+--var model=gpt-5.6-luna-batch --var population=populations/frozen_500_r3.jsonl \
+--var population_sha256=c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4 \
+--var styles=naive-hierarchy -- +hierarchy=model_spec

@@ -1,0 +1,18 @@
+# @package _global_
+# The hierarchy conditions: the Model Spec's levels of authority shown to the judge, added with `+hierarchy=model_spec`.
+hierarchy:
+  styles:
+    naive-rules-above:
+      rule_context: isolated
+      levels: null
+      levels_sha256: null
+    naive-hierarchy:
+      rule_context: superiors
+      levels: data/rules/modelspec/openai_rules_all_full.jsonl
+      levels_sha256: 99eac16d5fc4c8cd028b091b6cab23badcd1573bd33d9765f0ca436e91f7130a
+
+eval_cfg:
+  individual_rule_context: ${hierarchy.styles.${eval_cfg.reasoning_prompt_style}.rule_context}
+
+rule_levels_path: ${hierarchy.styles.${eval_cfg.reasoning_prompt_style}.levels}
+approved_rule_levels_sha256: ${hierarchy.styles.${eval_cfg.reasoning_prompt_style}.levels_sha256}

@@ -1,0 +1,46 @@
+# The training evaluation under repeated stochastic decoding, a template whose policies are declared at launch
+# (configs/launch/training_arms.yaml).
+defaults:
+  - sampling_campaign
+  - _self_
+  - training_serving: merged_fp32
+
+run_name: sampling_training
+
+training:
+  policy: base
+  # The declared policies' labels, '+'-joined.
+  family: ???
+  reference: base
+  policies:
+    base:
+      model_path: ${oc.env:RULEFORGE_MODEL_ROOT}/Qwen3-8B
+      weights_sha256: null
+
+condition_id: ${judge_model.model_name}/${rf.recorded:training}/${training.policy}
+condition_extra:
+  figure: ${rf.recorded:training}
+  policy: ${training.policy}
+  policy_family: ${training.family}
+  policy_reference: ${training.reference}
+
+scenario_set_path: ${oc.env:RULEFORGE_ARTIFACT_ROOT}/populations/frozen_500_r3.jsonl
+approved_scenario_sha256: c16f66f4ad3fc93fad46bf31efaa8325f30fb750104d1e13a9326b7cd46b10d4
+rule_set_path: data/rules/modelspec/openai_rules_all.jsonl
+approved_rule_set_sha256: a99062f00a9ff616cba4d548e9cd59460dc4ee52fc46e3de4a4eb2579a260228
+
+evaluation_mode: both
+interpretation: No_Interpretation
+
+eval_cfg:
+  reasoning_prompt_style: forced-grpo
+  individual_rule_context: isolated
+
+sampling:
+  campaign_mode: final
+  num_decoder_draws: 5
+  max_semantic_attempts: 20
+  forced_json_requirement: label_only
+  strict_think: true
+  retry_scope: component
+  truncation: model_default

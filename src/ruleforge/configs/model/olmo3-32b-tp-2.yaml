@@ -1,0 +1,16 @@
+# Olmo-3-32B-Think judge on vLLM at tensor-parallel size 2.
+model_name: "Olmo-3-32B-Think"
+model_type: "local"
+model_path: "${rf.env:MODEL_ROOT}/Olmo-3-32B-Think"
+tp_size: 2
+num_tries: 5
+strip_thinking_model: "olmo3"
+reasoning_parser: "olmo3"
+max_new_tokens: 32768
+seed: 16
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: true
+attention_backend: "FLASH_ATTN"

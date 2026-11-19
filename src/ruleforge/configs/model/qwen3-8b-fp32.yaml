@@ -1,0 +1,17 @@
+# Qwen3-8B in float32 with TRITON_ATTN, the engine its GRPO checkpoints are evaluated on.
+model_name: "Qwen3-8B"
+model_type: "local"
+model_path: "${rf.env:MODEL_ROOT}/Qwen3-8B"
+tp_size: 1
+num_tries: 5
+strip_thinking_model: "qwen3"
+reasoning_parser: "qwen3"
+max_new_tokens: 32768
+seed: 16
+gpt_oss_reasoning_level: null
+speculative_method: null
+num_speculative_tokens: null
+max_model_len: null
+enable_thinking: true
+attention_backend: "TRITON_ATTN"
+dtype: "float32"

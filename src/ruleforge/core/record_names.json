@@ -1,0 +1,15 @@
+{
+  "schema": "ruleforge.core.record_names/1",
+  "description": "The prompt styles' recorded keys beside their public names, the one table that holds both. The published campaigns were recorded before the prompts were named, so the recorded data (campaign roots: condition directories and ids, prompt_style fields, Hydra configs, code snapshots; the GRPO selection records, rows manifests and anchor conditions; the population manifests) names each style by its recorded key, and keeps it. The code names styles by their public names and reads recorded data through this table (ruleforge.core.record_names; the site's store builder reads the same file), and hashes every built-in task's condition identity under the recorded key, so every recorded fingerprint, generation seed, provider request namespace and grid digest re-derives, and a new run under the public names derives the same ones. The rows are in the records' order, which orders every style family's members. A task_keys entry names the key a built-in task's own prompt is hashed under where the rows give its name another: the legal task's one prompt, named naive, has the rules-above row's key. A record-only style is read from the records and never selected for a new run. A retired key names a style of an experiment the release leaves out; it has no public name, and a condition recorded under it is not read.",
+  "tasks": ["modelspec", "legal"],
+  "task_keys": {"legal": {"naive": "legacy"}},
+  "styles": [
+    {"recorded": "legacy", "public": "naive-rules-above", "record_only": false},
+    {"recorded": "even_better", "public": "forced-grpo", "record_only": false},
+    {"recorded": "legacy_v2", "public": "naive", "record_only": false},
+    {"recorded": "good_v2", "public": "encouraged", "record_only": false},
+    {"recorded": "even_better_v2", "public": "forced", "record_only": false},
+    {"recorded": "legacy_hierarchy", "public": "naive-hierarchy", "record_only": false}
+  ],
+  "retired": ["even_better_no_preemption", "good"]
+}
