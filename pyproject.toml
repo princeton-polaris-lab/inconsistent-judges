@@ -67,6 +67,7 @@ modelspec = "ruleforge.tasks.modelspec:ModelSpecTask"
 legal = "ruleforge.tasks.legal:LegalTask"
 
 [project.urls]
+Paper = "https://arxiv.org/abs/2611.29975"
 Repository = "https://github.com/princeton-polaris-lab/inconsistent-judges"
 Dataset = "https://huggingface.co/datasets/ai-law-society-lab/inconsistent-judges"
 Model = "https://huggingface.co/ai-law-society-lab/inconsistent-judges"

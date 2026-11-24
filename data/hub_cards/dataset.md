@@ -11,6 +11,7 @@ configs:
 
 # Inconsistent judges: the paper's data
 
+[![Paper](https://img.shields.io/badge/Paper-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.29975)
 [![Website](https://img.shields.io/badge/Website-2563EB)](https://www.polarislab.org/inconsistent-judges/)
 [![Code](https://img.shields.io/badge/Code-181717?logo=github&logoColor=white)](https://github.com/princeton-polaris-lab/inconsistent-judges)
 [![Models](https://img.shields.io/badge/Models-181717?logo=huggingface&logoColor=FFD21E)](https://huggingface.co/ai-law-society-lab/inconsistent-judges)
@@ -111,3 +112,17 @@ in the code repository lists them.
 | API judges' outputs | those providers' terms |
 
 See `data/README.md` in the code repository.
+
+## Citation
+
+```bibtex
+@misc{liao2026aligning,
+  title         = {Aligning Judge Models to Be Logically Consistent Multi-Rule Interpreters},
+  author        = {Liao, Michel and Nadeem, Nimra and He, Luxi and Henderson, Peter},
+  year          = {2026},
+  eprint        = {2611.29975},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2611.29975}
+}
+```

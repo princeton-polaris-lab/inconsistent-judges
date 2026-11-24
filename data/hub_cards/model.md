@@ -8,6 +8,7 @@ tags: [ruleforge, grpo, lora, multi-rule-consistency]
 
 # Inconsistent judges: GRPO LoRA adapters
 
+[![Paper](https://img.shields.io/badge/Paper-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.29975)
 [![Website](https://img.shields.io/badge/Website-2563EB)](https://www.polarislab.org/inconsistent-judges/)
 [![Code](https://img.shields.io/badge/Code-181717?logo=github&logoColor=white)](https://github.com/princeton-polaris-lab/inconsistent-judges)
 [![Dataset](https://img.shields.io/badge/Dataset-181717?logo=huggingface&logoColor=FFD21E)](https://huggingface.co/datasets/ai-law-society-lab/inconsistent-judges)
@@ -53,3 +54,17 @@ merge and the evaluation.
 **Use.** For research on rule-following consistency. Training changes how often each judgment is given (the paper's
 Figures 5c and 12c count them); after training, Qwen3-8B rarely answers no to a whole ruleset (Appendix F.3).
 The adapters are not safety-tuned models.
+
+## Citation
+
+```bibtex
+@misc{liao2026aligning,
+  title         = {Aligning Judge Models to Be Logically Consistent Multi-Rule Interpreters},
+  author        = {Liao, Michel and Nadeem, Nimra and He, Luxi and Henderson, Peter},
+  year          = {2026},
+  eprint        = {2611.29975},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2611.29975}
+}
+```

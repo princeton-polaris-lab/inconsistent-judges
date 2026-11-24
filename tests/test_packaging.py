@@ -31,6 +31,13 @@ AUTHORS = ["Michel Liao", "Nimra Nadeem", "Luxi He", "Peter Henderson"]
 BYLINE = ", ".join(f"{name}<sup>{mark}</sup>" for name, mark in zip(AUTHORS, ("1,2", "2", "2", "1,2")))
 #: The paper's Hugging Face repositories: one dataset and one model repository of the same name.
 HUB = "ai-law-society-lab/inconsistent-judges"
+#: The paper on arXiv: its identifier, its address and the badge that links it, first in each badge row.
+ARXIV = "2611.29975"
+PAPER = f"https://arxiv.org/abs/{ARXIV}"
+PAPER_BADGE = f"[![Paper](https://img.shields.io/badge/Paper-B31B1B?logo=arxiv&logoColor=white)]({PAPER})"
+#: The citation's fields in their order, as the README's Cite and each Hub card's Citation give them.
+CITATION = {"title": TITLE, "author": " and ".join(", ".join(name.rsplit(" ", 1)[::-1]) for name in AUTHORS),
+            "year": "2026", "eprint": ARXIV, "archivePrefix": "arXiv", "primaryClass": "cs.AI", "url": PAPER}
 
 #: What ``import ruleforge`` and an evaluation over the fake judge need.
 CORE = {"fuzzysearch", "hydra-core", "numpy", "omegaconf", "packaging", "pyyaml", "statsmodels"}
@@ -82,9 +89,7 @@ def test_the_project_metadata_is_the_readme_s():
             in README)
     logos = sorted(re.findall(r'(?:src|srcset)="(assets/[^"]+)"', README))
     assert logos == sorted(path.relative_to(REPO).as_posix() for path in (REPO / "assets" / "logos").iterdir())
-    [bibtex] = re.findall(r"```bibtex\n(.*?)```", README, re.S)
-    assert f"title  = {{{TITLE}}}" in bibtex
-    assert "author = {" + " and ".join(", ".join(name.rsplit(" ", 1)[::-1]) for name in AUTHORS) + "}" in bibtex
+    assert cited(README, "## Cite") == CITATION
     assert PROJECT["readme"] == "README.md" and PROJECT["requires-python"] == ">=3.12"
     # The third-party data's attributions ship as a license file, beside the code's license.
     assert PROJECT["license-files"] == ["LICENSE", "data/README.md"]
@@ -95,13 +100,17 @@ def test_the_project_metadata_is_the_readme_s():
 def test_the_urls_name_the_repository_and_the_hub_repositories():
     inventory = yaml.safe_load((REPO / "data" / "hub_inventory.yaml").read_text(encoding="utf-8"))
     assert inventory["dataset"] == inventory["model"] == DATASET == HUB
-    assert PROJECT["urls"] == {"Repository": "https://github.com/princeton-polaris-lab/inconsistent-judges",
+    assert PROJECT["urls"] == {"Paper": PAPER,
+                               "Repository": "https://github.com/princeton-polaris-lab/inconsistent-judges",
                                "Dataset": f"https://huggingface.co/datasets/{HUB}",
                                "Model": f"https://huggingface.co/{HUB}"}
-    # The README's badge row links the website, then the dataset and the model; its install command, the repository.
+    # The README's badge row links the paper, the website, then the dataset and the model; its install command, the
+    # repository.
     badges = re.findall(r"^\[!\[(\w+)\]\(https://img\.shields\.io/badge/[^)\s]+\)\]\((https://\S+)\)$", README, re.M)
-    assert [label for label, _ in badges] == ["Website", "Dataset", "Models"]
-    assert [link for _, link in badges[1:]] == [PROJECT["urls"]["Dataset"], PROJECT["urls"]["Model"]]
+    assert [label for label, _ in badges] == ["Paper", "Website", "Dataset", "Models"]
+    assert README.splitlines()[2] == PAPER_BADGE
+    assert [link for _, link in badges[:1] + badges[2:]] == [PROJECT["urls"][name]
+                                                              for name in ("Paper", "Dataset", "Model")]
     assert f"git clone {PROJECT['urls']['Repository']} " in README
 
 
@@ -112,15 +121,46 @@ CODE_BADGE = ("[![Code](https://img.shields.io/badge/Code-181717?logo=github&log
               f"({PROJECT['urls']['Repository']})")
 
 
+def cited(text: str, heading: str) -> dict[str, str]:
+    """The fields of the one BibTeX entry, the document's last section ``heading`` holds alone, in their order."""
+    assert text.count(f"\n{heading}\n") == 1, f"one {heading} section"
+    section = text.split(f"\n{heading}\n", 1)[1]
+    entry = re.fullmatch(r"\n```bibtex\n@misc\{liao2026aligning,\n(?P<fields>(?: {2}\w+ += \{[^{}\n]+\},?\n)+)"
+                         r"\}\n```\n", section)
+    assert entry is not None, f"{heading}: one BibTeX entry, liao2026aligning, and nothing after it"
+    lines = entry["fields"].splitlines()
+    # The fields' equals signs align, one field to a line, a comma after each but the last.
+    assert len({line.index("=") for line in lines}) == 1
+    assert [line.endswith(",") for line in lines] == [True] * (len(lines) - 1) + [False]
+    return dict(re.fullmatch(r" {2}(\w+) += \{(.+)\},?", line).groups() for line in lines)
+
+
+def test_every_arxiv_address_and_identifier_in_the_readme_the_cards_and_the_metadata_is_the_paper_s():
+    texts = {"README.md": README, "pyproject.toml": (REPO / "pyproject.toml").read_text(encoding="utf-8"),
+             **{f"data/hub_cards/{card}.md": (REPO / "data" / "hub_cards" / f"{card}.md").read_text(encoding="utf-8")
+                for card in ("dataset", "model")}}
+    ids = {name: re.findall(r"arxiv\.org/(?:abs|pdf)/([^\s)}\"]+)|eprint += \{([^}]*)\}", text, re.I)
+           for name, text in texts.items()}
+    # Each document's badge and citation address, its eprint, and the metadata's Paper link: one identifier everywhere.
+    assert {name: len(found) for name, found in ids.items()} == {"README.md": 3, "pyproject.toml": 1,
+                                                                 "data/hub_cards/dataset.md": 3,
+                                                                 "data/hub_cards/model.md": 3}
+    assert {value for found in ids.values() for pair in found for value in pair if value} == {ARXIV}
+    blocks = {name: re.findall(r"```bibtex\n.*?```\n", text, re.S) for name, text in texts.items()
+              if name != "pyproject.toml"}
+    assert all(len(found) == 1 for found in blocks.values()) and len({found[0] for found in blocks.values()}) == 1
+
+
 @pytest.mark.parametrize("card, sibling", [("dataset", "Models"), ("model", "Dataset")])
 def test_each_hub_card_s_header_is_the_readme_s_without_logos(card, sibling):
     text = (REPO / "data" / "hub_cards" / f"{card}.md").read_text(encoding="utf-8")
     header = CARD_HEADER.match(text, text.index("\n---\n", 3))
     assert header is not None, "under the title: the badges, what the repository is, the authors, the affiliations"
-    # The README's Website badge and its badge for the other Hub repository, between them the repository's Code badge.
+    # The README's Paper and Website badges, the repository's Code badge, then the README's badge for the other Hub
+    # repository.
     readme = {label: line for line, label in re.findall(r"^(\[!\[(\w+)\][^\n]*)$", README, re.M)}
-    assert readme["Website"].endswith(f"]({WEBSITE})")
-    assert header["badges"].splitlines() == [readme["Website"], CODE_BADGE, readme[sibling]]
+    assert readme["Paper"] == PAPER_BADGE and readme["Website"].endswith(f"]({WEBSITE})")
+    assert header["badges"].splitlines() == [readme["Paper"], readme["Website"], CODE_BADGE, readme[sibling]]
     # What the repository is names the paper in italics, and points to the other Hub repository by its badge.
     about = " ".join(header["about"].split())
     assert f"*{TITLE}*" in about and f"(the {sibling} button above)" in about
@@ -129,6 +169,8 @@ def test_each_hub_card_s_header_is_the_readme_s_without_logos(card, sibling):
     # The authors and the affiliations are said once, and a Hub card shows no logo, only the badges.
     assert all(text.count(name) == 1 for name in AUTHORS) and text.count("<sup>1</sup>MATS") == 1
     assert "Paper:" not in text and not re.search(r"<img|<picture|!\[[^]]*\]\((?!https://img\.shields\.io/badge/)", text)
+    # The card ends with the README's citation, under a Citation heading.
+    assert cited(text, "## Citation") == CITATION
 
 
 def test_the_core_dependencies_and_the_extras_are_as_stated():

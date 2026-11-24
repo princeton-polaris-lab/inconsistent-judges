@@ -1,5 +1,6 @@
 # RuleForge
 
+[![Paper](https://img.shields.io/badge/Paper-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.29975)
 [![Website](https://img.shields.io/badge/Website-2563EB)](https://www.polarislab.org/inconsistent-judges/)
 [![Dataset](https://img.shields.io/badge/Dataset-181717?logo=huggingface&logoColor=FFD21E)](https://huggingface.co/datasets/ai-law-society-lab/inconsistent-judges)
 [![Models](https://img.shields.io/badge/Models-181717?logo=huggingface&logoColor=FFD21E)](https://huggingface.co/ai-law-society-lab/inconsistent-judges)
@@ -148,8 +149,12 @@ and WeirdChat transcripts that describe self-harm and suicide.
 
 ```bibtex
 @misc{liao2026aligning,
-  title  = {Aligning Judge Models to Be Logically Consistent Multi-Rule Interpreters},
-  author = {Liao, Michel and Nadeem, Nimra and He, Luxi and Henderson, Peter},
-  year   = {2026}
+  title         = {Aligning Judge Models to Be Logically Consistent Multi-Rule Interpreters},
+  author        = {Liao, Michel and Nadeem, Nimra and He, Luxi and Henderson, Peter},
+  year          = {2026},
+  eprint        = {2611.29975},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2611.29975}
 }
 ```
